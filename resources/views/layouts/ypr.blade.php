@@ -1,8 +1,4 @@
 <!doctype html>
-<!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>			<html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->	<html class="no-js" lang="zxx"> <!--<![endif]-->
 
 <head>
 	<meta charset="utf-8">
@@ -31,27 +27,13 @@
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
 </head>
 <body class="jf-home jf-userlogin">
-	<!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-	<!--************************************
-			Preloader Start
-	*************************************-->
+	
 	<div class="preloader-outer">
 		<div class='loader'></div>
 	</div>
-	<!--************************************
-			Preloader End
-	*************************************-->
-	<!--************************************
-			Wrapper Start
-	*************************************-->
+	
 	<div id="jf-wrapper" class="jf-wrapper">
 	
-	
-		<!--************************************
-				Header Start
-		*************************************-->
 		<header id="jf-header" class="jf-header jf-haslayout">
 			<div class="jf-topbar">
 				<div class="container">
@@ -175,13 +157,9 @@
 				</div>
 			</div>
 		</header>
-		<!--************************************
-				Header End
-		*************************************-->
+		
             @yield('content')
-        <!--************************************
-				Footer Start
-		*************************************-->
+        
 		<footer id="jf-footer" class="jf-footer jf-haslayout">
 			<div class="jf-footerbottom">
 				<a class="jf-btnscrolltop" href=""><i class="fa fa-angle-double-up"></i></a>
@@ -201,13 +179,9 @@
 				</div>
 			</div>
 		</footer>
-		<!--************************************
-				Footer End
-		*************************************-->
+		
 	</div>
-	<!--************************************
-			Wrapper End
-	*************************************-->
+	
 	<script src="{{ asset('assets/js/vendor/jquery-3.3.1.js') }}"></script>
 	<script src="{{ asset('assets/js/vendor/jquery-library.js') }}"></script>
 	<script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
@@ -226,5 +200,4 @@
 	<script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
-<!-- Mirrored from amentotech.com/htmls/jobforest/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Mar 2020 21:48:06 GMT -->
 </html>

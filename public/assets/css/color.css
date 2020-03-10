@@ -24,7 +24,7 @@ a:active,
 .jf-innerbannercontent h2,
 .jf-description blockquote q span
 
-{ color: #19ab94; }
+{ color: #00cc67; }
 /*=============================================
 			Theme Background Color
 =============================================*/
@@ -60,9 +60,9 @@ a:active,
 .jf-invoicestable tbody tr td:first-child:after,
 .loader:before,
 .jf-rightarea .jf-nav .navbar-toggler
-{ background:#19ab94; }
+{ background:#00cc67; }
 .mCSB_scrollTools .mCSB_dragger,
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background:#19ab94 !important;}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background:#00cc67 !important;}
 /*=============================================
 			Theme Border Color
 =============================================*/
@@ -73,14 +73,14 @@ input:focus,
 .jf-formsuccessstory .jf-textarea .form-group.jf-btns .jf-btn,
 .jf-jobapplynowbtn .jf-btn,
 .jf-candidatessearch:hover .jf-employerdetails .jf-btn
-{ border-color: #19ab94; }
+{ border-color: #00cc67; }
 .jf-searchoptions.js-employer .form-group:after{background: #324b6e;}
 .jf-searchoptions.js-candidate .form-group:after{background: #fc413c;}
 .loader {
-    background: #19ab94;
-    background: -moz-linear-gradient(left, #19ab94 10%, rgba(0, 204, 103, 0) 42%);
-    background: -webkit-linear-gradient(left, #19ab94 10%, rgba(0, 204, 103, 0) 42%);
-    background: -o-linear-gradient(left, #19ab94 10%, rgba(0, 204, 103, 0) 42%);
-    background: -ms-linear-gradient(left, #19ab94 10%, rgba(0, 204, 103, 0) 42%);
-    background: linear-gradient(to right, #19ab94 10%, rgba(255, 204, 103, 0) 42%);
+    background: #00cc67;
+    background: -moz-linear-gradient(left, #00cc67 10%, rgba(0, 204, 103, 0) 42%);
+    background: -webkit-linear-gradient(left, #00cc67 10%, rgba(0, 204, 103, 0) 42%);
+    background: -o-linear-gradient(left, #00cc67 10%, rgba(0, 204, 103, 0) 42%);
+    background: -ms-linear-gradient(left, #00cc67 10%, rgba(0, 204, 103, 0) 42%);
+    background: linear-gradient(to right, #00cc67 10%, rgba(255, 204, 103, 0) 42%);
 }

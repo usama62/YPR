@@ -366,7 +366,7 @@ address { font-style: italic; }
 li.jf-facebook a { background:#3b5999; }
 .jf-inputwithicon.jf-twitter .jf-icon,
 .jf-checkbox.jf-twitter,
-li.jf-twitter a { background:#0080af; }
+li.jf-twitter a { background:#55acee; }
 .jf-inputwithicon.jf-linkedin .jf-icon,
 .jf-checkbox.jf-linkedin,
 li.jf-linkedin a { background:#0077B5; }
@@ -416,8 +416,8 @@ li.jf-rss a { background:#ff6600; }
 	border: 1px solid #3b5999;
 }
 .jf-socialiconsborder li.jf-twitter a {
-	color: #0080af;
-	border: 1px solid #0080af;
+	color: #55acee;
+	border: 1px solid #55acee;
 }
 .jf-socialiconsborder li.jf-linkedin a {
 	color: #0077B5;
@@ -504,7 +504,7 @@ li.jf-rss a { background:#ff6600; }
 	line-height: 32px;
 }
 .jf-socialiconsborder li.jf-facebook a i{ color: #3b5999; }
-.jf-socialiconsborder li.jf-twitter a i{ color: #0080af; }
+.jf-socialiconsborder li.jf-twitter a i{ color: #55acee; }
 .jf-socialiconsborder li.jf-linkedin a i{ color: #0077B5; }
 .jf-socialiconsborder li.jf-skype a i{ color: #00aff0; }
 .jf-socialiconsborder li.jf-dropbox a i{ color: #007ee5; }
@@ -576,7 +576,7 @@ li.jf-rss a { background:#ff6600; }
 	line-height:inherit;
 }
 .jf-socialiconssimple li.jf-facebook a i{color:#3b5999;}
-.jf-socialiconssimple li.jf-twitter a i{color:#0080af;}
+.jf-socialiconssimple li.jf-twitter a i{color:#55acee;}
 .jf-socialiconssimple li.jf-linkedin a i{color:#0077B5;}
 .jf-socialiconssimple li.jf-googleplus a i{color:#dd4b39;}
 .jf-socialiconssimple li.jf-rss a i{color:#ff6600;}
@@ -719,13 +719,13 @@ li.jf-rss a { background:#ff6600; }
 }
 .jf-btnviewall{
 	float:right;
-	color:#0080af;
+	color:#55acee;
 	display:block;
 	font-size:14px;
 	line-height:14px;
 }
 .jf-btnviewall:hover,
-.jf-btnviewall:focus{color: #0080af;}
+.jf-btnviewall:focus{color: #55acee;}
 .jf-title{
 	width:100%;
 	float:left;
@@ -782,7 +782,7 @@ li.jf-rss a { background:#ff6600; }
 	position:relative;
 }
 .jf-pagination ul li.jf-nextpage:hover a,
-.jf-pagination ul li.jf-prevpage:hover a{color:#0080af;}
+.jf-pagination ul li.jf-prevpage:hover a{color:#55acee;}
 .jf-pagination ul li:hover a,
 .jf-pagination ul li.jf-active a{color:#324b6e;}
 .jf-pagination ul li.jf-prevpage a i{margin:0 4px 0 0;}
@@ -956,13 +956,13 @@ li.jf-rss a { background:#ff6600; }
 	top:0;
 	left:-3px;
 	content:'/';
-	color:#0080af;
+	color:#55acee;
 	position:absolute;
 	font:500 14px/14px 'Poppins', Arial, Helvetica, sans-serif;
 }
 .jf-loginreg li:first-child:before{display:none;}
 .jf-loginreg li a{
-	color:#0080af;
+	color:#55acee;
 	display:block;
 	line-height:inherit;
 }
@@ -2163,7 +2163,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	vertical-align:middle;
 }
 .jf-professionalinfo li i{margin:0 10px 0 0;}
-.jf-professionalinfo li:hover span a{color:#0080af;}
+.jf-professionalinfo li:hover span a{color:#55acee;}
 /* =============================================
 			Testimonials Style					
 ============================================= */
@@ -2308,7 +2308,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	font-weight: 400;
 }
 .jf-sharestorycontent a{
-	color:#0080af;
+	color:#55acee;
 	font-size: 13px;
 	line-height:13px;
 	display: inline-block;
@@ -2432,9 +2432,9 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	padding:0 0 0 20px;
 }
 .jf-authorname a{color: #767676;}
-.jf-authorname a:focus{color: #0080af;}
+.jf-authorname a:focus{color: #55acee;}
 .jf-newsarticle:hover .jf-authorname,
-.jf-newsarticle:hover .jf-authorname a{color: #0080af;}
+.jf-newsarticle:hover .jf-authorname a{color: #55acee;}
 .jf-authorname:after{
 	top:0;
 	left:0;
@@ -2469,7 +2469,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	display:inline-block;
 	vertical-align:middle;
 }
-.jf-postarticlemeta li:last-child span {color: #0080af;}
+.jf-postarticlemeta li:last-child span {color: #55acee;}
 .jf-postarticlemeta li i{margin:0 5px 0 0;}
 /* =============================================
 			Footer Style						
@@ -2495,7 +2495,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	line-height:24px;
 }
 .jf-footeraboutus .jf-description p a{
-	color:#0080af;
+	color:#55acee;
 	text-decoration:none;
 }
 .jf-footeraboutus .jf-socialiconssimple{
@@ -2587,7 +2587,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 .jf-footercol .jf-widgetcontent ul li:last-child{padding-bottom:0; }
-.jf-widgetcontent ul li.jf-viewmore a{color:#0080af;}
+.jf-widgetcontent ul li.jf-viewmore a{color:#55acee;}
 .jf-widgetcontent ul li.jf-viewmore:hover a{padding:0;}
 .jf-widgetcontent ul li.jf-viewmore a:before{display:none;}
 .jf-widgetjobtype .jf-widgettiltshift,
@@ -2605,7 +2605,8 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	float:left;
 	padding:20px 0;
 	position: relative;
-	background:#324b6e;
+	background:#f7f7f7;
+	border-bottom:10px solid #0080af;
 }
 .jf-btnscrolltop{
 	top:-20px;
@@ -2636,7 +2637,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	font-size:14px;
 	line-height:20px;
 }
-.jf-copyrights span{color:#0080af;}
+.jf-copyrights span{color:#55acee;}
 .jf-addnav{float:right;}
 .jf-addnav ul{
 	width:100%;
@@ -2656,7 +2657,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	color:#fff;
 	display:block;
 }
-.jf-addnav ul li:hover a{color:#0080af;}
+.jf-addnav ul li:hover a{color:#55acee;}
 /* ===================================================================================
 								Inner Pages Style					
 ===================================================================================== */
@@ -2722,7 +2723,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-breadcrumb li:last-child { padding-right: 0; }
 .jf-breadcrumb li:first-child:after { display: none; }
 .jf-breadcrumb li a {
-	color:#0080af;
+	color:#55acee;
 	display:block;
 }
 /* =============================================
@@ -2957,7 +2958,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	position: absolute;
 }
 .jf-postarticlemetavtwo li:hover span,
-.jf-postarticlemetavtwo li:last-child span {color: #0080af;}
+.jf-postarticlemetavtwo li:last-child span {color: #55acee;}
 .jf-postarticlemetavtwo li i{margin:0 5px 0 0;}
 .jf-blogdetailshort .jf-innersectionhead{padding: 0;}
 .jf-blogdetailsshort{
@@ -3101,7 +3102,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 }
 .jf-checkboxgroup .jf-viewmore{
 	float: left; 
-	color: #0080af;
+	color: #55acee;
 	display: block;
 	font-size:13px;
 	line-height: 13px;
@@ -3655,7 +3656,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	line-height: 16px;
 }
 .jf-widgetjobalert .jf-widgetcontent a{
-	color: #0080af;
+	color: #55acee;
 	font-weight:500;
 	font-size: 16px;
 	line-height: 16px;
@@ -3774,7 +3775,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-recentsearches li:last-child{padding: 0;}
 .jf-recentsearches li a{
 	display: block;
-	color: #0080af;
+	color: #55acee;
 	font-size: inherit;
 	line-height: inherit; 
 }
@@ -3838,7 +3839,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-employerjobs{
 	float: left;
 	width: 100%;
-	color: #0080af;
+	color: #55acee;
 	font-size: 13px;
 	list-style:none;
 	margin:13px 0 0;
@@ -3860,7 +3861,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 }
 .jf-employerjobs li a{
 	display: block;
-	color: #0080af;
+	color: #55acee;
 }
 .jf-employerdetails .jf-btn{
 	margin: 20px 0 0;
@@ -3961,7 +3962,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	margin:0 4px 0 0;
 }
 .jf-addlike a + a{
-	color:#0080af;
+	color:#55acee;
 	font-size: 13px;
 	line-height: 13px;
 	display: inline-block;
@@ -3998,7 +3999,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	float: right;
 }
 .jf-employerlist .jf-widget .jf-professionalinfo li a{
-	color:#0080af;
+	color:#55acee;
 	display:inline-block;
 	vertical-align:middle;
 }
@@ -4084,7 +4085,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	position: absolute;
 }
 .jf-postarticlemetavthree li:hover span,
-.jf-postarticlemetavthree li:last-child span {color: #0080af;}
+.jf-postarticlemetavthree li:last-child span {color: #55acee;}
 .jf-postarticlemetavthree li i{margin:0 3px 0 0;}
 .jf-jobapplybtnlike{
 	padding:0;
@@ -4364,7 +4365,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	line-height:24px;
 }
 .jf-aboutcompany .jf-description p a{
-	color:#0080af;
+	color:#55acee;
 	text-decoration: none;
 }
 /* ======================================================
@@ -4534,7 +4535,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	padding: 10px 0 10px 19px;
 }
 .jf-qapolicy span a{
-	color:#0080af;
+	color:#55acee;
 	text-decoration:underline;
 }
 .jf-askjobform{
@@ -4633,7 +4634,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	display:inline-block;
 	text-transform: initial;
 }
-.jf-interviewprocess .jf-title h2 a:hover{color:#0080af;}
+.jf-interviewprocess .jf-title h2 a:hover{color:#55acee;}
 .jf-tabcontent .jf-jobdetails.jf-qapolicys .jf-description p{margin:22px 0 0;}
 .jf-btns{
 	float: left;
@@ -4641,7 +4642,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 }
 .jf-interviewprocess .jf-btns{margin:13px 0 0;}
 .jf-interviewprocess .jf-btns a + a{
-	color: #0080af;
+	color: #55acee;
 	margin: 0 0 0 16px;
 	font-size: 12px;
 	line-height: 12px;
@@ -4653,7 +4654,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	padding:8px 0;
 }
 .jf-reportbar i{margin:0 5px 0 0;}
-.jf-reportbar a{color: #0080af;}
+.jf-reportbar a{color: #55acee;}
 .jf-interviewprocess .jf-pagination{
 	margin:5px 0;
 }
@@ -4667,7 +4668,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 }
 .jf-qapolicyvtwo a{
 	display:block;
-	color: #0080af;
+	color: #55acee;
 	font:400 16px/16px 'Poppins', Arial, Helvetica, sans-serif;
 }
 .jf-qapolicyvtwo a i{margin:0 8px 0 0;}
@@ -4717,7 +4718,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	border-radius: 5px;
 }
 .jf-qapolicysvtwo .jf-btns a i{margin:0 5px 0 0;}
-.jf-qapolicysvtwo .jf-btns .jf-btnlikevtwo{background:#0080af;}
+.jf-qapolicysvtwo .jf-btns .jf-btnlikevtwo{background:#55acee;}
 .jf-qapolicysvtwo .jf-btns .jf-btndislike{background:#fc413c;}
 /* ======================================================
 		Employer Details Contact Style				
@@ -4778,7 +4779,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-direction li a{
 	display:block;
 	font-size: 13px;
-	color:#0080af;
+	color:#55acee;
 	line-height:inherit;
 }
 .jf-contactformarea{
@@ -4870,7 +4871,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	position: absolute;
 }
 .jf-candidatessearch:hover .jf-employerdetails .jf-btn{color:#fff;}
-.jf-professionalinfo li span a{color:#0080af;}
+.jf-professionalinfo li span a{color:#55acee;}
 .jf-searchholder .chosen-container-single .chosen-single span{line-height: 32px;}
 /* ======================================================
 			Candidates Grid Style				
@@ -4932,7 +4933,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	line-height:16px;
 }
 .jf-candidatessearchsvtwo .jf-employerdetails h4 span + span{padding:4px 0 0;}
-.jf-candidatessearchsvtwo .jf-employerdetails h4 span a{color:#0080af;}
+.jf-candidatessearchsvtwo .jf-employerdetails h4 span a{color:#55acee;}
 .jf-verticaltop{
 	margin: 0 -1px;
 	float: none !important;
@@ -4974,7 +4975,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-jobapplycentervthree .jf-jobapplybtnlike .jf-btn{float: none;}
 .jf-jobapplycentervthree .jf-jobapplybtnlike .jf-btn{padding:0 30px;}
 .jf-shortlist{
-	color:#0080af;
+	color:#55acee;
 	font-size: 14px;
 	line-height:14px;
 	margin:0 10px 0 25px;
@@ -5029,7 +5030,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-successname a{
 	display:block;
 	margin:5px 0 0;
-	color:#0080af;
+	color:#55acee;
 	font-size:13px;
 	line-height:14px;
 }
@@ -5097,7 +5098,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 }
 .jf-projectname a{
 	clear:both;
-	color:#0080af;
+	color:#55acee;
 	display:block;
 	font-size:13px;
 	line-height:15px;
@@ -5410,7 +5411,7 @@ body.jf-loginuser .jf-main{padding:0;}
 	text-align: center;
 }
 .jf-loginfooter .jf-description p a{
-	color:#0080af;
+	color:#55acee;
 	text-decoration: none;
 }
 .jf-signupbottombar{
@@ -5442,14 +5443,14 @@ body.jf-loginuser .jf-main{padding:0;}
 	font-size: 14px;
 	line-height:inherit;
 }
-.jf-signupbottombar ul li span a{color: #0080af;}
+.jf-signupbottombar ul li span a{color: #55acee;}
 .jf-footersignin .jf-footerbottom{
 	background: #fff;
 	padding: 19px 0;
 }
 .jf-footersignin .jf-footerbottom .jf-copyrights,
 .jf-footersignin .jf-footerbottom .jf-addnav ul li a{color:#324b6e;}
-.jf-footersignin .jf-footerbottom .jf-addnav ul li a:hover{color:#0080af;}
+.jf-footersignin .jf-footerbottom .jf-addnav ul li a:hover{color:#55acee;}
 .jf-socialiconssimple li.jf-sharejob{padding:0;}
 .jf-btnopenclose{
 	left: 0;
@@ -5724,7 +5725,7 @@ body.jf-loginuser .jf-main{padding:0;}
 	float: left;
 }
 .jf-commingsfooter .jf-description p a{
-	color: #0080af;
+	color: #55acee;
 	text-decoration: none;
 }
 .jf-commingsfooter .jf-footerlink{
@@ -5776,7 +5777,7 @@ body.jf-loginuser .jf-main{padding:0;}
 	line-height: 14px;
 }
 .jf-errorslink span a {
-	color: #0080af ;
+	color: #55acee ;
 	font-size: 14px;
 	line-height: inherit;
 }
@@ -5843,7 +5844,7 @@ body.jf-loginuser .jf-main{padding:0;}
 .jf-questionbtns .jf-btnreset {
     width: auto;
     margin: 0;
-    color: #0080af;
+    color: #55acee;
     display: inline-block;
     padding: 12px 15px;
 }
@@ -5856,7 +5857,7 @@ body.jf-loginuser .jf-main{padding:0;}
 .jf-questionbtns a:last-child{
 	width: auto;
 	float: right;
-	color: #0080af;
+	color: #55acee;
 	padding: 10px;
 }
 .jf-questionbtns a:last-child span{
@@ -5885,10 +5886,10 @@ body.jf-loginuser .jf-main{padding:0;}
     margin: 0 0 15px;
 }
 .jf-dashboardtitles:hover .jf-astquestion .jf-askquestiontitle h4{
-	color: #0080af;
+	color: #55acee;
 }
 .jf-dashboardtitles:hover .jf-askquestiontitle:before{
-	background-color: #0080af;
+	background-color: #55acee;
 } 
 .jf-questionsbox{
 	width: 100%;

@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('profile', function () {
+Route::get('/admin', function () {
     // Only verified users may enter...
 })->middleware('verified');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index');
