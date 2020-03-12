@@ -76,11 +76,11 @@
 								</li>
 							</ul>
 							<div class="jf-userloginreg">
-							@if (Auth::guest())
+							@guest
 								<div class="jf-signinarea">
 									<ul class="jf-loginreg">
-										<li><a href="javascript:void(0);">login</a></li>
-										<li><a href="javascript:void(0);">Signup</a></li>
+										<li><a href="{{url('login')}}">login</a></li>
+										<li><a href="{{url('register')}}">Signup</a></li>
 									</ul>
 									<figure class="jf-userimg">
 										<img src="{{ asset('assets/images/usrer-img.jpg')}}" alt="image description">
@@ -98,7 +98,7 @@
 									<nav class="jf-usernav">
 										<ul>
 											<li><a href="dashboard.html"><i class="ti-dashboard"></i><span> Insights</span></a></li>
-											<li><a href="dashboard-myprofile.html"><i class="ti-briefcase"></i><span>My Profile</span></a></li>
+											<li><a href="{{ url('/profile') }}"><i class="ti-briefcase"></i><span>My Profile</span></a></li>
 											<li><a href="dashboard-resume.html"><i class="ti-file"></i><span>My Resume</span></a></li>
 											<li><a href="dashboard-cv-manager.html"><i class="ti-package"></i><span>CV Manager</span></a></li>
 											<li><a href="dashboard-jobalerts.html"><i class="ti-announcement"></i><span>Job Alerts</span></a></li>
@@ -159,11 +159,22 @@
 													<em>New</em>
 												</a>
 											</li>							
-											<li><a href="signin.html"><i class="ti-shift-right"></i><span>Logout</span></a></li>
+											<li>
+												<a href="{{ route('logout') }}"
+													onclick="event.preventDefault();
+													document.getElementById('logout-form').submit();">
+													<i class="ti-shift-right"></i>
+													{{ __('Logout') }}
+												</a>
+
+												<form id="logout-form  " action="{{ route('logout') }}" method="POST" style="display: none;">
+													@csrf
+												</form>
+											</li>
 										</ul>
 									</nav>
 								</div>
-								@endif
+								@endguest
 							</div>
 							<ul class="jf-btnappdowld">
 								<li><a href="javascript:void(0);"><img src="{{ asset('assets/images/android-img.png') }}" alt="image description"></a></li>
