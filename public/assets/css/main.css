@@ -980,7 +980,7 @@ li.jf-rss a { background:#ff6600; }
 }
 .jf-btnappdowld li a{display:block;}
 .jf-userlogedin,
-body.jf-userlogin .jf-signinarea{display:none;}
+/* body.jf-userlogin .jf-signinarea{display:none;} */
 .jf-signinarea,
 body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-userlogedin{

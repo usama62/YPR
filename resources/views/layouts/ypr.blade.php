@@ -37,7 +37,7 @@
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 							<ul class="jf-langnotification">
-								<li>
+								<!-- <li>
 									<a id="jf-languagesbutton" href="javascript:void(0);" class="jf-languagesbutton">
 										<span>Eng</span>
 										<i class="fa fa-angle-down"></i>
@@ -59,7 +59,7 @@
 											</a>
 										</li>
 									</ul>
-								</li>
+								</li> -->
 								<li>
 									<a class="jf-notification" href="javascript:void(0);">
 										<span class="jf-notificationtag">04</span>
@@ -76,7 +76,7 @@
 								</li>
 							</ul>
 							<div class="jf-userloginreg">
-							@guest
+								@guest
 								<div class="jf-signinarea">
 									<ul class="jf-loginreg">
 										<li><a href="{{url('login')}}">login</a></li>
@@ -86,7 +86,7 @@
 										<img src="{{ asset('assets/images/usrer-img.jpg')}}" alt="image description">
 									</figure>
 								</div>
-							@else
+								@else
 								<div class="jf-userlogedin">
 									<figure class="jf-userimg">
 										<img src="{{ asset('assets/images/usrer-img-01.jpg') }}" alt="image description">
@@ -97,68 +97,7 @@
 									</div>
 									<nav class="jf-usernav">
 										<ul>
-											<li><a href="dashboard.html"><i class="ti-dashboard"></i><span> Insights</span></a></li>
 											<li><a href="{{ url('/profile') }}"><i class="ti-briefcase"></i><span>My Profile</span></a></li>
-											<li><a href="dashboard-resume.html"><i class="ti-file"></i><span>My Resume</span></a></li>
-											<li><a href="dashboard-cv-manager.html"><i class="ti-package"></i><span>CV Manager</span></a></li>
-											<li><a href="dashboard-jobalerts.html"><i class="ti-announcement"></i><span>Job Alerts</span></a></li>
-											<li><a href="dashboard-appliedjobs.html"><i class="ti-bookmark"></i><span>Applied Jobs</span></a></li>
-											<li><a href="dashboard-favouritejobs.html"><i class="ti-heart"></i><span>Favourite Jobs</span></a></li>
-											<li class="jf-profilenoti ">
-												<a href="dashboard-shortlisted.html">
-													<i class="ti-package"></i>
-													<span>Shortlisted Resume</span>
-												</a>
-											</li>							
-											<li class="jf-profilenoti ">
-												<a href="dashboard-qus-ans.html">
-													<i class="ti-announcement"></i>
-													<span>Questions &amp; Anwsers</span>
-												</a>
-											</li>							
-											<li>
-												<a href="dashboard-postajob.html">
-													<i class="ti-bookmark"></i>
-													<span>Post A New Job</span>
-												</a>
-											</li>
-											<li>
-												<a href="dashboard-companyprofile.html">
-													<i class="ti-briefcase"></i>
-													<span>Compony Profile</span>
-												</a>
-											</li>														
-											<li>
-												<a href="dashboard-managejobs.html">
-													<i class="ti-file"></i>
-													<span>Manage Jobs</span>
-												</a>
-											</li>														
-											<li>
-												<a href="dashboard-securitysetting.html"><i class="ti-alert"></i><span>Security Setting</span></a>
-											</li>
-											<li><a href="dashboard-privacysetting.html"><i class="ti-anchor"></i><span>Privacy Setting</span></a></li>
-											<li>
-												<a href="dashboard-myfollowing.html">
-													<i class="ti-flag-alt"></i>
-													<span>My Followings</span>
-												</a>
-											</li>
-											<li class="menu-item-has-children page_item_has_children">
-												<a href="javascript:void(0);"><i class="ti-money"></i><span>Packages</span></a>
-												<ul class="sub-menu children">
-													<li><a href="dashboard-packages.html"><i class="ti-money"></i><span>Packages</span></a></li>
-													<li><a href="dashboard-invoices.html"><i class="ti-layers-alt"></i><span>Invoices</span></a></li>
-												</ul>
-											</li>
-											<li><a href="dashboard-reportissue.html"><i class="ti-unlink"></i><span>Report Issue</span></a></li>
-											<li class="jf-customnoti">
-												<a href="dashboard-customize.html">
-													<i class="ti-pencil-alt"></i>
-													<span>Customize Page</span>
-													<em>New</em>
-												</a>
-											</li>							
 											<li>
 												<a href="{{ route('logout') }}"
 													onclick="event.preventDefault();
@@ -167,7 +106,7 @@
 													{{ __('Logout') }}
 												</a>
 
-												<form id="logout-form  " action="{{ route('logout') }}" method="POST" style="display: none;">
+												<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 													@csrf
 												</form>
 											</li>
@@ -176,10 +115,12 @@
 								</div>
 								@endguest
 							</div>
-							<ul class="jf-btnappdowld">
+
+							
+							<!-- <ul class="jf-btnappdowld">
 								<li><a href="javascript:void(0);"><img src="{{ asset('assets/images/android-img.png') }}" alt="image description"></a></li>
 								<li><a href="javascript:void(0);"><img src="{{ asset('assets/images/apple-img.png') }}" alt="image description"></a></li>
-							</ul>
+							</ul> -->
 						</div>
 					</div>
 				</div>
@@ -188,7 +129,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
-							<strong class="jf-logo"><a href="index-2.html"><img src="{{ asset('assets/images/logo.png') }}" alt="company logo here"></a></strong>
+							<strong class="jf-logo"><a href=""><img src="{{ asset('assets/images/logo.png') }}" alt="company logo here"></a></strong>
 							<div class="jf-rightarea">
 								<nav id="jf-nav" class="jf-nav navbar-expand-lg navbar-toggleable-sm">
 									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -197,68 +138,19 @@
 									<div class="collapse navbar-collapse jf-navigation" id="navbarNav">
 										<ul>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="javascript:void(0);">Jobs<em>Find Tons Of Jobs</em>
-												</a>
-												<ul class="sub-menu">
-													<li><a href="jobsearch.html">job search</a></li>
-													<li><a href="jobdetails.html">job Details</a></li>
-													<li><a href="jobdetailexternallink.html">job detail external link</a></li>
-												</ul>
+												<a href="#">Home</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="javascript:void(0);">Employers<em>Search Employer</em>
-												</a>
-												<ul class="sub-menu">
-													<li><a href="employersgrid.html">Employers Grid</a></li>
-													<li><a href="employerslist.html">Employers List</a></li>
-													<li><a href="employersdetails.html">Employers Details</a></li>
-												</ul>
+												<a href="#">Health Topics</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="javascript:void(0);">
-													Candidates
-													<em>Find Proffesionals</em>
-												</a>
-												<ul class="sub-menu">
-													<li><a href="candidatesgrid.html">Candidates Grid</a></li>
-													<li><a href="candidateslist.html">Candidates List</a></li>
-													<li><a href="candidatesdetails.html">Candidates Detail</a></li>
-												</ul>
+												<a href="#">Drugs & Supplements</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="javascript:void(0);" class="jf-menubar">
-													<span>More</span>
-													<img src="{{ asset('assets/images/nav-more.png') }}" alt="image description">
-												</a>
-												<ul class="sub-menu">
-													<li class="menu-item-has-children page_item_has_children">
-														<a href="javascript:void(0);">Home</a>
-														<ul class="sub-menu">
-															<li><a href="index-2.html">Home 1</a></li>
-															<li><a href="index2.html">Home 2</a></li>
-															<li><a href="index3.html">Home 3</a></li>
-														</ul>
-													</li>
-													<li class="menu-item-has-children page_item_has_children">
-														<a href="javascript:void(0);">Blog</a>
-														<ul class="sub-menu">
-															<li><a href="bloggrid.html">Blog Grid</a></li>
-															<li><a href="bloglist.html">Blog List</a></li>
-															<li><a href="blogdetail.html">Blog Detail</a></li>
-															<li><a href="blogdetailshort.html">Blog Detail Short</a></li>
-														</ul>
-													</li>
-													<li class="menu-item-has-children page_item_has_children">
-														<a href="javascript:void(0);">success story</a>
-														<ul class="sub-menu">
-															<li><a href="successstorygrid.html">success story grid</a></li>
-															<li><a href="successstorylist.html">success story list</a></li>
-														</ul>
-													</li>
-													<li><a href="signin.html">sign in</a></li>
-													<li><a href="signup.html">sign up</a></li>
-													<li><a href="comingsoon.html">Coming Soon</a></li>
-												</ul>
+												<a href="#">Videos </a>
+											</li>
+											<li class="menu-item-has-children page_item_has_children">
+												<a href="#">Saved</a>
 											</li>
 										</ul>
 									</div>

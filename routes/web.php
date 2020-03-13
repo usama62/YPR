@@ -24,8 +24,10 @@ Route::get('/admin', function () {
 Route::group(['middleware' => ['verified']], function () {
     Route::get('/admin', 'AdminController@index');
     Route::get('/profile', 'ProfileController@index');
+    Route::post('/profile/update/{id}','ProfileController@update')->name("profile.update");
 });
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 

@@ -28,29 +28,14 @@
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 </head>
 <body class="jf-userlogin">
-	<!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-	<!--************************************
-			Preloader Start
-	*************************************-->
 	<div class="preloader-outer">
 		<div class='loader'></div>
-	</div> 
-	<!--************************************
-			Preloader End
-	*************************************-->
-	<!--************************************
-			Wrapper Start
-	*************************************-->
+	</div>
 	<div id="jf-wrapper" class="jf-wrapper">
-		<!--************************************
-				Header Start
-		*************************************-->
 		<header id="jf-dashboardheader" class="jf-dashboardheader jf-haslayout">
 			<div class="jf-rightarea">
 				<ul class="jf-langnotification">
-					<li>
+					<!-- <li>
 						<a id="jf-languagesbutton" href="" class="jf-languagesbutton">
 							<span>Eng</span>
 							<i class="fa fa-angle-down"></i>
@@ -72,7 +57,7 @@
 								</a>
 							</li>
 						</ul>
-					</li>
+					</li> -->
 					<li>
 						<a class="jf-notification" href="">
 							<span class="jf-notificationtag">04</span>
@@ -98,74 +83,24 @@
 					</div>
 					<nav class="jf-usernav">
 						<ul>
-							<li><a href="dashboard.html"><i class="ti-dashboard"></i><span> Insights</span></a></li>
-							<li><a href="dashboard-myprofile.html"><i class="ti-briefcase"></i><span>My Profile</span></a></li>
-							<li><a href="dashboard-resume.html"><i class="ti-file"></i><span>My Resume</span></a></li>
-							<li><a href="dashboard-cv-manager.html"><i class="ti-package"></i><span>CV Manager</span></a></li>
-							<li><a href="dashboard-jobalerts.html"><i class="ti-announcement"></i><span>Job Alerts</span></a></li>
-							<li><a href="dashboard-appliedjobs.html"><i class="ti-bookmark"></i><span>Applied Jobs</span></a></li>
-							<li><a href="dashboard-favouritejobs.html"><i class="ti-heart"></i><span>Favourite Jobs</span></a></li>
-							<li class="jf-profilenoti ">
-								<a href="dashboard-shortlisted.html">
-									<i class="ti-package"></i>
-									<span>Shortlisted Resume</span>
-								</a>
-							</li>							
-							<li class="jf-profilenoti ">
-								<a href="dashboard-qus-ans.html">
-									<i class="ti-announcement"></i>
-									<span>Questions &amp; Anwsers</span>
-								</a>
-							</li>							
+							<li><a href="{{ url('/profile') }}"><i class="ti-briefcase"></i><span>My Profile</span></a></li>						
 							<li>
-								<a href="dashboard-postajob.html">
-									<i class="ti-bookmark"></i>
-									<span>Post A New Job</span>
+								<a href="{{ route('logout') }}"
+									onclick="event.preventDefault();
+									document.getElementById('logout-form').submit();">
+									<i class="ti-shift-right"></i>
+									{{ __('Logout') }}
 								</a>
+
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									@csrf
+								</form>
 							</li>
-							<li>
-								<a href="dashboard-companyprofile.html">
-									<i class="ti-briefcase"></i>
-									<span>Compony Profile</span>
-								</a>
-							</li>														
-							<li>
-								<a href="dashboard-managejobs.html">
-									<i class="ti-file"></i>
-									<span>Manage Jobs</span>
-								</a>
-							</li>														
-							<li>
-								<a href="dashboard-securitysetting.html"><i class="ti-alert"></i><span>Security Setting</span></a>
-							</li>
-							<li><a href="dashboard-privacysetting.html"><i class="ti-anchor"></i><span>Privacy Setting</span></a></li>
-							<li>
-								<a href="dashboard-myfollowing.html">
-									<i class="ti-flag-alt"></i>
-									<span>My Followings</span>
-								</a>
-							</li>
-							<li class="menu-item-has-children page_item_has_children">
-								<a href=""><i class="ti-money"></i><span>Packages</span></a>
-								<ul class="sub-menu children">
-									<li><a href="dashboard-packages.html"><i class="ti-money"></i><span>Packages</span></a></li>
-									<li><a href="dashboard-invoices.html"><i class="ti-layers"></i><span>Invoices</span></a></li>
-								</ul>
-							</li>
-							<li><a href="dashboard-reportissue.html"><i class="ti-unlink"></i><span>Report Issue</span></a></li>
-							<li class="jf-customnoti">
-								<a href="dashboard-customize.html">
-									<i class="ti-pencil-alt"></i>
-									<span>Customize Page</span>
-									<em>New</em>
-								</a>
-							</li>							
-							<li><a href="signin.html"><i class="ti-shift-right"></i><span>Logout</span></a></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
-			<form class="jf-formtheme jf-formsearch">
+			<!-- <form class="jf-formtheme jf-formsearch">
 				<fieldset>
 					<div class="form-group jf-inputwithicon">
 						<i class="lnr lnr-magnifier"></i>
@@ -228,8 +163,8 @@
 					</div>
 					<a class="jf-btnsearch" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
 				</fieldset>
-			</form>
-			<div class="jf-filtertype">
+			</form> -->
+			<!-- <div class="jf-filtertype">
 				<a class="jf-advancedlink" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
 				<form id="jf-formsearchbar" class="jf-formtheme jf-formsearch">
 					<fieldset>
@@ -298,126 +233,34 @@
 						</div>
 					</fieldset>
 				</form>
-			</div>
+			</div> -->
 			<div id="jf-sidebarwrapper" class="jf-sidebarwrapper">
 				<a id="jf-btnmenutoggle" href="" class="jf-btnmenutoggle"><i class="lnr lnr-menu"></i></a>
 				<div class="jf-verticalscrollbar">
 					<div class="jf-logoarea">
-						<a class="jf-logoicon" href="index-2.html"><img src="{{ asset('assets/images/logo-icon.png')}}" alt="imagedescription" class="mCS_img_loaded"></a>
-						<strong class="jf-logo"><a href="index-2.html"><img src="{{ asset('assets/images/logow.png')}}" alt="image description" class="mCS_img_loaded"></a></strong>
+						<a class="jf-logoicon" href=""><img src="{{ asset('assets/images/logo-icon.png')}}" alt="imagedescription" class="mCS_img_loaded"></a>
+						<strong class="jf-logo"><a href=""><img src="{{ asset('assets/images/logow.png')}}" alt="image description" class="mCS_img_loaded"></a></strong>
 					</div>
 					<nav id="jf-dashboardnav" class="jf-dashboardnav">
 						<ul>
 							<li class="jf-active jf-insightesnoti jf-notificationicon current-menu-item">
 								<a href="dashboard.html">
-									<i class="ti-dashboard"></i>
-									<span> Insights</span>
+									<i class="ti-user"></i>
+									<span> Users</span>
 								</a>
 							</li>
 							<li class="jf-profilenoti jf-notificationicon">
-								<a href="dashboard-myprofile.html">
-									<i class="ti-briefcase"></i>
-									<span>My Profile</span>
+								<a href="">
+									<i class="ti-image"></i>
+									<span>Photos</span>
 								</a>
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">
-								<a href="dashboard-resume.html">
-									<i class="ti-file"></i>
-									<span>My Resume</span>
+								<a href="">
+									<i class="ti-video-camera"></i>
+									<span>Videos</span>
 								</a>
-							</li>
-							<li>
-								<a href="dashboard-cv-manager.html">
-									<i class="ti-package"></i>
-									<span>CV Manager</span>
-								</a>
-							</li>
-							<li>
-								<a href="dashboard-jobalerts.html">
-									<i class="ti-announcement"></i>
-									<span>Job Alerts</span>
-								</a>
-							</li>
-							<li>
-								<a href="dashboard-appliedjobs.html">
-									<i class="ti-bookmark"></i>
-									<span>Applied Jobs</span>
-								</a>
-							</li>
-							<li class="jf-profilenoti jf-notificationicon">
-								<a href="dashboard-shortlisted.html">
-									<i class="ti-package"></i>
-									<span>Shortlisted Resume</span>
-								</a>
-							</li>							
-							<li class="jf-profilenoti jf-notificationicon">
-								<a href="dashboard-qus-ans.html">
-									<i class="ti-announcement"></i>
-									<span>Questions &amp; Anwsers</span>
-								</a>
-							</li>							
-							<li>
-								<a href="dashboard-postajob.html">
-									<i class="ti-bookmark"></i>
-									<span>Post A New Job</span>
-								</a>
-							</li>
-							<li>
-								<a href="dashboard-companyprofile.html">
-									<i class="ti-briefcase"></i>
-									<span>Compony Profile</span>
-								</a>
-							</li>														
-							<li>
-								<a href="dashboard-managejobs.html">
-									<i class="ti-file"></i>
-									<span>Manage Jobs</span>
-								</a>
-							</li>														
-							<li>
-								<a href="dashboard-favouritejobs.html">
-									<i class="ti-heart"></i>
-									<span>Favourite Jobs</span>
-								</a>
-							</li>
-							<li>
-								<a href="dashboard-myfollowing.html">
-									<i class="ti-flag-alt"></i>
-									<span>My Followings</span>
-								</a>
-							</li>
-							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href=""><i class="ti-money"></i><span>Packages</span></a>
-								<ul class="sub-menu children">
-									<li><a href="dashboard-packages.html"><i class="ti-money"></i><span>Packages</span></a></li>
-									<li><a href="dashboard-invoices.html"><i class="ti-layers"></i><span>Invoices</span></a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="dashboard-privacysetting.html">
-									<i class="ti-anchor"></i>
-									<span>Privacy Setting</span>
-								</a>
-							</li>
-							<li>
-								<a href="dashboard-securitysetting.html">
-									<i class="ti-alert"></i>
-									<span>Security Settings</span>
-								</a>
-							</li>
-							<li class="jf-reportissuenoti jf-notificationicon">
-								<a href="dashboard-reportissue.html">
-									<i class="ti-unlink"></i>
-									<span>Report Issue</span>
-								</a>
-							</li>
-							<li class="jf-customnoti">
-								<a href="dashboard-customize.html">
-									<i class="ti-pencil-alt"></i>
-									<span>Customize Page</span>
-									<em>New</em>
-								</a>
-							</li>							
+							</li>						
 						</ul>
 					</nav>
 					<div id="weather"></div>

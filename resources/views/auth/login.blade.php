@@ -89,7 +89,7 @@
 							<div class="jf-signupbottombar">
 								<ul>
 									<li><span>Not a member? <a href="{{ route('register') }}">Signup Now</a></span></li>
-									<li><span><a href="">Forgot Your Password?</a></span></li>
+									<li><span><a href="{{ route('password.request') }}">Forgot Your Password?</a></span></li>
 								</ul>
 							</div>
 						</div>

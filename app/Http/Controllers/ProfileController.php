@@ -68,9 +68,38 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'name'=>'required',
+            'phone'=>'required',
+            'email'=>'required',
+            'age'=>'required',
+            'gender'=>'required',
+            'disease'=>'required',
+            'pills'=>'required',
+            'address'=>'required',
+        ]);
 
+        $user = User::find($id);
+        $user->name=$request->name;
+        $user->phone=$request->phone;
+        $user->email=$request->email;
+        $user->age=$request->age;
+        $user->gender=$request->gender;
+        $user->disease=$request->disease;
+        $user->pills=$request->pills;
+        $user->address=$request->address;;
+        
+        if($user->save()){
+            session()->flash('message','your details have been updated successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Update failed');
+            session()->flash('class','danger');
+        }
+        
+        return back();
+    }
+    
     /**
      * Remove the specified resource from storage.
      *

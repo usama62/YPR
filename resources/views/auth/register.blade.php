@@ -112,7 +112,7 @@
 							<div class="jf-signupbottombar">
 								<ul>
 									<li><span>Have An Account? <a href="{{ route('login') }}">Sign In Now</a></span></li>
-									<li><span><a href="">Forgot Your Password?</a></span></li>
+									<li><span><a href="{{ route('password.request') }}">Forgot Your Password?</a></span></li>
 								</ul>
 							</div>
 						</div>

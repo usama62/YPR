@@ -14,7 +14,19 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged innnnnn!
+
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        <i class="ti-shift-right"></i>
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                       @csrf
+                       <!-- <button type="submit">Submit</button> -->
+                    </form>
                 </div>
             </div>
         </div>
