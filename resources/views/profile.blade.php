@@ -8,14 +8,15 @@
 			<div class="jf-dbsectionspace jf-haslayout">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						@if(session()->has('message'))
+							<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
+						@endif 
 						<div class="jf-dashboardbox jf-basicformholder">
 							<div class="jf-dashboardboxtitle">
 								<h2>Profile</h2>
-								<span>Add Your Details</span>
+								<span>Update Your Details</span>
 							</div>
-							@if(session()->has('message'))
-								<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
-							@endif 
+							
 							<div class="jf-dashbboardcontent jf-basicinfo">
 								<form method="POST" action="{{ route('profile.update',Auth::user()->id) }}" class="jf-formtheme jf-formbasicinfo">
                                     @csrf

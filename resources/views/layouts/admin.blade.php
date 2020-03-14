@@ -265,7 +265,17 @@
 					</nav>
 					<div id="weather"></div>
 				</div>
-				<a class="jf-btnlogout" href=""><i class="ti-power-off"></i></a>
+				<a href="{{ route('logout') }}"
+					class="jf-btnlogout"
+					onclick="event.preventDefault();
+					document.getElementById('logout-form').submit();">
+					<i class="ti-power-off"></i>
+					{{ __('Logout') }}
+				</a>
+
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					@csrf
+				</form>
 			</div>
 		</header>
 		<!--************************************

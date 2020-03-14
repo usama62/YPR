@@ -38,7 +38,7 @@
 					<div class="row justify-content-md-center">
 						<div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-lg-6 col-lg-push-3">
 							<div class="jf-logoareavtwo">
-								<strong class="jf-logo"><a href="index-2.html"><img src="{{ asset('assets/images/signin.png') }}" alt="image description"></a></strong>
+								<strong class="jf-logo"><a href="index-2.html"><img src="{{ asset('assets/images/logo.png') }}" alt="company logo here"></a></strong>
 							</div>
 							<div class="jf-logindetails">
 								<div class="jf-titlelogin">
