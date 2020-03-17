@@ -25,7 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('disease')->default(null);
             $table->string('pills')->default(null);
             $table->string('address')->default(null);
-            $table->string('role')->default(null);
+            $table->integer('role')->default(0);
+            $table->string('profile_image')->default(null);
             $table->rememberToken();
             $table->timestamps();
         });

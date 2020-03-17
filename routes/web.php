@@ -22,7 +22,14 @@ Route::get('/admin', function () {
 })->middleware('verified');
 
 Route::group(['middleware' => ['verified']], function () {
+
     Route::get('/admin', 'AdminController@index');
+    Route::get('/users', 'AdminController@users');
+    Route::get('/photos', 'AdminController@photos');
+    Route::get('/videos', 'AdminController@videos');
+    Route::get('/saved-items', 'AdminController@savedItems');
+
+
     Route::get('/profile', 'ProfileController@index');
     Route::post('/profile/update/{id}','ProfileController@update')->name("profile.update");
 });

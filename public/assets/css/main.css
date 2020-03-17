@@ -1405,8 +1405,8 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	border-radius:5px;
 }
 .jf-searchoptions .form-group .jf-radio input[type=radio] + label:before{display:none;}
-.jf-searchoptions .form-group .jf-radio.jf-employers label{background:#324b6e;}
-.jf-searchoptions .form-group .jf-radio.jf-candidates label{background:#fc413c;}
+.jf-searchoptions .form-group .jf-radio.jf-employers label{background:#989898;}
+.jf-searchoptions .form-group .jf-radio.jf-candidates label{background:#19ab94;}
 .jf-searchoptions .form-group .jf-radio input[type=radio] + label:hover,
 .jf-searchoptions .form-group .jf-radio input[type=radio]:checked + label{
 	margin:0;

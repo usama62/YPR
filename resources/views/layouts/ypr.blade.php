@@ -37,7 +37,7 @@
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 							<ul class="jf-langnotification">
-								<!-- <li>
+								<li>
 									<a id="jf-languagesbutton" href="javascript:void(0);" class="jf-languagesbutton">
 										<span>Eng</span>
 										<i class="fa fa-angle-down"></i>
@@ -59,7 +59,7 @@
 											</a>
 										</li>
 									</ul>
-								</li> -->
+								</li>
 								<li>
 									<a class="jf-notification" href="javascript:void(0);">
 										<span class="jf-notificationtag">04</span>
@@ -115,12 +115,10 @@
 								</div>
 								@endguest
 							</div>
-
-							
-							<!-- <ul class="jf-btnappdowld">
+							<ul class="jf-btnappdowld">
 								<li><a href="javascript:void(0);"><img src="{{ asset('assets/images/android-img.png') }}" alt="image description"></a></li>
 								<li><a href="javascript:void(0);"><img src="{{ asset('assets/images/apple-img.png') }}" alt="image description"></a></li>
-							</ul> -->
+							</ul>
 						</div>
 					</div>
 				</div>

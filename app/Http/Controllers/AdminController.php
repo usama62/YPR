@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -21,6 +22,27 @@ class AdminController extends Controller
     {
         //  return view('admin.index');
         return view('profile');
+    }
+
+    public function users()
+    {
+        $data['users'] = User::all();
+        return view('admin.users',$data);
+    }
+
+    public function photos()
+    {
+        return view('admin.photos');
+    }
+
+    public function videos()
+    {
+        return view('admin.videos');
+    }
+
+    public function savedItems()
+    {
+        return view('admin.saveditems');
     }
 
     /**

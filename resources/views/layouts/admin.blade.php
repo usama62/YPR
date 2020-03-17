@@ -244,21 +244,27 @@
 					<nav id="jf-dashboardnav" class="jf-dashboardnav">
 						<ul>
 							<li class="jf-active jf-insightesnoti jf-notificationicon current-menu-item">
-								<a href="dashboard.html">
+								<a href="{{ url('/users') }}">
 									<i class="ti-user"></i>
 									<span> Users</span>
 								</a>
 							</li>
 							<li class="jf-profilenoti jf-notificationicon">
-								<a href="">
+								<a href="{{ url('/photos') }}">
 									<i class="ti-image"></i>
 									<span>Photos</span>
 								</a>
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">
-								<a href="">
+								<a href="{{ url('/videos') }}">
 									<i class="ti-video-camera"></i>
 									<span>Videos</span>
+								</a>
+							</li>
+							<li class="jf-myresumenoti jf-notificationicon">
+								<a href="{{ url('/saved-items') }}">
+									<i class="ti-save"></i>
+									<span>Saved Items</span>
 								</a>
 							</li>						
 						</ul>
@@ -295,7 +301,6 @@
 		</footer>
 		
 	</div>
-	
 	<script src="{{ asset('assets/js/vendor/jquery-3.3.1.js') }}"></script>
 	<script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
 	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&amp;language=en"></script>
