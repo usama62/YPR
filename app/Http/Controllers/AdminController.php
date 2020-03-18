@@ -23,7 +23,7 @@ class AdminController extends Controller
         //  return view('admin.index');
         return view('profile');
     }
-
+ 
     public function users()
     {
         $data['users'] = User::all();
@@ -35,15 +35,32 @@ class AdminController extends Controller
         return view('admin.photos');
     }
 
+    public function upload_photos()
+    {
+        return view('admin.upload_photos');
+    }
+
     public function videos()
     {
         return view('admin.videos');
+    }
+
+    public function upload_videos()
+    {
+        return view('admin.upload_videos');
     }
 
     public function savedItems()
     {
         return view('admin.saveditems');
     }
+
+    public function create_users()
+    {
+        return view('admin.create_users');
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

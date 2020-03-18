@@ -17,17 +17,19 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/admin', function () {
-    // Only verified users may enter...
-})->middleware('verified');
+Route::get('/admin123', function () {
+    return view('auth.admin_login');
+});
 
 Route::group(['middleware' => ['verified']], function () {
-
     Route::get('/admin', 'AdminController@index');
     Route::get('/users', 'AdminController@users');
     Route::get('/photos', 'AdminController@photos');
+    Route::get('/upload-photos', 'AdminController@upload_photos');
     Route::get('/videos', 'AdminController@videos');
+    Route::get('/upload-videos', 'AdminController@upload_videos');
     Route::get('/saved-items', 'AdminController@savedItems');
+    Route::get('/create-users', 'AdminController@create_users');
 
 
     Route::get('/profile', 'ProfileController@index');

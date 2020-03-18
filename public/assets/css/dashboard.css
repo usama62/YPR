@@ -821,7 +821,7 @@ input[type="color"],
 }
 .jf-jobmatadata:before{
 	top:0;
-	left:44%;
+	left:50%;
 	content:'';
 	width:1px;
 	height:100%;
