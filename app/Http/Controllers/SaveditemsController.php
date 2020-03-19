@@ -3,39 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 
-class AdminController extends Controller
+class SaveditemsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        //  return view('admin.index');
-        return view('profile');
+        return view('admin.saveditems');
     }
- 
-    public function users()
-    {
-        $data['users'] = User::all();
-        return view('admin.users',$data);
-    }
-
-    public function create_users()
-    {
-        return view('admin.create_users');
-    }
-
-
 
     /**
      * Show the form for creating a new resource.

@@ -22,13 +22,28 @@ Route::get('/admin123', function () {
 });
 
 Route::group(['middleware' => ['verified']], function () {
+
     Route::get('/admin', 'AdminController@index');
     Route::get('/users', 'AdminController@users');
-    Route::get('/photos', 'AdminController@photos');
-    Route::get('/upload-photos', 'AdminController@upload_photos');
-    Route::get('/videos', 'AdminController@videos');
-    Route::get('/upload-videos', 'AdminController@upload_videos');
-    Route::get('/saved-items', 'AdminController@savedItems');
+
+    // Photos
+    Route::get('/photos', 'PhotosController@index');
+    Route::get('/upload-photos', 'PhotosController@create');
+    Route::get('/update-photos/{id}', 'PhotosController@edit')->name("photo.edit");;
+    Route::post('/photos/upload','PhotosController@store')->name("photos.store");
+    Route::get('/photo/delete/{id}', 'PhotosController@destroy')->name("photo.delete");
+    Route::post('/photo/update/{id}', 'PhotosController@update')->name("photo.update");
+
+    // Videos
+    Route::get('/videos', 'VideosController@index');
+    Route::get('/upload-videos', 'VideosController@create');
+    Route::post('/videos/upload','VideosController@store')->name("videos.store");
+    Route::get('/video/delete/{id}', 'VideosController@destroy')->name("videos.delete");
+
+    // Saved Items
+    Route::get('/saved-items', 'SaveditemsController@index');
+
+    // Users
     Route::get('/create-users', 'AdminController@create_users');
 
 

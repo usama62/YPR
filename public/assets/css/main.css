@@ -1586,9 +1586,9 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-btnjobtag:focus,
 .jf-btnjobtag:hover{color:#fff;}
 .jf-btnjobtag.jf-fulltimejob{background:#81c784;}
-.jf-btnjobtag.jf-internship{background:#f06292;}
-.jf-btnjobtag.jf-parttimejob{background:#9575cd;}
-.jf-btnjobtag.jf-projectbasejob{background:#c6c252;}
+.jf-btnjobtag.jf-internship{background:#eca137;}
+.jf-btnjobtag.jf-parttimejob{background:#00cc67;}
+.jf-btnjobtag.jf-projectbasejob{background:#4db6ac;}
 .jf-btnjobtag.jf-homebasejob{background:#4db6ac;}
 .jf-homesliderone{
 	width:100%;
@@ -6006,6 +6006,11 @@ body.jf-loginuser .jf-main{padding:0;}
 	bottom: 0;
 	right: 0;
 }
+
+/* custom Classes */
+.bg_pending{background: #eca137}
+.bg_publish{background: #00cc67}
+.bg_draft{background: #4db6ac}
 
 @-webkit-keyframes load3 {
   0% {

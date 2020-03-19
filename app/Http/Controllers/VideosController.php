@@ -3,39 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Videos;
 
-class AdminController extends Controller
+class VideosController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        //  return view('admin.index');
-        return view('profile');
+        $data['videos'] = Videos::all();
+        return view('admin.videos.manage_videos',$data);
     }
- 
-    public function users()
-    {
-        $data['users'] = User::all();
-        return view('admin.users',$data);
-    }
-
-    public function create_users()
-    {
-        return view('admin.create_users');
-    }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -44,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.videos.upload_videos');
     }
 
     /**
@@ -55,7 +36,28 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+            'status'=>'required',
+            'video_link'=>'required',
+        ]);
+
+        $data = new Videos();
+        $data->title=$request->title;
+        $data->status=$request->status;
+        $data->description=$request->description;
+        $data->video_link=$request->video_link;
+        
+        if($data->save()){
+            session()->flash('message','Video has been uploaded successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Upload failed');
+            session()->flash('class','danger');
+        }
+        
+        return back();
     }
 
     /**
@@ -100,6 +102,14 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Videos::find($id);
+        if( $data->delete()){
+            session()->flash('message','Video has been deleted successfully');
+            session()->flash('class','danger');
+        }else{
+            session()->flash('message','Delete failed');
+            session()->flash('class','danger');
+        }
+        return back();
     }
 }

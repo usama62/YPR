@@ -16,6 +16,7 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->default(null);
+            $table->string('description')->default(null);
             $table->string('image_path')->default(null);
             $table->string('status')->default(null);
             $table->timestamps();
