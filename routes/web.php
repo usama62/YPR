@@ -29,7 +29,7 @@ Route::group(['middleware' => ['verified']], function () {
     // Photos
     Route::get('/photos', 'PhotosController@index');
     Route::get('/upload-photos', 'PhotosController@create');
-    Route::get('/update-photos/{id}', 'PhotosController@edit')->name("photo.edit");;
+    Route::get('/update-photos/{id}', 'PhotosController@edit')->name("photo.edit");
     Route::post('/photos/upload','PhotosController@store')->name("photos.store");
     Route::get('/photo/delete/{id}', 'PhotosController@destroy')->name("photo.delete");
     Route::post('/photo/update/{id}', 'PhotosController@update')->name("photo.update");
@@ -37,8 +37,22 @@ Route::group(['middleware' => ['verified']], function () {
     // Videos
     Route::get('/videos', 'VideosController@index');
     Route::get('/upload-videos', 'VideosController@create');
+    Route::get('/update-videos/{id}', 'VideosController@edit')->name("videos.edit");
     Route::post('/videos/upload','VideosController@store')->name("videos.store");
+    Route::post('/video/update/{id}', 'VideosController@update')->name("videos.update");
     Route::get('/video/delete/{id}', 'VideosController@destroy')->name("videos.delete");
+
+    // Category
+    Route::get('/create-category', 'CategoryController@create');
+    Route::get('/category', 'CategoryController@show');
+    Route::post('/category/create','CategoryController@store')->name("category.store");
+    Route::get('/category/delete/{id}', 'CategoryController@destroy')->name("category.delete");
+
+    // Article
+    Route::get('/create-article', 'ArticleController@create');
+    Route::get('/article', 'ArticleController@show');
+    Route::post('/article/create','ArticleController@store')->name("article.store");
+    Route::get('/article/delete/{id}', 'ArticleController@destroy')->name("article.delete");
 
     // Saved Items
     Route::get('/saved-items', 'SaveditemsController@index');

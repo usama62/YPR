@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Videos;
+use App\Article;
+use App\Category;
 
-class VideosController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,7 @@ class VideosController extends Controller
      */
     public function index()
     {
-        $data['videos'] = Videos::all();
-        return view('admin.videos.manage_videos',$data);
+        //
     }
 
     /**
@@ -25,7 +25,8 @@ class VideosController extends Controller
      */
     public function create()
     {
-        return view('admin.videos.upload_videos');
+        $data['category'] = Category::all();
+        return view('admin.article.create',$data);
     }
 
     /**
@@ -36,27 +37,27 @@ class VideosController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $request->validate([
             'title'=>'required',
             'description'=>'required',
-            'status'=>'required',
-            'video_link'=>'required',
+            'category'=>'required',
         ]);
 
-        $data = new Videos();
+        $data = new Article();
         $data->title=$request->title;
-        $data->status=$request->status;
         $data->description=$request->description;
-        $data->video_link=$request->video_link;
-        
+        $data->category=$request->category;
+        $data->image=null;
+
         if($data->save()){
-            session()->flash('message','Video has been uploaded successfully');
+            session()->flash('message','Article has been created successfully');
             session()->flash('class','success');
         }else{
-            session()->flash('message','Upload failed');
+            session()->flash('message','Failed to create article');
             session()->flash('class','danger');
         }
-        
+
         return back();
     }
 
@@ -66,9 +67,10 @@ class VideosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $data['article'] = Article::all();
+        return view('admin.article.manage',$data);
     }
 
     /**
@@ -79,8 +81,7 @@ class VideosController extends Controller
      */
     public function edit($id)
     {
-        $data['video'] = Videos::find($id);
-        return view('admin.videos.update',$data);
+        //
     }
 
     /**
@@ -92,27 +93,7 @@ class VideosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title'=>'required',
-            'status'=>'required',
-            'description'=>'required',
-        ]);
-
-        $data = new Videos();
-        $data->title=$request->title;
-        $data->status=$request->status;
-        $data->description=$request->description;
-        $data->image_path=null;
-        
-        if($data->save()){
-            session()->flash('message','Photo has been uploaded successfully');
-            session()->flash('class','success');
-        }else{
-            session()->flash('message','Upload failed');
-            session()->flash('class','danger');
-        }
-        
-        return back();
+        //
     }
 
     /**
@@ -123,9 +104,9 @@ class VideosController extends Controller
      */
     public function destroy($id)
     {
-        $data = Videos::find($id);
+        $data = Article::find($id);
         if( $data->delete()){
-            session()->flash('message','Video has been deleted successfully');
+            session()->flash('message','Article has been deleted successfully');
             session()->flash('class','danger');
         }else{
             session()->flash('message','Delete failed');

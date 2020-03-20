@@ -246,22 +246,36 @@
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-user"></i><span>Users</span></a>
 								<ul class="sub-menu children">
-									<li><a href="{{ url('/users') }}"><span>Manage Users</span></a></li>
 									<li><a href="{{ url('/create-users') }}"><span>Create User</span></a></li>
+									<li><a href="{{ url('/users') }}"><span>Manage Users</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-image"></i><span>Photos</span></a>
 								<ul class="sub-menu children">
-									<li><a href="{{ url('/photos') }}"><span>Manage Photos</span></a></li>
 									<li><a href="{{ url('/upload-photos') }}"><span>Upload Photos</span></a></li>
+									<li><a href="{{ url('/photos') }}"><span>Manage Photos</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-video-camera"></i><span>Videos</span></a>
 								<ul class="sub-menu children">
-									<li><a href="{{ url('/videos') }}"><span>Manage Videos</span></a></li>
 									<li><a href="{{ url('/upload-videos') }}"><span>Upload Videos</span></a></li>
+									<li><a href="{{ url('/videos') }}"><span>Manage Videos</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-menu-alt"></i><span>Categories</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create-category') }}"><span>Create Categories</span></a></li>
+									<li><a href="{{ url('/category') }}"><span>Manage Categories</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-notepad"></i><span>Articles</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create-article') }}"><span>Create Articles</span></a></li>
+									<li><a href="{{ url('/article') }}"><span>Manage Articles</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">
