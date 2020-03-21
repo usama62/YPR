@@ -51,7 +51,7 @@
 										<div class="jf-featurejob">
 											<figure class="jf-companyimg">
 												@if($photo->image_path != null)
-												<img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
+												<img src="{{ asset($photo->image_path) }}" alt="image description">
 												@else
 												<img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
 												@endif

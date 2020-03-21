@@ -22,14 +22,11 @@
 							@if(session()->has('message'))
 								<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
 							@endif
-								<form method="POST" action="{{ route('photos.store') }}" class="jf-formtheme jf-postajobform" >
+								<form method="POST" action="{{ route('photos.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="title" class="form-control" placeholder="Title">
-										</div>
-										<div class="form-group jf-inputwithicon">
-											<input type="text" name="description" class="form-control" placeholder="Description">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -40,6 +37,9 @@
 													<option>Draft</option>
 												</select>
 											</span>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<textarea type="text" name="description" class="form-control" placeholder="Description" rows="2"></textarea>
 										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">

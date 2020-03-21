@@ -37,9 +37,13 @@
                                 @forelse($article as $art)
                                 <li>
                                     <div class="jf-featurejob">
-                                        <!-- <figure class="jf-companyimg">
-                                            <img src="images/team/img-01.jpg" alt="image description">
-                                        </figure> -->
+                                        <figure class="jf-companyimg">
+                                            @if($art->image != null)
+                                            <img src="{{ asset($art->image) }}" alt="image description">
+                                            @else
+                                            <img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
+                                            @endif
+                                        </figure>
                                         <div class="jf-companycontent jf-companycontentvtwo">
                                             <div class="jf-companyname">
                                                 <h3>{{$art->title}}</h3>
@@ -49,8 +53,8 @@
                                     <div class="jf-featurejob" style="width:35%">
                                         <div class="jf-companycontent jf-companycontentvtwo">
                                             <div class="jf-companyname">
-                                                <h5>parent</h5>
-                                                <span>Angry Creative Bears</span>
+                                                <h5>Category</h5>
+                                                <span>{{$art->category}}</span>
                                             </div>
                                         </div>
                                     </div>

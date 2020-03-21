@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/transitions.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body class="jf-home jf-userlogin">
 	<div class="preloader-outer">
@@ -145,10 +146,10 @@
 												<a href="#">Drugs & Supplements</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="#">Videos </a>
+												<a href="{{  url('/videos-listing') }}">Videos </a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="#">Saved</a>
+												<a href="{{  url('/saved') }}">Saved</a>
 											</li>
 										</ul>
 									</div>

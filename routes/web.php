@@ -68,4 +68,12 @@ Route::group(['middleware' => ['verified']], function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/videos-listing', 'frontend\VideosController@index');
+Route::get('/video/detail/{id}', 'frontend\VideosController@show')->name("video.detail");
+
+Route::get('/saved', 'frontend\SavedController@index')->name("video.detail");
+Route::post('/saved-items','frontend\SavedController@store')->name("saved");
+
+
+
 

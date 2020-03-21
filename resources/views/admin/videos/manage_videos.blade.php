@@ -45,12 +45,12 @@
 											<div class="jf-companycontent">
 												<div class="jf-companyname">
 													<h3><a href="javascript:void(0);">{{$video->title}}</a></h3>
-													<span>{{$video->description}}</span>
+													<span>{{str_limit($video->description, 40) }}</span>
 												</div>
 											</div>
 										</div>
 										<ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
-											<li class="jf-btnnewwindow"><a href="javascript:void(0);"><i class="ti-new-window"></i></a></li>
+											<li class="jf-btnnewwindow"><a href="{{ route('video.detail',['id'=>$video->id]) }}"><i class="ti-new-window"></i></a></li>
 											<li class="jf-btneditjob"><a href="{{ route('videos.edit',['id'=>$video->id]) }}"><i class="ti-pencil"></i></a></li>
 											<li class="jf-btndell"><a href="{{ route('videos.delete',['id'=>$video->id]) }}"><i class="ti-trash"></i></a></li>
 										</ul>

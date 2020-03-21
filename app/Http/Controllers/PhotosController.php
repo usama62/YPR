@@ -35,7 +35,7 @@ class PhotosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         // return $request;
         $request->validate([
             'title'=>'required',
@@ -43,11 +43,20 @@ class PhotosController extends Controller
             'description'=>'required',
         ]);
 
+        
+        $founder_image_Name = '';
+        if ($request->hasFile('uploadimg')) {
+            $founder_image = $request->file('uploadimg');
+            $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
+            $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
+            $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
+        }
+
         $data = new Photos();
         $data->title=$request->title;
         $data->status=$request->status;
         $data->description=$request->description;
-        $data->image_path=null;
+        $data->image_path=$founder_image_Name;
         
         if($data->save()){
             session()->flash('message','Photo has been uploaded successfully');

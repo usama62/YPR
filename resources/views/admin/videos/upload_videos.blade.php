@@ -29,9 +29,6 @@
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="description" class="form-control" placeholder="Description">
-										</div>
-										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
 												<select name="status">
 													<option>Status</option>
@@ -43,6 +40,10 @@
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="video_link" class="form-control" placeholder="Video Link">
+										</div>
+										
+										<div class="form-group jf-inputwithicon">
+											<textarea type="text" name="description" class="form-control" placeholder="Description" rows="5"></textarea>
 										</div>
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>

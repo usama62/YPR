@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 	<link rel="stylesheet" href="{{ asset('assets/css/dbresponsive.css')}}">
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body class="jf-userlogin">
 	<div class="preloader-outer">

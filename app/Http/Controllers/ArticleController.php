@@ -44,11 +44,19 @@ class ArticleController extends Controller
             'category'=>'required',
         ]);
 
+        $founder_image_Name = '';
+        if ($request->hasFile('uploadimg')) {
+            $founder_image = $request->file('uploadimg');
+            $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
+            $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
+            $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
+        }
+
         $data = new Article();
         $data->title=$request->title;
         $data->description=$request->description;
         $data->category=$request->category;
-        $data->image=null;
+        $data->image=$founder_image_Name;
 
         if($data->save()){
             session()->flash('message','Article has been created successfully');
