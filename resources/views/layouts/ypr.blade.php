@@ -137,13 +137,13 @@
 									<div class="collapse navbar-collapse jf-navigation" id="navbarNav">
 										<ul>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="#">Home</a>
+												<a href="{{  url('/home') }}">Home</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="#">Health Topics</a>
+												<a href="{{  url('/health-listing') }}">Health Topics</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
-												<a href="#">Drugs & Supplements</a>
+												<a href="{{  url('/drugs-listing') }}">Drugs & Supplements</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
 												<a href="{{  url('/videos-listing') }}">Videos </a>

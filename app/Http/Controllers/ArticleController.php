@@ -42,6 +42,7 @@ class ArticleController extends Controller
             'title'=>'required',
             'description'=>'required',
             'category'=>'required',
+            'video_link'=>'required',
         ]);
 
         $founder_image_Name = '';
@@ -56,6 +57,7 @@ class ArticleController extends Controller
         $data->title=$request->title;
         $data->description=$request->description;
         $data->category=$request->category;
+        $data->video_link=$request->video_link;
         $data->image=$founder_image_Name;
 
         if($data->save()){
@@ -66,7 +68,8 @@ class ArticleController extends Controller
             session()->flash('class','danger');
         }
 
-        return back();
+        $data['article'] = Article::all();
+        return view('admin.article.manage',$data);
     }
 
     /**

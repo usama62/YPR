@@ -107,8 +107,8 @@
                                                         <span>{{ \Carbon\Carbon::parse($video->created_at)->format('M d, Y') }}</span>
                                                     </li>
                                                     <li>
-                                                        <i class="lnr lnr-heart"></i>
-                                                        <span><a data-item="{{$video->id}}" class="wish_list">Click to Save</a></span>
+                                                        <i id="wish_list_icon_{{$video->id}}" class="lnr lnr-heart"></i>
+                                                        <span><a id="wish_list_text_{{$video->id}}" data-item="{{$video->id}}" class="wish_list">Click to Save</a></span>
                                                     </li>
                                                 </ul>
                                             </article>
@@ -340,6 +340,11 @@
                 success: function(response)
                 {
                     console.log(response);
+                    if(response > 0){
+                        $('#wish_list_icon_'+response).removeClass('lnr lnr-heart');
+                        $('#wish_list_icon_'+response).addClass('fa fa-heart-o');
+                        $('#wish_list_text_'+response).text('saved');
+                    }
                 }
             });
         });    

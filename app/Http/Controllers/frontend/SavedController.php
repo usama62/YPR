@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Saved;
+use Auth;
 
 class SavedController extends Controller
 {
@@ -36,22 +37,22 @@ class SavedController extends Controller
      */
     public function store(Request $request)
     {
-        print_r($_POST['data']);
-        // $data = new Saved();
-        // $data->title=$request->title;
-        // $data->parent_id=$request->parent;
+        $entry = Saved::where(['user_id' => Auth::user()->id, 'post_id' =>$request->item_id])->get();
 
-        // if($data->save()){
-        //     session()->flash('message','Category has been created successfully');
-        //     session()->flash('class','success');
-        // }else{
-        //     session()->flash('message','Failed to create category');
-        //     session()->flash('class','danger');
-        // }
+        if(count($entry) == 0){
+            $data = new Saved();
+            $data->user_id= Auth::user()->id;
+            $data->post_id=$request->item_id;
+            
+            if($data->save()){
+                return $request->item_id;
+            }else{
+                return 0;
+            }
+        }else{
+            return "id already exist";
+        }
 
-        // return back();
-        // // $data['data'] = Saved::paginate(12);
-        // return view('saved',$data);
     }
 
     /**

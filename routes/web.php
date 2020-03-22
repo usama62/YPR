@@ -55,7 +55,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/article/delete/{id}', 'ArticleController@destroy')->name("article.delete");
 
     // Saved Items
-    Route::get('/saved-items', 'SaveditemsController@index');
+    // Route::get('/saved-items', 'SaveditemsController@index');
 
     // Users
     Route::get('/create-users', 'AdminController@create_users');
@@ -69,9 +69,11 @@ Route::group(['middleware' => ['verified']], function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/videos-listing', 'frontend\VideosController@index');
+Route::get('/health-listing', 'frontend\HealthtopicsController@index');
+Route::get('/drugs-listing', 'frontend\DrugssupplementsController@index');
 Route::get('/video/detail/{id}', 'frontend\VideosController@show')->name("video.detail");
 
-Route::get('/saved', 'frontend\SavedController@index')->name("video.detail");
+Route::get('/saved', 'frontend\SavedController@index')->name("video.saved");
 Route::post('/saved-items','frontend\SavedController@store')->name("saved");
 
 

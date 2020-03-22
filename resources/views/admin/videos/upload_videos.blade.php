@@ -41,7 +41,6 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="video_link" class="form-control" placeholder="Video Link">
 										</div>
-										
 										<div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description" rows="5"></textarea>
 										</div>

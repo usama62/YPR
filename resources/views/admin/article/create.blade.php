@@ -19,9 +19,6 @@
 								<span>Add Details</span>
 							</div>
 							<div class="jf-dashbboardcontent">
-							@if(session()->has('message'))
-								<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
-							@endif
 								<form method="POST" action="{{ route('article.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
 								@csrf
 									<fieldset>	
@@ -40,6 +37,9 @@
                                                     @endforeach
 												</select>
 											</span>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="video_link" class="form-control" placeholder="Video Link">
 										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">
