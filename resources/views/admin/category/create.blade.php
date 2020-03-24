@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="jf-dashboardbanner" class="jf-dashboardbanner">
-        <h1>Photos</h1>
+        <h1>Categories</h1>
         <ol class="jf-breadcrumb">
             <li><a href="javascript:void(0);">Dashboard</a></li>
             <li><a href="javascript:void(0);">Create Categories</a></li>

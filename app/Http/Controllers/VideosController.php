@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Videos;
+use Auth;
 
 class VideosController extends Controller
 {
@@ -14,8 +15,13 @@ class VideosController extends Controller
      */
     public function index()
     {
-        $data['videos'] = Videos::all();
-        return view('admin.videos.manage_videos',$data);
+        if(Auth::User()->role == 1){
+            $data['videos'] = Videos::paginate(6);
+            return view('admin.videos.manage_videos',$data);
+        }else{
+            $data['videos'] = Videos::where('user_id', Auth::User()->id)->paginate(6);
+            return view('admin.videos.manage_videos',$data);
+        }
     }
 
     /**
@@ -44,6 +50,7 @@ class VideosController extends Controller
         ]);
 
         $data = new Videos();
+        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
         $data->description=$request->description;
@@ -57,7 +64,7 @@ class VideosController extends Controller
             session()->flash('class','danger');
         }
         
-        return back();
+        return redirect('videos');
     }
 
     /**
@@ -95,24 +102,26 @@ class VideosController extends Controller
         $request->validate([
             'title'=>'required',
             'status'=>'required',
+            'video_link'=>'required',
             'description'=>'required',
         ]);
 
-        $data = new Videos();
+        $data = Videos::find($id);
+        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
         $data->description=$request->description;
-        $data->image_path=null;
+        $data->video_link=$request->video_link;;
         
         if($data->save()){
-            session()->flash('message','Photo has been uploaded successfully');
+            session()->flash('message','Video has been updated successfully');
             session()->flash('class','success');
         }else{
-            session()->flash('message','Upload failed');
+            session()->flash('message','Update failed');
             session()->flash('class','danger');
         }
         
-        return back();
+        return redirect('videos');
     }
 
     /**

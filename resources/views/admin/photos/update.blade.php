@@ -26,14 +26,14 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" value="{{$photo->title}}">
+											<input type="text" name="title" class="form-control" value="{{$photo->title}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="description" class="form-control" value="{{$photo->description}}">
+											<input type="text" name="description" class="form-control" value="{{$photo->description}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
-												<select name="status">
+												<select name="status" required>
 													<option value="">Status</option>
 													<option value="pending" @if($photo->status == 'pending') selected @endif >Pending</option>
 													<option value="publish" @if($photo->status == 'publish') selected @endif >Publish</option>

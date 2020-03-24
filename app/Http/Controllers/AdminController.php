@@ -26,13 +26,8 @@ class AdminController extends Controller
  
     public function users()
     {
-        $data['users'] = User::all();
-        return view('admin.users',$data);
-    }
-
-    public function create_users()
-    {
-        return view('admin.create_users');
+        $data['users'] = User::paginate(10);
+        return view('admin.users.manage',$data);
     }
 
 
@@ -44,7 +39,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create_users');
     }
 
     /**
@@ -55,7 +50,49 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'phone'=>'required',
+            'age'=>'required',
+            'gender'=>'required',
+            'disease'=>'required',
+            'pills'=>'required',
+            'role'=>'required',
+            'address'=>'required',
+        ]);
+
+        $founder_image_Name = '';
+        if ($request->hasFile('profile_image')) {
+            $founder_image = $request->file('profile_image');
+            $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
+            $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
+            $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
+        }
+
+        $data = new User();
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=$request->password;
+        $data->phone=$request->phone;
+        $data->age=$request->age;
+        $data->gender=$request->gender;
+        $data->disease=$request->disease;
+        $data->pills=$request->pills;
+        $data->address=$request->address;
+        $data->profile_image=$founder_image_Name;
+
+        if($data->save()){
+            session()->flash('message','User has been created successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Failed to create user');
+            session()->flash('class','danger');
+        }
+
+        return redirect('manage-users');
     }
 
     /**
@@ -77,7 +114,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['user'] = User::find($id);
+        return view('admin.users.edit',$data);
     }
 
     /**
@@ -89,7 +127,38 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $founder_image_Name = '';
+        if ($request->hasFile('profile_image')) {
+            $founder_image = $request->file('profile_image');
+            $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
+            $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
+            $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
+        }else{
+            $founder_image_Name = $request->profile_image_hidden;
+        }
+
+        $data = User::find($id);
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=$request->password;
+        $data->phone=$request->phone;
+        $data->age=$request->age;
+        $data->gender=$request->gender;
+        $data->disease=$request->disease;
+        $data->pills=$request->pills;
+        $data->address=$request->address;
+        $data->profile_image=$founder_image_Name;
+
+        if($data->save()){
+            session()->flash('message','User has been Updated successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Failed to update user');
+            session()->flash('class','danger');
+        }
+
+        return redirect('manage-users');
     }
 
     /**
@@ -100,6 +169,14 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = User::find($id);
+        if( $data->delete()){
+            session()->flash('message','User has been deleted successfully');
+            session()->flash('class','danger');
+        }else{
+            session()->flash('message','Delete failed');
+            session()->flash('class','danger');
+        }
+        return back();
     }
 }

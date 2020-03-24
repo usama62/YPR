@@ -23,9 +23,6 @@ Route::get('/admin123', function () {
 
 Route::group(['middleware' => ['verified']], function () {
 
-    Route::get('/admin', 'AdminController@index');
-    Route::get('/users', 'AdminController@users');
-
     // Photos
     Route::get('/photos', 'PhotosController@index');
     Route::get('/upload-photos', 'PhotosController@create');
@@ -55,18 +52,26 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/article/delete/{id}', 'ArticleController@destroy')->name("article.delete");
 
     // Saved Items
-    // Route::get('/saved-items', 'SaveditemsController@index');
+    Route::get('/saveditems', 'SaveditemsController@index');
 
-    // Users
-    Route::get('/create-users', 'AdminController@create_users');
+    // admin
+    Route::get('/admin', 'AdminController@index');
+    Route::get('/manage-users', 'AdminController@users');
+    Route::get('/create-users', 'AdminController@create');
+    Route::post('/store-user','AdminController@store')->name("store.user");
+    Route::get('/user-edit/{id}','AdminController@edit')->name("user.edit");
+    Route::post('/user-update/{id}', 'AdminController@update')->name("user.update");
+    Route::get('/user-delete/{id}', 'AdminController@destroy')->name("user.delete");
 
 
     Route::get('/profile', 'ProfileController@index');
     Route::post('/profile/update/{id}','ProfileController@update')->name("profile.update");
+
 });
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/search', 'HomeController@search')->name('search');
 
 Route::get('/videos-listing', 'frontend\VideosController@index');
 Route::get('/health-listing', 'frontend\HealthtopicsController@index');

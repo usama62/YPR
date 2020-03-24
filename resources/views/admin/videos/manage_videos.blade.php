@@ -18,7 +18,7 @@
 									<h2>Videos</h2>
 									<span>Your Latest Posted Videos</span>
 								</div>
-								<form class="jf-formtheme jf-questsearch">
+								<!-- <form class="jf-formtheme jf-questsearch">
 									<fieldset>
 										<div class="form-group jf-inputwithicon">
 											<i class="lnr lnr-magnifier"></i>
@@ -26,7 +26,7 @@
 										</div>
 										<a class="jf-btnsearch" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
 									</fieldset>
-								</form>
+								</form> -->
 							</div>
 							<div class="jf-dashbboardcontent jf-myjobsapplications">
 								<ul>
@@ -83,147 +83,14 @@
 										<p>No Data Found</p>
 									</div>	
 									@endforelse	
-									<!-- <li>
-										<div class="jf-featurejob">
-											<figure class="jf-companyimg">
-												<img src="{{ asset('assets/images/play-button.png') }}" alt="image description">
-											</figure>
-											<div class="jf-companycontent">
-												<div class="jf-companyname">
-													<h3><a href="javascript:void(0);">Demo Medical Video</a></h3>
-													<span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-												</div>
-											</div>
-										</div>
-										<ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
-											<li class="jf-btnnewwindow"><a href="javascript:void(0);"><i class="ti-new-window"></i></a></li>
-											<li class="jf-btneditjob"><a href="javascript:void(0);"><i class="ti-pencil"></i></a></li>
-											<li class="jf-btndell"><a href="javascript:void(0);"><i class="ti-trash"></i></a></li>
-										</ul>
-										<ul class="jf-jobmatadata">
-											<li>
-												<i class="ti-calendar"></i>
-												<div class="jf-matacontent">
-													<span>Posted On</span>
-													<time datetime="2019-12-12">Jun 27, 2019</time>
-												</div>
-											</li>
-											<li>
-												<i class="ti-bell"></i>
-												<div class="jf-matacontent">
-													<span>Video Status</span>
-													<time datetime="2019-12-12"><a class="jf-btnjobtag jf-internship" href="javascript:void(0);">Pending</a></time>
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<div class="jf-featurejob">
-											<figure class="jf-companyimg">
-												<img src="{{ asset('assets/images/play-button.png') }}" alt="image description">
-											</figure>
-											<div class="jf-companycontent">
-												<div class="jf-companyname">
-													<h3><a href="javascript:void(0);">Demo Medical Video</a></h3>
-													<span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-												</div>
-											</div>
-										</div>
-										<ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
-											<li class="jf-btnnewwindow"><a href="javascript:void(0);"><i class="ti-new-window"></i></a></li>
-											<li class="jf-btneditjob"><a href="javascript:void(0);"><i class="ti-pencil"></i></a></li>
-											<li class="jf-btndell"><a href="javascript:void(0);"><i class="ti-trash"></i></a></li>
-										</ul>
-										<ul class="jf-jobmatadata">
-											<li>
-												<i class="ti-calendar"></i>
-												<div class="jf-matacontent">
-													<span>Posted On</span>
-													<time datetime="2019-12-12">Jun 27, 2019</time>
-												</div>
-											</li>
-											<li>
-												<i class="ti-bell"></i>
-												<div class="jf-matacontent">
-													<span>Video Status</span>
-													<time datetime="2019-12-12"><a class="jf-btnjobtag jf-internship" href="javascript:void(0);">Pending</a></time>
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<div class="jf-featurejob">
-											<figure class="jf-companyimg">
-												<img src="{{ asset('assets/images/play-button.png') }}" alt="image description">
-											</figure>
-											<div class="jf-companycontent">
-												<div class="jf-companyname">
-													<h3><a href="javascript:void(0);">Demo Medical Video</a></h3>
-													<span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-												</div>
-											</div>
-										</div>
-										<ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
-											<li class="jf-btnnewwindow"><a href="javascript:void(0);"><i class="ti-new-window"></i></a></li>
-											<li class="jf-btneditjob"><a href="javascript:void(0);"><i class="ti-pencil"></i></a></li>
-											<li class="jf-btndell"><a href="javascript:void(0);"><i class="ti-trash"></i></a></li>
-										</ul>
-										<ul class="jf-jobmatadata">
-											<li>
-												<i class="ti-calendar"></i>
-												<div class="jf-matacontent">
-													<span>Posted On</span>
-													<time datetime="2019-12-12">Jun 27, 2019</time>
-												</div>
-											</li>
-											<li>
-												<i class="ti-bell"></i>
-												<div class="jf-matacontent">
-													<span>Video Status</span>
-													<time datetime="2019-12-12"><a class="jf-btnjobtag jf-internship" href="javascript:void(0);">Pending</a></time>
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<div class="jf-featurejob">
-											<figure class="jf-companyimg">
-												<img src="{{ asset('assets/images/play-button.png') }}" alt="image description">
-											</figure>
-											<div class="jf-companycontent">
-												<div class="jf-companyname">
-													<h3><a href="javascript:void(0);">Demo Medical Video</a></h3>
-													<span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-												</div>
-											</div>
-										</div>
-										<ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
-											<li class="jf-btnnewwindow"><a href="javascript:void(0);"><i class="ti-new-window"></i></a></li>
-											<li class="jf-btneditjob"><a href="javascript:void(0);"><i class="ti-pencil"></i></a></li>
-											<li class="jf-btndell"><a href="javascript:void(0);"><i class="ti-trash"></i></a></li>
-										</ul>
-										<ul class="jf-jobmatadata">
-											<li>
-												<i class="ti-calendar"></i>
-												<div class="jf-matacontent">
-													<span>Posted On</span>
-													<time datetime="2019-12-12">Jun 27, 2019</time>
-												</div>
-											</li>
-											<li>
-												<i class="ti-bell"></i>
-												<div class="jf-matacontent">
-													<span>Video Status</span>
-													<time datetime="2019-12-12"><a class="jf-btnjobtag jf-internship" href="javascript:void(0);">Pending</a></time>
-												</div>
-											</li>
-										</ul>
-									</li> -->
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<nav class="jf-pagination">
+				{{ $videos->links() }}
+			</nav>
 		</main>
 @endsection

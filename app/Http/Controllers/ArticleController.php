@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Category;
+use Auth;
 
 class ArticleController extends Controller
 {
@@ -54,6 +55,7 @@ class ArticleController extends Controller
         }
 
         $data = new Article();
+        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->description=$request->description;
         $data->category=$request->category;
@@ -68,8 +70,7 @@ class ArticleController extends Controller
             session()->flash('class','danger');
         }
 
-        $data['article'] = Article::all();
-        return view('admin.article.manage',$data);
+        return redirect('article');
     }
 
     /**
@@ -80,8 +81,13 @@ class ArticleController extends Controller
      */
     public function show()
     {
-        $data['article'] = Article::all();
-        return view('admin.article.manage',$data);
+        if(Auth::User()->role == 1){
+            $data['article'] = Article::paginate(6);
+            return view('admin.article.manage',$data);
+        }else{
+            $data['article'] = Article::where('user_id', Auth::User()->id)->paginate(6);
+            return view('admin.article.manage',$data);
+        }
     }
 
     /**

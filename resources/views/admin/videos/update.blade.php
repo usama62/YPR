@@ -44,16 +44,6 @@
                                         <div class="form-group jf-inputwithicon">
 											<input type="text" name="video_link" class="form-control" value="{{$video->video_link}}">
 										</div>
-										<fieldset class="jf-dragdropimg">
-											<div class="jf-inputtyfile">
-												<label for="jf-uploadimg">
-													<i class="ti-layers-alt"></i>
-													<span>Drag Files Here or <a href="javascript:void(0);">Browse</a></span>
-													<em>Maximum upload file size: 500 KB Maximum image size: 300px X 300px</em>
-													<input type="file" name="uploadimg" id="jf-uploadimg">
-												</label>
-											</div>
-										</fieldset>
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>

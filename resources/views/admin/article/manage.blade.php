@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="jf-dashboardbanner" class="jf-dashboardbanner">
-        <h1>Categories</h1>
+        <h1>Articles</h1>
         <ol class="jf-breadcrumb">
             <li><a href="javascript:void(0);">Dashboard</a></li>
             <li><a href="javascript:void(0);">Manage Categories</a></li>
@@ -15,7 +15,7 @@
                     <div class="jf-dashboardbox jf-myappliedjobs">
                         <div class="jf-dashboardboxtitle jf-dashboardboxtitlevtwo">
                             <div class="jf-title">
-                                <h2>Manage Categories</h2>
+                                <h2>Manage Articles</h2>
                             </div>
                             <form class="jf-formtheme jf-questsearch">
                                 <fieldset>
@@ -74,5 +74,8 @@
                 </div>
             </div>
         </div>
+        <nav class="jf-pagination">
+            {{ $article->links() }}
+        </nav>
     </main>
 @endsection

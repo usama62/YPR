@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Photos;
+use Auth;
 
 class PhotosController extends Controller
 {
@@ -14,8 +15,14 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        $data['photos'] = Photos::all();
-        return view('admin.photos.manage_photos',$data);
+        if(Auth::User()->role == 1){
+            $data['photos'] = Photos::paginate(6);
+            return view('admin.photos.manage_photos',$data);
+        }else{
+            $data['photos'] = Photos::where('user_id', Auth::User()->id)->paginate(6);
+            return view('admin.photos.manage_photos',$data);
+        }
+        
     }
 
     /**
@@ -53,6 +60,7 @@ class PhotosController extends Controller
         }
 
         $data = new Photos();
+        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
         $data->description=$request->description;
@@ -66,7 +74,7 @@ class PhotosController extends Controller
             session()->flash('class','danger');
         }
         
-        return back();
+        return redirect('photos');
     }
 
     /**
@@ -108,21 +116,32 @@ class PhotosController extends Controller
             'description'=>'required',
         ]);
 
-        $data = new Photos();
+        $founder_image_Name = '';
+        if ($request->hasFile('uploadimg')) {
+            $founder_image = $request->file('uploadimg');
+            $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
+            $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
+            $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
+        }else{
+            $founder_image_Name = $request->profile_image_hidden;
+        }
+
+        $data = Photos::find($id);
+        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
         $data->description=$request->description;
-        $data->image_path=null;
+        $data->image_path=$founder_image_Name;;
         
         if($data->save()){
-            session()->flash('message','Photo has been uploaded successfully');
+            session()->flash('message','Photo has been updated successfully');
             session()->flash('class','success');
         }else{
-            session()->flash('message','Upload failed');
+            session()->flash('message','Update failed');
             session()->flash('class','danger');
         }
         
-        return back();
+        return redirect('photos');
     }
 
     /**

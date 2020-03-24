@@ -30,160 +30,38 @@
                             <span>Your Saved Items</span>
                         </div>
                         <div class="jf-dashbboardcontent">
+                            @forelse($saved as $save)
                             <div class="jf-featurejob">
                                 <figure class="jf-companyimg">
                                     <img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
                                 </figure>
                                 <div class="jf-companycontent">
                                     <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Lorem ipsum</a>
+                                        <a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">{{$save->articles->category}}</a>
                                         <div class="jf-rightarea">
-                                            <a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">feature</a>
+                                            <a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">Saved</a>
                                             <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
                                         </div>
                                     </div>
                                     <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">Demo Medical Image</a></h3>
-                                        <span>Lorem ipsum is placeholder text commonly used in the graphic</span>
+                                        <h3><a href="javascript:void(0);">{{$save->articles->title}}</a></h3>
+                                        <span>{{str_limit($save->articles->description,40)}}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="jf-featurejob">
-                                <figure class="jf-companyimg">
-                                    <img src="{{ asset('assets/images/play-button.png') }}" alt="image description">
-                                </figure>
-                                <div class="jf-companycontent">
-                                    <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-parttimejob" href="javascript:void(0);">Lorem ipsum</a>
-                                        <div class="jf-rightarea">
-                                            <a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-                                            <a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">Demo Medical Videos</a></h3>
-                                        <span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jf-featurejob">
-                                <figure class="jf-companyimg">
-                                    <img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
-                                </figure>
-                                <div class="jf-companycontent">
-                                    <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Lorem ipsum</a>
-                                        <div class="jf-rightarea">
-                                            <a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">feature</a>
-                                            <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">Demo Medical Image</a></h3>
-                                        <span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jf-featurejob">
-                                <figure class="jf-companyimg">
-                                    <img src="{{ asset('assets/images/play-button.png') }}" alt="image description">
-                                </figure>
-                                <div class="jf-companycontent">
-                                    <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-parttimejob" href="javascript:void(0);">Lorem ipsum</a>
-                                        <div class="jf-rightarea">
-                                            <a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-                                            <a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">Demo Medical Videos</a></h3>
-                                        <span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jf-featurejob">
-                                <figure class="jf-companyimg">
-                                    <img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
-                                </figure>
-                                <div class="jf-companycontent">
-                                    <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Lorem ipsum</a>
-                                        <div class="jf-rightarea">
-                                            <a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">feature</a>
-                                            <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">Demo Medical Image</a></h3>
-                                        <span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jf-featurejob">
-                                <figure class="jf-companyimg">
-                                    <img src="{{ asset('assets/images/play-button.png') }}" alt="image description">
-                                </figure>
-                                <div class="jf-companycontent">
-                                    <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-parttimejob" href="javascript:void(0);">Lorem ipsum</a>
-                                        <div class="jf-rightarea">
-                                            <a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-                                            <a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">Demo Medical Videos</a></h3>
-                                        <span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jf-featurejob">
-                                <figure class="jf-companyimg">
-                                    <img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
-                                </figure>
-                                <div class="jf-companycontent">
-                                    <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Lorem ipsum</a>
-                                        <div class="jf-rightarea">
-                                            <a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">feature</a>
-                                            <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">Demo Medical Image</a></h3>
-                                        <span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jf-featurejob">
-                                <figure class="jf-companyimg">
-                                    <img src="{{ asset('assets/images/play-button.png') }}" alt="image description">
-                                </figure>
-                                <div class="jf-companycontent">
-                                    <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-parttimejob" href="javascript:void(0);">Lorem ipsum</a>
-                                        <div class="jf-rightarea">
-                                            <a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-                                            <a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">Demo Medical Videos</a></h3>
-                                        <span>Lorem ipsum is placeholder text commonly used in the graphic</span>
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                                <div class="text-center" style="padding-top:100px;padding-bottom:100px;">
+                                    <img src="{{ asset('assets/images/no-record.png')}}" alt="image description">
+                                    <p>No Data Found</p>
+                                </div>	
+                            @endforelse	
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--************************************
-                Jobs Alerts Start End
-        *************************************-->
+        <nav class="jf-pagination">
+            {{ $saved->links() }}
+        </nav>
     </main>
-    <!--************************************
-            Main End
-    *************************************-->
 @endsection

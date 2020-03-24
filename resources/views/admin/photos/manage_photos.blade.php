@@ -28,7 +28,7 @@
 									<h2>Photos</h2>
 									<span>Your Latest Posted Photos</span>
 								</div>
-								<form class="jf-formtheme jf-questsearch">
+								<!-- <form class="jf-formtheme jf-questsearch">
 									<fieldset>
 										<div class="form-group jf-inputwithicon">
 											<i class="lnr lnr-magnifier"></i>
@@ -36,7 +36,7 @@
 										</div>
 										<a class="jf-btnsearch" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
 									</fieldset>
-								</form>
+								</form> -->
 							</div>
 							<div class="jf-dashbboardcontent jf-myjobsapplications">
 								<ul>
@@ -59,12 +59,12 @@
 											<div class="jf-companycontent">
 												<div class="jf-companyname">
 													<h3><a href="javascript:void(0);">{{$photo->title}}</a></h3>
-													<span>{{$photo->description}}</span>
+													<span>{{str_limit($photo->description, 40) }}</span>
 												</div>
 											</div>
 										</div>
 										<ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
-										<li class="jf-btnnewwindow"><a href="javascript:void(0);"><i class="ti-new-window"></i></a></li>
+										<!-- <li class="jf-btnnewwindow"><a href="javascript:void(0);"><i class="ti-new-window"></i></a></li> -->
 											<li class="jf-btneditjob"><a href="{{ route('photo.edit',['id'=>$photo->id]) }}"><i class="ti-pencil"></i></a></li>
 											<li class="jf-btndell"><a href="{{ route('photo.delete',['id'=>$photo->id]) }}"><i class="ti-trash"></i></a></li>
 										</ul>
@@ -103,5 +103,8 @@
 					</div>
 				</div>
 			</div>
+			<nav class="jf-pagination">
+				{{ $photos->links() }}
+			</nav>
 		</main>
 @endsection

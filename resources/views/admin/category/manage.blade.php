@@ -17,7 +17,7 @@
                             <div class="jf-title">
                                 <h2>Manage Categories</h2>
                             </div>
-                            <form class="jf-formtheme jf-questsearch">
+                            <!-- <form class="jf-formtheme jf-questsearch">
                                 <fieldset>
                                     <div class="form-group jf-inputwithicon">
                                         <i class="lnr lnr-magnifier"></i>
@@ -25,7 +25,7 @@
                                     </div>
                                     <a class="jf-btnsearch" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
                                 </fieldset>
-                            </form>
+                            </form> -->
                         </div>
                         <div class="jf-dashbboardcontent jf-myjobsapplications">
                             <ul>
@@ -49,8 +49,12 @@
                                     <div class="jf-featurejob" style="width:35%">
                                         <div class="jf-companycontent jf-companycontentvtwo">
                                             <div class="jf-companyname">
-                                                <h5>parent</h5>
-                                                <span>Angry Creative Bears</span>
+                                                <h5>Parent</h5>
+                                                @if($cat->parent_id == null)
+                                                <span>None</span>
+                                                @else
+                                                <span>{{$cat->parent->title}}</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -70,5 +74,8 @@
                 </div>
             </div>
         </div>
+        <nav class="jf-pagination">
+            {{ $category->links() }}
+        </nav>
     </main>
 @endsection

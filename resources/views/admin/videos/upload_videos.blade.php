@@ -26,23 +26,23 @@
 									@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" placeholder="Title">
+											<input type="text" name="title" class="form-control" placeholder="Title" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
-												<select name="status">
-													<option>Status</option>
-													<option>Pending</option>
-													<option>Publish</option>
-													<option>Draft</option>
+												<select name="status" required>
+													<option value="">Status</option>
+													<option value="pending">Pending</option>
+													<option value="publish">Publish</option>
+													<option value="draft">Draft</option>
 												</select>
 											</span>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="video_link" class="form-control" placeholder="Video Link">
+											<input type="text" name="video_link" class="form-control" placeholder="Video Link" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<textarea type="text" name="description" class="form-control" placeholder="Description" rows="5"></textarea>
+											<textarea type="text" name="description" class="form-control" placeholder="Description" required></textarea>
 										</div>
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>

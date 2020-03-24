@@ -15,19 +15,19 @@
 								<div class="jf-description">
 									<p></p>
 								</div>
-								<form class="jf-formtheme jf-formbannersearch">
+								<form action="{{ route('search') }}" class="jf-formtheme jf-formbannersearch" >
 									<fieldset class="jf-searchoptions">
 										<div class="form-group">
 											<div class="jf-radio jf-findjobs jf-search-type" data-class="js-job">
-												<input type="radio" name="searchoptions" id="jf-findjobs" checked>
+												<input type="radio" name="" id="jf-findjobs" checked>
 												<label for="jf-findjobs">Health</label>
 											</div>
 											<div class="jf-radio jf-employers jf-search-type" data-class="js-employer">
-												<input type="radio" name="searchoptions" id="jf-employers">
+												<input type="radio" name="" id="jf-employers">
 												<label for="jf-employers">Disease</label>
 											</div>
 											<div class="jf-radio jf-candidates jf-search-type" data-class="js-candidate">
-												<input type="radio" name="searchoptions" id="jf-candidates">
+												<input type="radio" name="" id="jf-candidates">
 												<label for="jf-candidates">Drug</label>
 											</div>
 										</div>
@@ -42,14 +42,14 @@
 											<span class="jf-select">
 												<select data-placeholder="All" class="chosen-select locations" name="catagory">
 													<option value="">Select catagory</option>
-													<option value="Health">Health</option>
-													<option value="Disease">Disease</option>
-													<option value="Drug">Drug</option>
+													<option value="health">Health</option>
+													<option value="disease">Disease</option>
+													<option value="drug">Drug</option>
 												</select>
 											</span>
 										</div>
 										<div class="jf-searchbtn">
-											<a href="javascript:void(0)" class="jf-btn"><i class="lnr lnr-magnifier"></i></a>
+											<button type="submit" class="jf-btn"><i class="lnr lnr-magnifier"></i></button>
 										</div>
 									</fieldset>
 								</form>
@@ -101,470 +101,77 @@
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="jf-sectionhead">
-								<h2>Body Location Systems</h2>
+								<h2>Recent Articles</h2>
 								<a class="jf-btnviewall" href="javascript:void(0);">View All</a>
 							</div>
 						</div>
 						<div class="jf-featuredjobs">
+							@foreach($recents as $recent)
 							<div class="jf-featurejobholder">
 								<div class="jf-featurejob">
 									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-01.png') }}" alt="image description">
+										@if($recent->image != null)
+											<img src="{{ asset($recent->image) }}" alt="image description">
+										@else
+											<img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
+										@endif
 									</figure>
 									<div class="jf-companycontent">
 										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
+											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">{{$recent->category}}</a>
+											<!-- <div class="jf-rightarea">
 												<a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">feature</a>
 												<a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
+											</div> -->
 										</div>
 										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Gastro-Intestinal System</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
+											<h3><a href="javascript:void(0);">{{$recent->title}}</a></h3>
+											<span>{{str_limit($recent->description,30)}}</span>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-02.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-parttimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Cardiovascular System</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-03.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-homebasejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Respiratory System</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-internship" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Nervous System</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-05.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-projectbasejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Infections</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-06.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-homebasejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Endocrine System</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-01.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-homebasejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Genito-urinary System</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-03.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-parttimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Immune & Malignant</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Disease</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Blood & Nutrition</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Musculoskeletal System</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Eyes</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Ear, Nose & Oropharynx</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Skin</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Vaccines</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Anaesthesia</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="jf-featurejobholder">
-								<div class="jf-featurejob">
-									<figure class="jf-companyimg">
-										<img src="{{ asset('assets/images/topcompanies/img-04.png') }}" alt="image description">
-									</figure>
-									<div class="jf-companycontent">
-										<div class="jf-companyhead">
-											<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Category</a>
-											<div class="jf-rightarea">
-												<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
-												<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-											</div>
-										</div>
-										<div class="jf-companyname">
-											<h3><a href="javascript:void(0);">Emergency Treatment of Poison</a></h3>
-											<span>Angry Creative Bears, Chicago</span>
-										</div>
-									</div>
-								</div>
-							</div>
+							@endforeach
 						</div>
 					</div>
 				</div>
 			</section>
-			<!--************************************
-					Featured Jobs End
-			*************************************-->
-			
-			<!--************************************
-					Our Professionals Start
-			*************************************-->
 			<section class="jf-haslayout jf-sectionspace">
 				<div class="container">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="jf-sectionhead">
-								<h2>Top Professional Doctors</h2>
-								<a class="jf-btnviewall" href="javascript:void(0);">View All</a>
+								<h2>Recent Videos</h2>
+								<!-- <a class="jf-btnviewall" href="javascript:void(0);">View Details</a> -->
 							</div>
 						</div>
 						<div class="jf-ourprofessionals">
+						@foreach($videos as $video)
 							<div class="col-12 col-sm-12 col-md-12 col-lg-6 float-left">
 								<div class="jf-ourprofessional">
 									<div class="jf-professionaldetail">
 										<figure class="jf-professionalimg">
-											<img src="{{ asset('assets/images/team/img-01.jpg') }}" alt="image description">
+											<img height="81" width="81" src="{{ asset('assets/images/play-button.png') }}" alt="image description">
 										</figure>
 										<div class="jf-professionalcontent">
 											<div class="jf-professionalname">
-												<h3><a href="javascript:void(0);">Dr. Lorem Ipsum</a></h3>
-												<span>Senior surgeon</span>
+												<h3><a href="javascript:void(0);">{{str_limit($video->title,25)}}</a></h3>
+												<span>{{str_limit($video->description,30)}}</span>
 											</div>
-											<span class="jf-totalviews"><i class="lnr lnr-eye"></i><em>1,744,588 views</em></span>
-											<a class="jf-btn" href="javascript:void(0);">View Full Profile</a>
+											<span class="jf-totalviews"></span>
+											<a class="jf-btn" href="{{ route('video.detail',['id'=>$video->id]) }}">Watch Video</a>
 										</div>
 									</div>
 									<ul class="jf-professionalinfo">
-										<li><i class="lnr lnr-briefcase"></i><span>Exp: 07 years</span></li>
-										<li><i class="lnr lnr-location"></i><span>Chicago, USA</span></li>
-										<li><i class="lnr lnr-tag"></i><span><a href="javascript:void(0);">Business &amp; Finance</a></span></li>
+										<li><i class="lnr lnr-briefcase"></i><span>{{ \Carbon\Carbon::parse($video->created_at)->format('M d, Y') }}</span></li>
 									</ul>
 								</div>
 							</div>
-							<div class="col-12 col-sm-12 col-md-12 col-lg-6 float-left">
-								<div class="jf-ourprofessional">
-									<div class="jf-professionaldetail">
-										<figure class="jf-professionalimg">
-											<img src="{{ asset('assets/images/team/img-02.jpg') }}" alt="image description">
-										</figure>
-										<div class="jf-professionalcontent">
-											<div class="jf-professionalname">
-												<h3><a href="javascript:void(0);">Dr. Lorem Ipsum</a></h3>
-												<span>Paediatrician</span>
-											</div>
-											<span class="jf-totalviews"><i class="lnr lnr-eye"></i><em>1,744,588 views</em></span>
-											<a class="jf-btn" href="javascript:void(0);">View Full Profile</a>
-										</div>
-									</div>
-									<ul class="jf-professionalinfo">
-										<li><i class="lnr lnr-briefcase"></i><span>Exp: 07 years</span></li>
-										<li><i class="lnr lnr-location"></i><span>Chicago, USA</span></li>
-										<li><i class="lnr lnr-tag"></i><span><a href="javascript:void(0);">Business &amp; Finance</a></span></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-12 col-sm-12 col-md-12 col-lg-6 float-left">
-								<div class="jf-ourprofessional">
-									<div class="jf-professionaldetail">
-										<figure class="jf-professionalimg">
-											<img src="{{ asset('assets/images/team/img-03.jpg') }}" alt="image description">
-										</figure>
-										<div class="jf-professionalcontent">
-											<div class="jf-professionalname">
-												<h3><a href="javascript:void(0);">Dr. Lorem Ipsum</a></h3>
-												<span>Dentist</span>
-											</div>
-											<span class="jf-totalviews"><i class="lnr lnr-eye"></i><em>1,744,588 views</em></span>
-											<a class="jf-btn" href="javascript:void(0);">View Full Profile</a>
-										</div>
-									</div>
-									<ul class="jf-professionalinfo">
-										<li><i class="lnr lnr-briefcase"></i><span>Exp: 07 years</span></li>
-										<li><i class="lnr lnr-location"></i><span>Chicago, USA</span></li>
-										<li><i class="lnr lnr-tag"></i><span><a href="javascript:void(0);">Business &amp; Finance</a></span></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-12 col-sm-12 col-md-12 col-lg-6 float-left">
-								<div class="jf-ourprofessional">
-									<div class="jf-professionaldetail">
-										<figure class="jf-professionalimg">
-											<img src="{{ asset('assets/images/team/img-04.jpg')}}" alt="image description">
-										</figure>
-										<div class="jf-professionalcontent">
-											<div class="jf-professionalname">
-												<h3><a href="javascript:void(0);">Dr. Lorem Ipsum</a></h3>
-												<span>general physician</span>
-											</div>
-											<span class="jf-totalviews"><i class="lnr lnr-eye"></i><em>1,744,588 views</em></span>
-											<a class="jf-btn" href="javascript:void(0);">View Full Profile</a>
-										</div>
-									</div>
-									<ul class="jf-professionalinfo">
-										<li><i class="lnr lnr-briefcase"></i><span>Exp: 07 years</span></li>
-										<li><i class="lnr lnr-location"></i><span>Chicago, USA</span></li>
-										<li><i class="lnr lnr-tag"></i><span><a href="javascript:void(0);">Business &amp; Finance</a></span></li>
-									</ul>
-								</div>
-							</div>
+							@endforeach
 						</div>
 					</div>
 				</div>
 			</section>
-			<!--************************************
-					Our Professionals End
-			*************************************-->
-			<!--************************************
-					Top Companies Start
-			*************************************-->
 			<section class="jf-haslayout jf-sectionspace">
 				<div class="container">
 					<div class="row">
@@ -820,11 +427,5 @@
 					</div>
 				</div>
 			</section>
-			<!--************************************
-					Blogs News Article End
-			*************************************-->
 		</main>
-		<!--************************************
-				Main End
-        *************************************-->
         @endsection

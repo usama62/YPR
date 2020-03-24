@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Auth;
 
 class CategoryController extends Controller
 {
@@ -42,6 +43,7 @@ class CategoryController extends Controller
         ]);
 
         $data = new Category();
+        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->parent_id=$request->parent;
 
@@ -53,7 +55,7 @@ class CategoryController extends Controller
             session()->flash('class','danger');
         }
 
-        return back();
+        return redirect('category');
     }
 
     /**
@@ -64,8 +66,13 @@ class CategoryController extends Controller
      */
     public function show()
     {
-        $data['category'] = Category::all();
-        return view('admin.category.manage',$data);
+        if(Auth::User()->role == 1){
+            $data['category'] = Category::paginate(6);
+            return view('admin.category.manage',$data);
+        }else{
+            $data['category'] = Category::where('user_id', Auth::User()->id)->paginate();
+            return view('admin.category.manage',$data);
+        }
     }
 
     /**

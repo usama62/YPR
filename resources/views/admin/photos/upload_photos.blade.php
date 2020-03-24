@@ -19,18 +19,15 @@
 								<span>Add Photos</span>
 							</div>
 							<div class="jf-dashbboardcontent">
-							@if(session()->has('message'))
-								<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
-							@endif
 								<form method="POST" action="{{ route('photos.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" placeholder="Title">
+											<input type="text" name="title" class="form-control" placeholder="Title" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
-												<select name="status">
+												<select name="status" required>
 													<option>Status</option>
 													<option>Pending</option>
 													<option>Publish</option>
@@ -39,7 +36,7 @@
 											</span>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<textarea type="text" name="description" class="form-control" placeholder="Description" rows="2"></textarea>
+											<textarea type="text" name="description" class="form-control" placeholder="Description" rows="2" required></textarea>
 										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">

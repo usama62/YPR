@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Saved;
+use Auth;
 
 class SaveditemsController extends Controller
 {
@@ -13,7 +15,14 @@ class SaveditemsController extends Controller
      */
     public function index()
     {
-        return view('admin.saveditems');
+        if(Auth::User()->role == 1){
+            $data['saved'] = Saved::paginate();
+            return view('admin.saveditems',$data);
+        }else{
+            $data['saved'] = Saved::where('user_id', Auth::User()->id)->paginate(6);
+            return view('admin.saveditems',$data);
+        }
+
     }
 
     /**

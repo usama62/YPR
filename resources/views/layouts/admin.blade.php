@@ -36,29 +36,6 @@
 		<header id="jf-dashboardheader" class="jf-dashboardheader jf-haslayout">
 			<div class="jf-rightarea">
 				<ul class="jf-langnotification">
-					<!-- <li>
-						<a id="jf-languagesbutton" href="" class="jf-languagesbutton">
-							<span>Eng</span>
-							<i class="fa fa-angle-down"></i>
-						</a>
-						<ul class="jf-languagedropdown">
-							<li>
-								<a href="">
-									<span>en</span>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<span>fr</span>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<span>ar</span>
-								</a>
-							</li>
-						</ul>
-					</li> -->
 					<li>
 						<a class="jf-notification" href="">
 							<span class="jf-notificationtag">04</span>
@@ -76,10 +53,14 @@
 				</ul>
 				<div class="jf-userlogedin">
 					<figure class="jf-userimg">
-						<img src="{{ asset('assets/images/usrer-img-01.jpg') }}" alt="image description">
+						@if(auth::user()->profile_image != null)
+							<img src="{{ asset(auth::user()->profile_image)}}" alt="image description">
+						@else
+							<img src="{{ asset('assets/images/default-user-profile-image.png')}}" alt="image description">
+						@endif
 					</figure>
 					<div class="jf-username">
-						<h3>Margorie Wayman</h3>
+						<h3>{{ auth::user()->name }}</h3>
 						<span>Sr. Creative Designer</span>
 					</div>
 					<nav class="jf-usernav">
@@ -101,156 +82,24 @@
 					</nav>
 				</div>
 			</div>
-			<!-- <form class="jf-formtheme jf-formsearch">
-				<fieldset>
-					<div class="form-group jf-inputwithicon">
-						<i class="lnr lnr-magnifier"></i>
-						<input type="text" name="jobtitle" class="form-control" placeholder="Job Title, Skills or Company">
-					</div>
-					<div class="form-group jf-inputwithicon">
-						<i class="lnr lnr-map-marker"></i>
-						<span class="jf-select">
-							<select data-placeholder="All" name="locations">
-								<option value="">Location</option>
-								<option value="aberdeen">Aberdeen</option>
-								<option value="aldershot">Aldershot</option>
-								<option value="altrincham">Altrincham</option>
-								<option value="aylesbury">Aylesbury</option>
-								<option value="bamber">Bamber</option>
-								<option value="bangor">Bangor</option>
-								<option value="batley">Batley</option>
-								<option value="bebingto">Bebingto</option>
-								<option value="bedford">Bedford</option>
-								<option value="birmingham">Birmingham</option>
-								<option value="blackpool">Blackpool</option>
-								<option value="brentwood">Brentwood</option>
-								<option value="bristol">Bristol</option>
-								<option value="cardiff">Cardiff</option>
-								<option value="carlisle">Carlisle</option>
-								<option value="crawley">Crawley</option>
-								<option value="darlington">Darlington</option>
-								<option value="eastleigh">Eastleigh</option>
-								<option value="edinburg">Edinburg</option>
-								<option value="esher">Esher</option>
-								<option value="glasgow-sco">Glasgow SCO</option>
-								<option value="guildford">Guildford</option>
-								<option value="halesowen">Halesowen</option>
-								<option value="halifax">Halifax</option>
-								<option value="hamilton">Hamilton</option>
-								<option value="leeds">Leeds</option>
-								<option value="leicester">Leicester</option>
-								<option value="liverpool">Liverpool</option>
-								<option value="london">London</option>
-								<option value="louisville">Louisville</option>
-								<option value="manchester">Manchester</option>
-								<option value="sheffield">Sheffield</option>
-							</select>
-						</span>
-					</div>
-					<div class="form-group jf-inputwithicon">
-						<i class="lnr lnr-layers"></i>
-						<span class="jf-select">
-							<select data-placeholder="All" name="findjobs">
-								<option value="">Find Jobs</option>
-								<option value="Find Jobs">Find Jobs</option>
-								<option value="Find Jobs">Find Jobs</option>
-								<option value="Find Jobs">Find Jobs</option>
-								<option value="Find Jobs">Find Jobs</option>
-								<option value="Find Jobs">Find Jobs</option>
-								<option value="Find Jobs">Find Jobs</option>
-								<option value="Find Jobs">Find Jobs</option>
-							</select>
-						</span>
-					</div>
-					<a class="jf-btnsearch" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
-				</fieldset>
-			</form> -->
-			<!-- <div class="jf-filtertype">
-				<a class="jf-advancedlink" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
-				<form id="jf-formsearchbar" class="jf-formtheme jf-formsearch">
-					<fieldset>
-						<div class="form-group jf-inputwithicon">
-							<i class="lnr lnr-magnifier"></i>
-							<input type="text" name="jobtitle" class="form-control" placeholder="Job Title, Skills or Company">
-						</div>
-						<div class="form-group jf-inputwithicon">
-							<i class="lnr lnr-map-marker"></i>
-							<span class="jf-select">
-								<select data-placeholder="All" name="locations">
-									<option value="">Location</option>
-									<option value="aberdeen">Aberdeen</option>
-									<option value="aldershot">Aldershot</option>
-									<option value="altrincham">Altrincham</option>
-									<option value="aylesbury">Aylesbury</option>
-									<option value="bamber">Bamber</option>
-									<option value="bangor">Bangor</option>
-									<option value="batley">Batley</option>
-									<option value="bebingto">Bebingto</option>
-									<option value="bedford">Bedford</option>
-									<option value="birmingham">Birmingham</option>
-									<option value="blackpool">Blackpool</option>
-									<option value="brentwood">Brentwood</option>
-									<option value="bristol">Bristol</option>
-									<option value="cardiff">Cardiff</option>
-									<option value="carlisle">Carlisle</option>
-									<option value="crawley">Crawley</option>
-									<option value="darlington">Darlington</option>
-									<option value="eastleigh">Eastleigh</option>
-									<option value="edinburg">Edinburg</option>
-									<option value="esher">Esher</option>
-									<option value="glasgow-sco">Glasgow SCO</option>
-									<option value="guildford">Guildford</option>
-									<option value="halesowen">Halesowen</option>
-									<option value="halifax">Halifax</option>
-									<option value="hamilton">Hamilton</option>
-									<option value="leeds">Leeds</option>
-									<option value="leicester">Leicester</option>
-									<option value="liverpool">Liverpool</option>
-									<option value="london">London</option>
-									<option value="louisville">Louisville</option>
-									<option value="manchester">Manchester</option>
-									<option value="sheffield">Sheffield</option>
-								</select>
-							</span>
-						</div>
-						<div class="form-group jf-inputwithicon">
-							<i class="lnr lnr-layers"></i>
-							<span class="jf-select">
-								<select data-placeholder="All" name="findjobs">
-									<option value="">Find Jobs</option>
-									<option value="Find Jobs">Find Jobs</option>
-									<option value="Find Jobs">Find Jobs</option>
-									<option value="Find Jobs">Find Jobs</option>
-									<option value="Find Jobs">Find Jobs</option>
-									<option value="Find Jobs">Find Jobs</option>
-									<option value="Find Jobs">Find Jobs</option>
-									<option value="Find Jobs">Find Jobs</option>
-								</select>
-							</span>
-						</div>
-						<div class="form-group jf-formbtnarea">
-							<a class="jf-btnsearch" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
-							<a id="jf-closebar" class="jf-closebar" href="javascript:void(0)"><i class="lnr lnr-cross"></i></a>
-						</div>
-					</fieldset>
-				</form>
-			</div> -->
 			<div id="jf-sidebarwrapper" class="jf-sidebarwrapper">
 				<a id="jf-btnmenutoggle" href="" class="jf-btnmenutoggle"><i class="lnr lnr-menu"></i></a>
 				<div class="jf-verticalscrollbar">
 					<div class="jf-logoarea">
 						<a class="jf-logoicon" href=""><img src="{{ asset('assets/images/logo-icon.png')}}" alt="imagedescription" class="mCS_img_loaded"></a>
-						<strong class="jf-logo"><a href=""><img src="{{ asset('assets/images/logow.png')}}" alt="image description" class="mCS_img_loaded"></a></strong>
+						<strong class="jf-logo"><a href=""><img src="{{ asset('assets/images/logo.png')}}" alt="image description" class="mCS_img_loaded"></a></strong>
 					</div>
 					<nav id="jf-dashboardnav" class="jf-dashboardnav">
 						<ul>
+							@if(Auth::User()->role == 1)
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-user"></i><span>Users</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create-users') }}"><span>Create User</span></a></li>
-									<li><a href="{{ url('/users') }}"><span>Manage Users</span></a></li>
+									<li><a href="{{ url('/manage-users ') }}"><span>Manage Users</span></a></li>
 								</ul>
 							</li>
+							@endif
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-image"></i><span>Photos</span></a>
 								<ul class="sub-menu children">
@@ -280,7 +129,7 @@
 								</ul>
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">
-								<a href="{{ url('/saved-items') }}">
+								<a href="{{ url('/saveditems') }}">
 									<i class="ti-save"></i>
 									<span>Saved Items</span>
 								</a>

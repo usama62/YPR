@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
+use App\Videos;
 
 class HomeController extends Controller
 {
@@ -11,18 +13,25 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
-        return view('index');
+        $data['recents'] = Article::orderBy('id','desc')->limit(6)->get(); 
+        $data['videos'] = Videos::orderBy('id','desc')->limit(6)->get(); 
+        return view('index',$data);
+    }
+
+    public function search(Request $request){
+        $data['values'] = Article::where([
+            ['title','LIKE','%'.$request->search.'%'],
+            ['category', '=' , $request->catagory ]
+            ])->paginate(6);
+        return view('search_listing',$data);
     }
 }
