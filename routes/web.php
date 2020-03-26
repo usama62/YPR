@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes(['verify' => true]);
 
@@ -50,6 +48,14 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/article', 'ArticleController@show');
     Route::post('/article/create','ArticleController@store')->name("article.store");
     Route::get('/article/delete/{id}', 'ArticleController@destroy')->name("article.delete");
+    Route::get('/article/detail/{id}', 'ArticleController@details')->name("article.detail");
+
+    // Drugs
+    Route::get('/upload-drugs', 'DrugsController@create');
+    // Route::get('/article', 'DrugsController@show');
+    // Route::post('/article/create','DrugsController@store')->name("article.store");
+    // Route::get('/article/delete/{id}', 'DrugsController@destroy')->name("article.delete");
+    // Route::get('/article/detail/{id}', 'DrugsController@details')->name("article.detail");
 
     // Saved Items
     Route::get('/saveditems', 'SaveditemsController@index');

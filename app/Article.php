@@ -18,4 +18,11 @@ class Article extends Model
     {
         return $this->hasMany(Saved::class);
     }
+
+
+
+    public function abc()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

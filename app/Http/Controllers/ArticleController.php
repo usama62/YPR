@@ -90,6 +90,12 @@ class ArticleController extends Controller
         }
     }
 
+    public function details($id)
+    {
+        $data['details'] = Article::find($id);
+        return view('article_detail',$data);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

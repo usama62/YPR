@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Job Forest</title>
+	<title>Yemeny Pharmaceutical Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -27,6 +27,15 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/dbresponsive.css')}}">
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+  	tinymce.init({
+		selector:'textarea',
+		branding: false,
+		menubar:false,
+		// statusbar: false,
+	});
+	  </script>
 </head>
 <body class="jf-userlogin">
 	<div class="preloader-outer">
@@ -115,7 +124,7 @@
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-menu-alt"></i><span>Categories</span></a>
+								<a href="#"><i class="ti-layout-grid2"></i><span>Categories</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create-category') }}"><span>Create Categories</span></a></li>
 									<li><a href="{{ url('/category') }}"><span>Manage Categories</span></a></li>
@@ -126,6 +135,27 @@
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create-article') }}"><span>Create Articles</span></a></li>
 									<li><a href="{{ url('/article') }}"><span>Manage Articles</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-plus"></i><span>Drugs</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/upload-drugs') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/article') }}"><span>Manage</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-pulse"></i><span>Health</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create-article') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/article') }}"><span>Manage</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-widget"></i><span>Disease</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create-article') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/article') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">

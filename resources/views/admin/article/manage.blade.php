@@ -59,6 +59,7 @@
                                         </div>
                                     </div>
                                     <ul class="jf-btnjobalerts jf-btnjobalertsvthree" style="padding: 50px 25px;">
+                                    <li class="jf-btnnewwindow"><a href="{{ route('article.detail',['id'=>$art->id]) }}"><i class="ti-new-window"></i></a></li>
                                         <li class="jf-btndell"><a href="{{ route('article.delete',['id'=>$art->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>
                                 </li>
