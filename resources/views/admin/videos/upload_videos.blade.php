@@ -32,9 +32,9 @@
 											<span class="jf-select">
 												<select name="status" required>
 													<option value="">Status</option>
-													<option value="pending">Pending</option>
-													<option value="publish">Publish</option>
-													<option value="draft">Draft</option>
+													<option value="pending">pending</option>
+													<option value="publish">publish</option>
+													<option value="draft">draft</option>
 												</select>
 											</span>
 										</div>

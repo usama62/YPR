@@ -35,9 +35,9 @@
 											<span class="jf-select">
 												<select name="status">
 													<option value="">Status</option>
-													<option value="pending" @if($video->status == 'pending') selected @endif >Pending</option>
-													<option value="publish" @if($video->status == 'publish') selected @endif >Publish</option>
-													<option value="draft" @if($video->status == 'draft') selected @endif >Draft</option>
+													<option value="pending" @if($video->status == 'pending') selected @endif >pending</option>
+													<option value="publish" @if($video->status == 'publish') selected @endif >publish</option>
+													<option value="draft" @if($video->status == 'draft') selected @endif >draft</option>
 												</select>
 											</span>
 										</div>

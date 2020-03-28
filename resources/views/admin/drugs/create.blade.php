@@ -19,7 +19,7 @@
 								<span>Add Details</span>
 							</div>
 							<div class="jf-dashbboardcontent">
-								<form method="POST" action="{{ route('article.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
+								<form method="POST" action="{{ route('drugs.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
@@ -29,9 +29,9 @@
 											<span class="jf-select">
 												<select name="status" required>
 													<option>Status</option>
-													<option>Public</option>
-													<option>Pending</option>
-													<option>Draft</option>
+													<option>publish</option>
+													<option>pending</option>
+													<option>draft</option>
 												</select>
 											</span>
 										</div>
@@ -41,7 +41,9 @@
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">
 												<label for="jf-uploadimg">
-													<i class="ti-layers-alt"></i>
+													<div>
+														<img id="profile-img-tag" src="" style="height:150px" alt="">
+													</div>
 													<span>Drag Files Here or <a href="javascript:void(0);">Browse</a></span>
 													<em>Maximum upload file size: 500 KB Maximum image size: 300px X 300px</em>
 													<input type="file" name="uploadimg" id="jf-uploadimg">
@@ -51,8 +53,7 @@
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
-									</fieldset>
-								</form>									
+									</fieldset>					
 							</div>
 						</div>
 					</div>
@@ -69,44 +70,41 @@
 								</a></div>
 								<div class="jf-widget jf-themecollapsecontent" aria-hidden="false" style="display: block;">
 									<div class="jf-checkboxgroup">
-										<span class="jf-checkbox">
-											<input type="checkbox" id="jf-salesexecutive" name="bycondition" value="Sales Executive">
-											<label for="jf-salesexecutive">
-												<span>Flu</span>
-											</label>
-										</span>
-										<span class="jf-checkbox">
-											<input type="checkbox" id="jf-graphicdesigner" name="bycondition" value="Graphic Designer" checked="">
-											<label for="jf-graphicdesigner">
-												<span>Flu</span>
-											</label>
-										</span>
-										<span class="jf-checkbox">
-											<input type="checkbox" id="jf-marketingexecutive" name="bycondition" value="Marketing Executive">
-											<label for="jf-marketingexecutive">
-												<span>Flu</span>
-											</label>
-										</span>
-										<span class="jf-checkbox">
-											<input type="checkbox" id="jf-accountant" name="bycondition" value="Accountant">
-											<label for="jf-accountant">
-												<span>Flu</span>
-											</label>
-										</span>
-										<span class="jf-checkbox">
-											<input type="checkbox" id="jf-salesmarketingexecutive" name="bycondition" value="Sales / Marketing Executive">
-											<label for="jf-salesmarketingexecutive">
-												<span>Flu</span>
-											</label>
-										</span>
-										<a href="javascript:void(0);" class="jf-viewmore">View More</a>
+										<ul>
+											@forelse($categories as $category)
+											<li style="list-style-type:none;">
+												<input type="checkbox" id="jf-salesexecutive" name="category[]" value="{{$category->title}}">
+												<label for="jf-salesexecutive" style="display: inline;">
+													<span>{{$category->title}}</span>
+												</label>
+											</li>
+											@empty
+												<p>No categories under Drugs</p>
+											@endforelse
+										</ul>	
 									</div>
 								</div>
 							</div>
+							</form>	
 						</aside>
 					</div>
 				</div>
 			</div>
 		</div>
 	</main>
+	<script>
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				
+				reader.onload = function (e) {
+					$('#profile-img-tag').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+			}
+			$("#jf-uploadimg").change(function(){
+				readURL(this);
+		});
+    </script>
 @endsection

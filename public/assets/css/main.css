@@ -1586,9 +1586,18 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-btnjobtag:focus,
 .jf-btnjobtag:hover{color:#fff;}
 .jf-btnjobtag.jf-fulltimejob{background:#81c784;}
-.jf-btnjobtag.jf-internship{background:#eca137;}
-.jf-btnjobtag.jf-parttimejob{background:#00cc67;}
-.jf-btnjobtag.jf-projectbasejob{background:#4db6ac;}
+.jf-btnjobtag.jf-internship{
+	background:#c6c252;
+	text-transform: capitalize;
+}
+.jf-btnjobtag.jf-parttimejob{
+	background:#00cc67;
+	text-transform: capitalize;
+}
+.jf-btnjobtag.jf-projectbasejob{
+	background:#f57d00;
+	text-transform: capitalize;
+}
 .jf-btnjobtag.jf-homebasejob{background:#4db6ac;}
 .jf-homesliderone{
 	width:100%;
@@ -1986,7 +1995,7 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 .jf-companyimg{
 	width:81px;
 	float:left;
-	min-height:81px;
+	/* min-height:81px; */
 	margin:0 10px 0 0;
 	background:#fafafa;
 	-webkit-box-align: center;
@@ -6040,4 +6049,8 @@ body.jf-loginuser .jf-main{padding:0;}
 .tox-silver-sink{
 	display: none;
 } 
+
+li{
+	list-style-type: none !important;
+}
 /* tox-tinymce-aux */

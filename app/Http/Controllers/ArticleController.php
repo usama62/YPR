@@ -26,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $data['category'] = Category::all();
+        $data['categories'] = Category::where('parent_id', null)->get();
         return view('admin.article.create',$data);
     }
 
@@ -43,7 +43,8 @@ class ArticleController extends Controller
             'title'=>'required',
             'description'=>'required',
             'category'=>'required',
-            'video_link'=>'required',
+            'status'=>'required',
+            // 'video_link'=>'required',
         ]);
 
         $founder_image_Name = '';
@@ -58,8 +59,9 @@ class ArticleController extends Controller
         $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->description=$request->description;
-        $data->category=$request->category;
-        $data->video_link=$request->video_link;
+        $data->status=$request->status;
+        $data->category=implode(',' , $request->category);
+        // $data->video_link=$request->video_link;
         $data->image=$founder_image_Name;
 
         if($data->save()){
@@ -70,7 +72,7 @@ class ArticleController extends Controller
             session()->flash('class','danger');
         }
 
-        return redirect('article');
+        return redirect('blogs');
     }
 
     /**
@@ -82,10 +84,10 @@ class ArticleController extends Controller
     public function show()
     {
         if(Auth::User()->role == 1){
-            $data['article'] = Article::paginate(6);
+            $data['posts'] = Article::paginate(6);
             return view('admin.article.manage',$data);
         }else{
-            $data['article'] = Article::where('user_id', Auth::User()->id)->paginate(6);
+            $data['posts'] = Article::where('user_id', Auth::User()->id)->paginate(6);
             return view('admin.article.manage',$data);
         }
     }
@@ -104,7 +106,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['posts'] = Article::find($id);
+        $data['categories'] =Category::where('parent_id', null)->get();
+        return view('admin.article.update',$data);
     }
 
     /**
@@ -116,7 +120,41 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+            'category'=>'required',
+            'status'=>'required',
+            // 'video_link'=>'required',
+        ]);
+
+        $founder_image_Name = '';
+        if ($request->hasFile('uploadimg')) {
+            $founder_image = $request->file('uploadimg');
+            $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
+            $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
+            $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
+        }else{
+            $founder_image_Name = $request->hiddenimage;
+        }
+
+        $data = Article::find($id);
+        $data->user_id=Auth::User()->id;
+        $data->title=$request->title;
+        $data->description=$request->description;
+        $data->status=$request->status;
+        $data->category=implode(',' , $request->category);
+        $data->image=$founder_image_Name;
+
+        if($data->save()){
+            session()->flash('message','Blog has been updated successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Update failed');
+            session()->flash('class','danger');
+        }
+
+        return redirect('blogs');
     }
 
     /**

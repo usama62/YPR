@@ -5,7 +5,7 @@ namespace App\Http\Controllers\frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Article;
+use App\Posts;
 
 class HealthtopicsController extends Controller
 {
@@ -16,7 +16,7 @@ class HealthtopicsController extends Controller
      */
     public function index()
     {
-        $data['values'] = Article::where('category',"Health")->paginate(10);
+        $data['values'] = Posts::where(['post_type'=>"Health",'status'=>"publish"])->paginate(10);
         return view('health_listing',$data);
     }
 

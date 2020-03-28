@@ -45,6 +45,19 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="address" class="form-control" placeholder="Address" value="{{ auth::user()->address }}">
 										</div>
+										
+											<div class="jf-inputtyfile">
+												<label for="jf-uploadimg">
+													<div>
+														<img id="profile-img-tag" src="{{ auth::user()->profile_image }}" style="height:150px" alt="">
+													</div>
+													<span>Drag Files Here or <a href="javascript:void(0);">Browse</a></span>
+													<em>Maximum upload file size: 500 KB Maximum image size: 300px X 300px</em>
+													<input type="file" name="uploadimg" id="jf-uploadimg">
+												</label>
+											</div>
+										
+										<input type="hidden" name="hiddenimage" value="{{ auth::user()->profile_image }}">
 										<div class="form-group jf-btnsarea">
                                             <button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save & Update') }}</button>
                                         </div>
@@ -55,8 +68,20 @@
 					</div>
 				</div>
 			</div>
-			<!--************************************
-					Chart Statistics End
-			*************************************-->
 		</main>
+	<script>
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				
+				reader.onload = function (e) {
+					$('#profile-img-tag').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+			}
+			$("#jf-uploadimg").change(function(){
+				readURL(this);
+		});
+    </script>
 @endsection

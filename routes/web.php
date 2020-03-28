@@ -44,18 +44,36 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/category/delete/{id}', 'CategoryController@destroy')->name("category.delete");
 
     // Article
-    Route::get('/create-article', 'ArticleController@create');
-    Route::get('/article', 'ArticleController@show');
-    Route::post('/article/create','ArticleController@store')->name("article.store");
-    Route::get('/article/delete/{id}', 'ArticleController@destroy')->name("article.delete");
-    Route::get('/article/detail/{id}', 'ArticleController@details')->name("article.detail");
+    Route::get('/create-blog', 'ArticleController@create');
+    Route::get('/blogs', 'ArticleController@show');
+    Route::get('/update-blog/{id}', 'ArticleController@edit')->name("article.edit");
+    Route::post('/blog/update/{id}', 'ArticleController@update')->name("article.update");
+    Route::post('/blog/create','ArticleController@store')->name("article.store");
+    Route::get('/blog/delete/{id}', 'ArticleController@destroy')->name("article.delete");
 
     // Drugs
-    Route::get('/upload-drugs', 'DrugsController@create');
-    // Route::get('/article', 'DrugsController@show');
-    // Route::post('/article/create','DrugsController@store')->name("article.store");
-    // Route::get('/article/delete/{id}', 'DrugsController@destroy')->name("article.delete");
-    // Route::get('/article/detail/{id}', 'DrugsController@details')->name("article.detail");
+    Route::get('/create/drugs', 'DrugsController@create');
+    Route::get('/drugs', 'DrugsController@show');
+    Route::get('/drugs/update/{id}', 'DrugsController@edit')->name("drugs.edit");
+    Route::post('/drugs/updated/{id}', 'DrugsController@update')->name("drugs.update");
+    Route::post('/drugs/create','DrugsController@store')->name("drugs.store");
+    Route::get('/drugs/delete/{id}', 'DrugsController@destroy')->name("drugs.delete");
+
+    // Health
+    Route::get('/create/health', 'HealthController@create');
+    Route::get('/health/update/{id}', 'HealthController@edit')->name("health.edit");
+    Route::post('/health/updated/{id}', 'HealthController@update')->name("health.update");
+    Route::get('/health', 'HealthController@show');
+    Route::post('/health/create','HealthController@store')->name("health.store");
+    Route::get('/health/delete/{id}', 'HealthController@destroy')->name("health.delete");
+
+    // Disease
+    Route::get('/create/disease', 'DiseaseController@create');
+    Route::get('/disease/update/{id}', 'DiseaseController@edit')->name("disease.edit");
+    Route::post('/disease/updated/{id}', 'DiseaseController@update')->name("disease.update");
+    Route::get('/disease', 'DiseaseController@show');
+    Route::post('/disease/create','DiseaseController@store')->name("disease.store");
+    Route::get('/disease/delete/{id}', 'DiseaseController@destroy')->name("disease.delete");
 
     // Saved Items
     Route::get('/saveditems', 'SaveditemsController@index');
@@ -82,6 +100,13 @@ Route::get('/search', 'HomeController@search')->name('search');
 Route::get('/videos-listing', 'frontend\VideosController@index');
 Route::get('/health-listing', 'frontend\HealthtopicsController@index');
 Route::get('/drugs-listing', 'frontend\DrugssupplementsController@index');
+Route::get('/disease-listing', 'frontend\DiseasefrontController@index');
+Route::get('/blogs-listing', 'frontend\BlogsfrontController@index');
+
+Route::get('/drugs/detail/{id}', 'DrugsController@details')->name("drugs.detail");
+Route::get('/blog/detail/{id}', 'ArticleController@details')->name("article.detail");
+Route::get('/health/detail/{id}', 'HealthController@details')->name("health.detail");
+Route::get('/disease/detail/{id}', 'DiseaseController@details')->name("disease.detail");
 Route::get('/video/detail/{id}', 'frontend\VideosController@show')->name("video.detail");
 
 Route::get('/saved', 'frontend\SavedController@index')->name("video.saved");

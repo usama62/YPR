@@ -131,31 +131,31 @@
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-notepad"></i><span>Articles</span></a>
+								<a href="#"><i class="ti-notepad"></i><span>Blogs</span></a>
 								<ul class="sub-menu children">
-									<li><a href="{{ url('/create-article') }}"><span>Create Articles</span></a></li>
-									<li><a href="{{ url('/article') }}"><span>Manage Articles</span></a></li>
+									<li><a href="{{ url('/create-blog') }}"><span>Create Blog</span></a></li>
+									<li><a href="{{ url('/blogs') }}"><span>Manage Blogs</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-plus"></i><span>Drugs</span></a>
 								<ul class="sub-menu children">
-									<li><a href="{{ url('/upload-drugs') }}"><span>Create</span></a></li>
-									<li><a href="{{ url('/article') }}"><span>Manage</span></a></li>
+									<li><a href="{{ url('/create/drugs') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/drugs') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-pulse"></i><span>Health</span></a>
 								<ul class="sub-menu children">
-									<li><a href="{{ url('/create-article') }}"><span>Create</span></a></li>
-									<li><a href="{{ url('/article') }}"><span>Manage</span></a></li>
+									<li><a href="{{ url('/create/health') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/health') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-widget"></i><span>Disease</span></a>
 								<ul class="sub-menu children">
-									<li><a href="{{ url('/create-article') }}"><span>Create</span></a></li>
-									<li><a href="{{ url('/article') }}"><span>Manage</span></a></li>
+									<li><a href="{{ url('/create/disease') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/disease') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">
@@ -181,9 +181,6 @@
 				</form>
 			</div>
 		</header>
-		<!--************************************
-				Header End
-		*************************************-->
 		
         @yield('content')
 		<footer id="jf-footer" class="jf-footer jf-haslayout">

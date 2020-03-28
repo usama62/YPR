@@ -74,7 +74,9 @@
 											<fieldset class="jf-dragdropimg">
 												<div class="jf-inputtyfile">
 													<label for="jf-uploadimg">
-														<i class="ti-layers-alt"></i>
+														<div>
+															<img id="profile-img-tag" src="{{$user->profile_image}}" style="height:150px" alt="">
+														</div>
 														<span>Update profile picture Here <a href="javascript:void(0);">Browse</a></span>
 														<em>Maximum upload file size: 500 KB Maximum image size: 300px X 300px</em>
 														<input type="file" name="profile_image" id="jf-uploadimg">
@@ -94,4 +96,19 @@
 				</div>
 			</div>
 		</main>
+		<script>
+			function readURL(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+					
+					reader.onload = function (e) {
+						$('#profile-img-tag').attr('src', e.target.result);
+					}
+					reader.readAsDataURL(input.files[0]);
+				}
+			}
+				$("#jf-uploadimg").change(function(){
+					readURL(this);
+				});
+		</script>
 @endsection

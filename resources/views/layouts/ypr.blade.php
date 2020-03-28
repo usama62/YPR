@@ -90,7 +90,11 @@
 								@else
 								<div class="jf-userlogedin">
 									<figure class="jf-userimg">
-										<img src="{{ asset('assets/images/usrer-img-01.jpg') }}" alt="image description">
+										@if(auth::user()->profile_image == null)
+											<img src="{{ asset('assets/images/usrer-img-01.jpg') }}" alt="image description">
+										@else
+											<img src="{{ asset(auth::user()->profile_image) }}" alt="image description">
+										@endif
 									</figure>
 									<div class="jf-username">
 										<h3>{{ auth::user()->name }}</h3>

@@ -25,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $data['category'] = Category::all();
+        $data['category'] = Category::where('parent_id', null)->get();
         return view('admin.category.create',$data);
     }
 

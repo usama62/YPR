@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Hash;
 use App\User;
 
 class AdminController extends Controller
@@ -75,7 +76,7 @@ class AdminController extends Controller
         $data = new User();
         $data->name=$request->name;
         $data->email=$request->email;
-        $data->password=$request->password;
+        $data->password=Hash::make($request->password);
         $data->phone=$request->phone;
         $data->age=$request->age;
         $data->gender=$request->gender;
@@ -127,6 +128,18 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'phone'=>'required',
+            'age'=>'required',
+            'gender'=>'required',
+            'disease'=>'required',
+            'pills'=>'required',
+            'role'=>'required',
+
+        ]);
 
         $founder_image_Name = '';
         if ($request->hasFile('profile_image')) {
@@ -141,7 +154,7 @@ class AdminController extends Controller
         $data = User::find($id);
         $data->name=$request->name;
         $data->email=$request->email;
-        $data->password=$request->password;
+        $data->password=Hash::make($request->password);
         $data->phone=$request->phone;
         $data->age=$request->age;
         $data->gender=$request->gender;

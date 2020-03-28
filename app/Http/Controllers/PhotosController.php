@@ -123,7 +123,7 @@ class PhotosController extends Controller
             $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
             $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
         }else{
-            $founder_image_Name = $request->profile_image_hidden;
+            $founder_image_Name = $request->hiddenimage;
         }
 
         $data = Photos::find($id);

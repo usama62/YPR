@@ -35,22 +35,25 @@
 											<span class="jf-select">
 												<select name="status" required>
 													<option value="">Status</option>
-													<option value="pending" @if($photo->status == 'pending') selected @endif >Pending</option>
-													<option value="publish" @if($photo->status == 'publish') selected @endif >Publish</option>
-													<option value="draft" @if($photo->status == 'draft') selected @endif >Draft</option>
+													<option value="pending" @if($photo->status == 'pending') selected @endif >pending</option>
+													<option value="publish" @if($photo->status == 'publish') selected @endif >publish</option>
+													<option value="draft" @if($photo->status == 'draft') selected @endif >draft</option>
 												</select>
 											</span>
 										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">
 												<label for="jf-uploadimg">
-													<i class="ti-layers-alt"></i>
+													<div>
+														<img id="profile-img-tag" src="{{ $photo->image_path }}" style="height:150px" alt="">
+													</div>
 													<span>Drag Files Here or <a href="javascript:void(0);">Browse</a></span>
 													<em>Maximum upload file size: 500 KB Maximum image size: 300px X 300px</em>
 													<input type="file" name="uploadimg" id="jf-uploadimg">
 												</label>
 											</div>
 										</fieldset>
+										<input type="hidden" name="hiddenimage" value="{{ $photo->image_path }}">
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
@@ -63,4 +66,19 @@
 			</div>
 		</div>
 	</main>
+	<script>
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				
+				reader.onload = function (e) {
+					$('#profile-img-tag').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+			}
+			$("#jf-uploadimg").change(function(){
+				readURL(this);
+		});
+    </script>
 @endsection

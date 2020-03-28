@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Posts;
 use App\Videos;
 
 class HomeController extends Controller
@@ -22,8 +23,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        $data['recents'] = Article::orderBy('id','desc')->limit(6)->get(); 
+        $data['recents'] = Posts::where('post_type','Disease')->orderBy('id','desc')->limit(6)->get(); 
         $data['videos'] = Videos::orderBy('id','desc')->limit(6)->get(); 
+        $data['articles'] = Article::orderBy('id','desc')->limit(3)->get(); 
+        
         return view('index',$data);
     }
 
