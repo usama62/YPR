@@ -61,9 +61,14 @@ class SavedController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show()
+    {        if(Auth::User()->role == 1){
+                $data['saved_items'] = Saved::paginate(6);
+                return view('admin.saveditems',$data);
+            }else{
+                $data['saved_items'] = Saved::where('user_id', Auth::User()->id)->paginate(6);
+                return view('admin.saveditems',$data);
+            }
     }
 
     /**
@@ -97,6 +102,14 @@ class SavedController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Saved::find($id);
+        if( $data->delete()){
+            session()->flash('message','Item has been removed successfully');
+            session()->flash('class','danger');
+        }else{
+            session()->flash('message','Remove failed');
+            session()->flash('class','danger');
+        }
+        return back();
     }
 }

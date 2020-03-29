@@ -18,22 +18,34 @@
                             <span>Your Saved Items</span>
                         </div>
                         <div class="jf-dashbboardcontent">
-                            @forelse($saved as $save)
+                            <div style="padding: 30px 20px;">
+                                @if(session()->has('message'))
+                                    <div class="alert alert-{{session('class')}}">{{session("message")}}</div>
+                                @endif
+                            </div>
+                            @forelse($saved_items as $saved_item)
                             <div class="jf-featurejob">
                                 <figure class="jf-companyimg">
+                                    @if($saved_item->posts->image != null)
+                                    <img src="{{ asset($saved_item->posts->image) }}" alt="image description">
+                                    @else
                                     <img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
+                                    @endif
                                 </figure>
                                 <div class="jf-companycontent">
-                                    <div class="jf-companyhead">
-                                        <a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">{{$save->articles->category}}</a>
-                                        <div class="jf-rightarea">
-                                            <a class="jf-tagfeature jf-tagfeatured" href="javascript:void(0);">Saved</a>
-                                            <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-                                        </div>
+                                    <div class="jf-companyname" style="width:75%">
+                                        <h3><a href="javascript:void(0);">{{$saved_item->posts->title}}</a></h3>
+                                        <span>{{$saved_item->posts->categories }}</span>
                                     </div>
-                                    <div class="jf-companyname">
-                                        <h3><a href="javascript:void(0);">{{$save->articles->title}}</a></h3>
-                                        <span>{{str_limit($save->articles->description,40)}}</span>
+                                    <div style="float:right">
+                                        @if($saved_item->posts->post_type == "Health")
+                                            <a class="jf-btn" href="{{ route('health.detail',['id'=>$saved_item->posts->id]) }}">Details</a>
+                                        @elseif($saved_item->posts->post_type == "Disease")
+                                            <a class="jf-btn" href="{{ route('disease.detail',['id'=>$saved_item->posts->id]) }}">Details</a>
+                                        @else
+                                            <a class="jf-btn" href="{{ route('drugs.detail',['id'=>$saved_item->posts->id]) }}">Details</a>
+                                        @endif
+                                            <a class="jf-btn" href="{{ route('saved.delete',['id'=>$saved_item->id]) }}">Remove</a>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +61,7 @@
             </div>
         </div>
         <nav class="jf-pagination">
-            {{ $saved->links() }}
+            {{ $saved_items->links() }}
         </nav>
     </main>
 @endsection

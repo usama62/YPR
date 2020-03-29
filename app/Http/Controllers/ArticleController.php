@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Category;
+use App\Helper;
 use Auth;
 
 class ArticleController extends Controller
@@ -27,6 +28,7 @@ class ArticleController extends Controller
     public function create()
     {
         $data['categories'] = Category::where('parent_id', null)->get();
+        $data['status'] = Helper::getStatus();
         return view('admin.article.create',$data);
     }
 
@@ -43,7 +45,7 @@ class ArticleController extends Controller
             'title'=>'required',
             'description'=>'required',
             'category'=>'required',
-            'status'=>'required',
+            // 'status'=>'required',
             // 'video_link'=>'required',
         ]);
 
@@ -59,13 +61,13 @@ class ArticleController extends Controller
         $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->description=$request->description;
-        $data->status=$request->status;
+        $data->status=(Auth::user()->role != 1 )? "pending" : $request->status;
         $data->category=implode(',' , $request->category);
         // $data->video_link=$request->video_link;
         $data->image=$founder_image_Name;
 
         if($data->save()){
-            session()->flash('message','Article has been created successfully');
+            session()->flash('message','Blog has been created successfully');
             session()->flash('class','success');
         }else{
             session()->flash('message','Failed to create article');
@@ -108,6 +110,7 @@ class ArticleController extends Controller
     {
         $data['posts'] = Article::find($id);
         $data['categories'] =Category::where('parent_id', null)->get();
+        $data['status'] = Helper::getStatus();
         return view('admin.article.update',$data);
     }
 
@@ -124,7 +127,7 @@ class ArticleController extends Controller
             'title'=>'required',
             'description'=>'required',
             'category'=>'required',
-            'status'=>'required',
+            // 'status'=>'required',
             // 'video_link'=>'required',
         ]);
 
@@ -139,7 +142,6 @@ class ArticleController extends Controller
         }
 
         $data = Article::find($id);
-        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->description=$request->description;
         $data->status=$request->status;
@@ -167,7 +169,7 @@ class ArticleController extends Controller
     {
         $data = Article::find($id);
         if( $data->delete()){
-            session()->flash('message','Article has been deleted successfully');
+            session()->flash('message','Blog has been deleted successfully');
             session()->flash('class','danger');
         }else{
             session()->flash('message','Delete failed');

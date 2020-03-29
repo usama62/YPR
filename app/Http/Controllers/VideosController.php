@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Videos;
+use App\Helper;
 use Auth;
 
 class VideosController extends Controller
@@ -31,7 +32,8 @@ class VideosController extends Controller
      */
     public function create()
     {
-        return view('admin.videos.upload_videos');
+        $data['status'] = Helper::getStatus();
+        return view('admin.videos.upload_videos',$data);
     }
 
     /**
@@ -87,6 +89,7 @@ class VideosController extends Controller
     public function edit($id)
     {
         $data['video'] = Videos::find($id);
+        $data['status'] = Helper::getStatus();
         return view('admin.videos.update',$data);
     }
 
@@ -107,7 +110,6 @@ class VideosController extends Controller
         ]);
 
         $data = Videos::find($id);
-        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
         $data->description=$request->description;

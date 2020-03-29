@@ -31,16 +31,18 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="description" class="form-control" value="{{$photo->description}}" required>
 										</div>
+										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
 												<select name="status" required>
 													<option value="">Status</option>
-													<option value="pending" @if($photo->status == 'pending') selected @endif >pending</option>
-													<option value="publish" @if($photo->status == 'publish') selected @endif >publish</option>
-													<option value="draft" @if($photo->status == 'draft') selected @endif >draft</option>
+													@foreach($status as $key=>$value)
+														<option value="{{$key}}" @if($photo->status == $key) selected @endif >{{$value}}</option>
+													@endforeach
 												</select>
 											</span>
 										</div>
+										@endif 
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">
 												<label for="jf-uploadimg">

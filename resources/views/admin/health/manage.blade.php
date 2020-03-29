@@ -31,7 +31,7 @@
                                 <li>
                                     <div class="jf-featurejob">
                                         <figure class="jf-companyimg">
-                                            <img src="{{ $post->image }}" alt="image description">
+                                            <img src="{{ asset($post->image) }}" alt="image description">
                                         </figure>
                                         <div class="jf-companycontent">
                                             <div class="jf-companyname">

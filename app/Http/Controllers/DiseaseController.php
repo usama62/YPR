@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use App\Category;
+use App\Helper;
 use Auth;
 
 class DiseaseController extends Controller
@@ -27,6 +28,7 @@ class DiseaseController extends Controller
     public function create()
     {
         $data['categories'] = Category::where('parent_id', 5)->get();
+        $data['status'] = Helper::getStatus();
         return view('admin.disease.create',$data);
     }
 
@@ -71,7 +73,7 @@ class DiseaseController extends Controller
             session()->flash('class','danger');
         }
         
-        return redirect('drugs');
+        return redirect('disease');
     }
 
     /**
@@ -101,6 +103,7 @@ class DiseaseController extends Controller
     {
         $data['posts'] = Posts::find($id);
         $data['categories'] =Category::where('parent_id', 5)->get();
+        $data['status'] = Helper::getStatus();
         return view('admin.disease.update',$data);
     }
 
@@ -136,7 +139,6 @@ class DiseaseController extends Controller
         }
 
         $data = Posts::find($id);
-        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
         $data->categories=implode(',' , $request->category);

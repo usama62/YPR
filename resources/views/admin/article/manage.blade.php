@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="jf-dashboardbanner" class="jf-dashboardbanner">
-        <h1>Drugs</h1>
+        <h1>Blogs</h1>
         <ol class="jf-breadcrumb">
             <li><a href="javascript:void(0);">Dashboard</a></li>
             <li><a href="javascript:void(0);">Blogs</a></li>
@@ -31,7 +31,11 @@
                                 <li>
                                     <div class="jf-featurejob">
                                         <figure class="jf-companyimg">
+                                        @if($post->image != null)
                                             <img src="{{ $post->image }}" alt="image description">
+                                        @else
+                                            <img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
+                                        @endif
                                         </figure>
                                         <div class="jf-companycontent">
                                             <div class="jf-companyname">

@@ -40,7 +40,9 @@
 								</li>
 							</ul>
 							<figure class="jf-blogdetailimgvtwo">
+								@if($details->image != null)
 								<img src="{{ asset($details->image) }}" alt="image description">
+								@endif
 							</figure>
 							<div class="jf-description">
 								<?= html_entity_decode($details->description)?>

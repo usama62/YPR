@@ -110,6 +110,27 @@
 							</li>
 							@endif
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-plus"></i><span>Drugs</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create/drugs') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/drugs') }}"><span>Manage</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-pulse"></i><span>Health</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create/health') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/health') }}"><span>Manage</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-widget"></i><span>Disease</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create/disease') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/disease') }}"><span>Manage</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-image"></i><span>Photos</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/upload-photos') }}"><span>Upload Photos</span></a></li>
@@ -137,29 +158,8 @@
 									<li><a href="{{ url('/blogs') }}"><span>Manage Blogs</span></a></li>
 								</ul>
 							</li>
-							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-plus"></i><span>Drugs</span></a>
-								<ul class="sub-menu children">
-									<li><a href="{{ url('/create/drugs') }}"><span>Create</span></a></li>
-									<li><a href="{{ url('/drugs') }}"><span>Manage</span></a></li>
-								</ul>
-							</li>
-							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-pulse"></i><span>Health</span></a>
-								<ul class="sub-menu children">
-									<li><a href="{{ url('/create/health') }}"><span>Create</span></a></li>
-									<li><a href="{{ url('/health') }}"><span>Manage</span></a></li>
-								</ul>
-							</li>
-							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-widget"></i><span>Disease</span></a>
-								<ul class="sub-menu children">
-									<li><a href="{{ url('/create/disease') }}"><span>Create</span></a></li>
-									<li><a href="{{ url('/disease') }}"><span>Manage</span></a></li>
-								</ul>
-							</li>
 							<li class="jf-myresumenoti jf-notificationicon">
-								<a href="{{ url('/saveditems') }}">
+								<a href="{{ url('/saved-posts') }}">
 									<i class="ti-save"></i>
 									<span>Saved Items</span>
 								</a>
@@ -195,6 +195,27 @@
 		</footer>
 		
 	</div>
+	<script>   
+        $(".wish_list").click(function(){
+            var item_id = $(this).data('item');
+            var _token = $("input[name=_token]").val();
+            console.log(item_id);
+            $.ajax({ 
+                url: "{{ route('saved') }}",
+                data: {item_id : item_id, _token : _token},
+                type: 'post',
+                success: function(response)
+                {
+                    console.log(response);
+                    if(response > 0){
+                        $('#wish_list_icon_'+response).removeClass('lnr lnr-heart');
+                        $('#wish_list_icon_'+response).addClass('fa fa-heart-o');
+                        $('#wish_list_text_'+response).text('saved');
+                    }
+                }
+            });
+        });    
+   </script>
 	<script src="{{ asset('assets/js/vendor/jquery-3.3.1.js') }}"></script>
 	<script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
 	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&amp;language=en"></script>

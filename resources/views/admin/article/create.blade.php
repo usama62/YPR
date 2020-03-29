@@ -25,16 +25,18 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="title" class="form-control" placeholder="Title" required>
 										</div>
+										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
 												<select name="status" required>
 													<option>Status</option>
-													<option>publish</option>
-													<option>pending</option>
-													<option>draft</option>
+													@foreach($status as $key=>$value)
+														<option value="$key">{{$value}}</option>
+													@endforeach
 												</select>
 											</span>
 										</div>
+										@endif
 										<div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
 										</div>

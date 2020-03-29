@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use App\Category;
+use App\Helper;
 use Auth;
 
 class HealthController extends Controller
@@ -27,6 +28,7 @@ class HealthController extends Controller
     public function create()
     {
         $data['categories'] = Category::where('parent_id', 3)->get();
+        $data['status'] = Helper::getStatus();
         return view('admin.health.create',$data);
     }
 
@@ -101,6 +103,7 @@ class HealthController extends Controller
     {
         $data['posts'] = Posts::find($id);
         $data['categories'] =Category::where('parent_id', 3)->get();
+        $data['status'] = Helper::getStatus();
         return view('admin.health.update',$data);
     }
 
@@ -131,7 +134,6 @@ class HealthController extends Controller
         }
 
         $data = Posts::find($id);
-        $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
         $data->categories=implode(',' , $request->category);

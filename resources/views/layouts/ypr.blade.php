@@ -188,7 +188,27 @@
 		</footer>
 		
 	</div>
-	
+	<script>   
+        $(".wish_list").click(function(){
+            var item_id = $(this).data('item');
+            var _token = $("input[name=_token]").val();
+            console.log(item_id);
+            $.ajax({ 
+                url: "{{ route('saved') }}",
+                data: {item_id : item_id, _token : _token},
+                type: 'post',
+                success: function(response)
+                {
+                    console.log(response);
+                    if(response > 0){
+                        $('#wish_list_icon_'+response).removeClass('lnr lnr-heart');
+                        $('#wish_list_icon_'+response).addClass('fa fa-heart-o filled');
+                        $('#wish_list_text_'+response).text('saved');
+                    }
+                }
+            });
+        });    
+   </script>
 	<script src="{{ asset('assets/js/vendor/jquery-3.3.1.js') }}"></script>
 	<script src="{{ asset('assets/js/vendor/jquery-library.js') }}"></script>
 	<script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>

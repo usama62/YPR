@@ -61,8 +61,8 @@
 												</select>
 											</span>
 										</div>
-										<div class="form-group jf-inputwithicon jf-textarea">
-											<textarea type="text" name="address" placeholder=" Address" style="height:150px"></textarea>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="address" placeholder=" Address" class="form-control">
 										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">

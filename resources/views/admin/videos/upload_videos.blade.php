@@ -28,16 +28,18 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="title" class="form-control" placeholder="Title" required>
 										</div>
+										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
 												<select name="status" required>
 													<option value="">Status</option>
-													<option value="pending">pending</option>
-													<option value="publish">publish</option>
-													<option value="draft">draft</option>
+													@foreach($status as $key=>$value)
+														<option value="$key">{{$value}}</option>
+													@endforeach
 												</select>
 											</span>
 										</div>
+										@endif 
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="video_link" class="form-control" placeholder="Video Link" required>
 										</div>

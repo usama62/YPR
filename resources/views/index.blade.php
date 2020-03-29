@@ -98,7 +98,7 @@
 								<div class="jf-featurejob">
 									<figure class="jf-companyimg">
 										@if($recent->image != null)
-											<img src="{{ asset($recent->image) }}" alt="image description">
+											<img src="{{ asset($recent->image) }}" alt="image description" style="height: 45px;">
 										@else
 											<img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
 										@endif
@@ -320,9 +320,6 @@
 											<i class="lnr lnr-calendar-full"></i>
 											<span>{{ \Carbon\Carbon::parse($article->created_at)->format('M d, Y') }}</span>
 										</li>
-										<!-- <li>
-											<a href="javascript:void(0);"><i class="lnr lnr-tag"></i><span>Lifestyle &amp; DIY</span></a>
-										</li> -->
 									</ul>
 								</article>
 							</div>

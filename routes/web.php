@@ -91,6 +91,8 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/profile', 'ProfileController@index');
     Route::post('/profile/update/{id}','ProfileController@update')->name("profile.update");
 
+    Route::get('/saveditems-delete/{id}', 'frontend\SavedController@destroy')->name("saved.delete");
+
 });
 
 
@@ -111,6 +113,7 @@ Route::get('/video/detail/{id}', 'frontend\VideosController@show')->name("video.
 
 Route::get('/saved', 'frontend\SavedController@index')->name("video.saved");
 Route::post('/saved-items','frontend\SavedController@store')->name("saved");
+Route::get('/saved-posts','frontend\SavedController@show');
 
 
 

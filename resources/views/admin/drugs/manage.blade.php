@@ -31,7 +31,7 @@
                                 <li>
                                     <div class="jf-featurejob">
                                         <figure class="jf-companyimg">
-                                            <img src="{{ $post->image }}" alt="image description">
+                                            <img src="{{ asset($post->image) }}" alt="image description">
                                         </figure>
                                         <div class="jf-companycontent">
                                             <div class="jf-companyname">
@@ -42,7 +42,7 @@
                                     </div>
                                     <ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
                                     
-                                    <li class="jf-btnnewwindow"><a href="{{ route('drugs.detail',['id'=>$post->id]) }}"><i class="ti-new-window"></i></a></li>
+                                        <li class="jf-btnnewwindow"><a href="{{ route('drugs.detail',['id'=>$post->id]) }}"><i class="ti-new-window"></i></a></li>
                                         <li class="jf-btneditjob"><a href="{{ route('drugs.edit',['id'=>$post->id]) }}"><i class="ti-pencil"></i></a></li>
                                         <li class="jf-btndell"><a href="{{ route('drugs.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>
