@@ -37,9 +37,6 @@
                                 @forelse($category as $cat)
                                 <li>
                                     <div class="jf-featurejob">
-                                        <!-- <figure class="jf-companyimg">
-                                            <img src="images/team/img-01.jpg" alt="image description">
-                                        </figure> -->
                                         <div class="jf-companycontent jf-companycontentvtwo">
                                             <div class="jf-companyname">
                                                 <h3>{{$cat->title}}</h3>
@@ -49,9 +46,9 @@
                                     <div class="jf-featurejob" style="width:35%">
                                         <div class="jf-companycontent jf-companycontentvtwo">
                                             <div class="jf-companyname">
-                                                <h5>Parent</h5>
+                                                <h5>Category Type</h5>
                                                 @if($cat->parent_id == null)
-                                                <span>None</span>
+                                                <span>Base</span>
                                                 @else
                                                 <span>{{$cat->parent->title}}</span>
                                                 @endif
@@ -59,6 +56,7 @@
                                         </div>
                                     </div>
                                     <ul class="jf-btnjobalerts jf-btnjobalertsvthree" style="padding: 50px 25px;">
+                                    <li class="jf-btneditjob"><a href="{{ route('category.edit',['id'=>$cat->id]) }}"><i class="ti-pencil"></i></a></li>
                                         <li class="jf-btndell"><a href="{{ route('category.delete',['id'=>$cat->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>
                                 </li>

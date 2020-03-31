@@ -25,6 +25,9 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" class="form-control" name="category[]" id="tokenfield" value="" />
+										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -56,7 +59,7 @@
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
 									</fieldset>
-																
+								</form>								
 							</div>
 						</div>
 					</div>
@@ -88,7 +91,7 @@
 									</div>
 								</div>
 							</div>
-							</form>	
+							
 						</aside>
 					</div>
 				</div>

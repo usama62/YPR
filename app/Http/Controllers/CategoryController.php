@@ -46,6 +46,8 @@ class CategoryController extends Controller
         $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->parent_id=$request->parent;
+        $data->description=$request->description;
+        $data->access_level=$request->access_level;
 
         if($data->save()){
             session()->flash('message','Category has been created successfully');
@@ -83,7 +85,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['category'] =Category::find($id);
+        $data['categories'] =Category::where('parent_id', null)->get();
+        return view('admin.category.update',$data);
     }
 
     /**
@@ -95,7 +99,25 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+        ]);
+
+        $data = Category::find($id);
+        $data->title=$request->title;
+        $data->parent_id=$request->parent;
+        $data->description=$request->description;
+        $data->access_level=$request->access_level;
+
+        if($data->save()){
+            session()->flash('message','CAtegory has been updated successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Update failed');
+            session()->flash('class','danger');
+        }
+
+        return redirect('category');
     }
 
     /**

@@ -25,15 +25,53 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/transitions.css')}}">
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 	<link rel="stylesheet" href="{{ asset('assets/css/dbresponsive.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-tokenfield.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/token-input.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/token-input-facebook.css')}}">
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="{{ asset('assets/js/jquery.tokeninput.js')}}"></script>
+
+	 <script type="text/javascript">
+        $(document).ready(function() {
+            $("#categories").tokenInput([
+                {id: 7, name: "cancer"},
+                {id: 11, name: "cancer"},
+                {id: 13, name: "cancer"},
+                {id: 17, name: "cancer"},
+                {id: 19, name: "cancer"},
+                {id: 23, name: "cancer"},
+                {id: 29, name: "cancer"},
+                {id: 31, name: "cancer"},
+                {id: 37, name: "cancer"},
+                {id: 41, name: "cancer"},
+                {id: 43, name: "cancer"},
+                {id: 47, name: "cancer"}
+            ]);
+
+			$("#tags").tokenInput([
+                {id: 7, name: "Medical"},
+                {id: 11, name: "Health"},
+                {id: 13, name: "Disease"},
+                {id: 17, name: "Medicine"},
+                
+            ]);
+        });
+        </script>
+		
+	<script src="{{ asset('assets/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
   <script>
   	tinymce.init({
 		selector:'textarea',
 		branding: false,
-		menubar:false,
-		// statusbar: false,
+		entity_decoding:'raw',
+		cleanup: true,
+		menubar: false,
+		plugins: "code",
+  		toolbar: " undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify code",
+		// setup: (editor) => {
+		// 	editor.execCommand('mceCodeEditor');
+		// }
 	});
 	  </script>
 </head>
@@ -168,7 +206,7 @@
 					</nav>
 					<div id="weather"></div>
 				</div>
-				<a href="{{ route('logout') }}"
+				<!-- <a href="{{ route('logout') }}"
 					class="jf-btnlogout"
 					onclick="event.preventDefault();
 					document.getElementById('logout-form').submit();">
@@ -178,7 +216,7 @@
 
 				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 					@csrf
-				</form>
+				</form> -->
 			</div>
 		</header>
 		
@@ -195,6 +233,7 @@
 		</footer>
 		
 	</div>
+
 	<script>   
         $(".wish_list").click(function(){
             var item_id = $(this).data('item');
@@ -216,7 +255,7 @@
             });
         });    
    </script>
-	<script src="{{ asset('assets/js/vendor/jquery-3.3.1.js') }}"></script>
+	<!-- <script src="{{ asset('assets/js/vendor/jquery-3.3.1.js') }}"></script> -->
 	<script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
 	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCR-KEWAVCn52mSdeVeTqZjtqbmVJyfSus&amp;language=en"></script>
 	<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>

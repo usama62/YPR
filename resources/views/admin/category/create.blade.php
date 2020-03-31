@@ -24,20 +24,34 @@
 							@endif
 								<form method="POST" action="{{ route('category.store') }}" class="jf-formtheme jf-postajobform" >
 								@csrf
-									<fieldset>	
+									<fieldset>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" placeholder="Title">
-										</div>
-                                        <div class="form-group jf-inputwithicon">
 											<span class="jf-select">
 												<select name="parent">
-													<option value="">Parent category</option>
-                                                    @foreach($category as $cat)
+													<option value="">Category Type</option>
+													@foreach($category as $cat)
 													<option value="{{$cat->id}}">{{$cat->title}}</option>
-                                                    @endforeach
+													@endforeach
+												</select>
+											</span>
+										</div>	
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="title" class="form-control" placeholder="Category Name">
+										</div>
+                                        <div class="form-group jf-inputwithicon">
+											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
+										</div>
+										@if(Auth::user()->role == 1)
+										<div class="form-group jf-inputwithicon">
+											<span class="jf-select">
+												<select name="access_level" required>
+													<option>Access Level</option>
+													<option value="admin">Admin</option>
+													<option value="public">Public</option>
 												</select>
 											</span>
 										</div>
+										@endif
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>

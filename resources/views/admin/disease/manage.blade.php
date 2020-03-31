@@ -41,8 +41,7 @@
                                         </div>
                                     </div>
                                     <ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
-                                    
-                                    <li class="jf-btnnewwindow"><a href="{{ route('disease.detail',['id'=>$post->id]) }}"><i class="ti-new-window"></i></a></li>
+                                        <li class="jf-btnnewwindow"><a href="{{ route('disease.detail',['id'=>$post->id]) }}"><i class="ti-new-window"></i></a></li>
                                         <li class="jf-btneditjob"><a href="{{ route('disease.edit',['id'=>$post->id]) }}"><i class="ti-pencil"></i></a></li>
                                         <li class="jf-btndell"><a href="{{ route('disease.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>

@@ -43,6 +43,11 @@
                                                 <span>Posted On</span>
                                                 <span>{{ \Carbon\Carbon::parse($value->created_at)->format('M d, Y') }}</span>
                                             </span>
+                                            @guest
+                                            <span style="float:right">
+                                                
+                                            </span>
+                                            @else
                                             <span style="float:right">
                                                 @php
                                                     $saved_item= App\Saved::where(['user_id' => Auth::user()->id, 'post_id' =>$value->id])->get();
@@ -54,6 +59,7 @@
                                                 @endif
                                                 <span><a id="wish_list_text_{{$value->id}}" data-item="{{$value->id}}" class="wish_list" style="cursor:pointer">@if(count($saved_item) > 0)Saved @else Click to Save @endif</a></span>
                                             </span>
+                                            @endguest
                                         </div>
                                     </div>
                                 </div>

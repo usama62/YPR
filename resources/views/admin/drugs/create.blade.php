@@ -25,6 +25,15 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="categories" name="blah" class="tokenfield" placeholder="Enter categories"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="title" class="form-control" placeholder="Slug">
+										</div>
+										<div class="form-group jf-inputwithicon">
+										<input type="text" id="tags" name="blah" class="tokenfield" placeholder="Enter categories"/>
+										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -55,12 +64,13 @@
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
-									</fieldset>					
+									</fieldset>	
+								</form>				
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 float-left">
+				<!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 float-left">
 					<div class="jf-dbsectionspace jf-haslayout">
 						<aside id="jf-sidebar" class="jf-sidebar jf-sidebarcol">
 							<div id="jf-narrowsearchcollapse" class="jf-themecollapse jf-narrowsearchcollapse">
@@ -75,8 +85,8 @@
 										<ul>
 											@forelse($categories as $category)
 											<li style="list-style-type:none;">
-												<input type="checkbox" id="jf-salesexecutive" name="category[]" value="{{$category->title}}">
-												<label for="jf-salesexecutive" style="display: inline;">
+												<input type="checkbox" name="category[]" value="{{$category->title}}">
+												<label style="display: inline;">
 													<span>{{$category->title}}</span>
 												</label>
 											</li>
@@ -87,10 +97,10 @@
 									</div>
 								</div>
 							</div>
-							</form>	
+								
 						</aside>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</main>

@@ -6046,9 +6046,9 @@ body.jf-loginuser .jf-main{padding:0;}
   }
 }
 
-.tox-silver-sink{
+/* .tox-silver-sink{
 	display: none;
-} 
+}  */
 
 li{
 	list-style-type: none !important;
@@ -6056,5 +6056,21 @@ li{
 
 .filled:before{
 	color: #fc413c;content: '\f004';
+}
+.tokenfield{
+	width:100%;
+}
+
+li.token-input-token {
+    overflow: hidden;
+    height: auto !important;
+    height: 1%;
+    margin: 3px;
+    padding: 3px 5px;
+    background-color: #dfdfdf;
+    color: #000;
+    font-weight: bold;
+    cursor: default;
+    display: inherit;
 }
 /* tox-tinymce-aux */
