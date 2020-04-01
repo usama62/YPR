@@ -39,13 +39,15 @@ class CategoryController extends Controller
     {
         // return $request;
         $request->validate([
-            'title'=>'required',
+            'name'=>'required',
         ]);
 
         $data = new Category();
         $data->user_id=Auth::User()->id;
-        $data->title=$request->title;
+        $data->name=$request->name;
         $data->parent_id=$request->parent;
+        $data->slug=$request->slug;
+        $data->tags=$request->tags_input;
         $data->description=$request->description;
         $data->access_level=$request->access_level;
 
@@ -100,12 +102,14 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title'=>'required',
+            'name'=>'required',
         ]);
 
         $data = Category::find($id);
-        $data->title=$request->title;
+        $data->name=$request->name;
         $data->parent_id=$request->parent;
+        $data->slug=$request->slug;
+        $data->tags=$request->tags_input;
         $data->description=$request->description;
         $data->access_level=$request->access_level;
 
@@ -137,5 +141,13 @@ class CategoryController extends Controller
             session()->flash('class','danger');
         }
         return back();
+    }
+
+    public function getcategories(){
+        $data['categories_drugs'] =Category::where('parent_id', 1)->get('name');
+        $data['categories_disease'] =Category::where('parent_id', 5)->get('name');
+        $data['categories_health'] =Category::where('parent_id', 3)->get('name');
+
+        return $data;
     }
 }

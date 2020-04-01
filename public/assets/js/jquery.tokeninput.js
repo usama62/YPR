@@ -50,7 +50,7 @@
     // Tokenization settings
     tokenLimit: null,
     tokenDelimiter: ",",
-    preventDuplicates: false,
+    preventDuplicates: true,
     tokenValue: "id",
 
     // Behavioral settings

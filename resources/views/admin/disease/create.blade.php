@@ -26,7 +26,7 @@
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" class="form-control" name="category[]" id="tokenfield" value="" />
+											<input type="text" id="diseasecategories" name="diseasecategories" class="tokenfield" placeholder="Enter categories"/>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">

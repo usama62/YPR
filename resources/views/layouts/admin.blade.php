@@ -25,7 +25,6 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/transitions.css')}}">
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css')}}">
 	<link rel="stylesheet" href="{{ asset('assets/css/dbresponsive.css')}}">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-tokenfield.css')}}">
 	<link rel="stylesheet" href="{{ asset('assets/css/token-input.css')}}">
 	<link rel="stylesheet" href="{{ asset('assets/css/token-input-facebook.css')}}">
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
@@ -34,31 +33,117 @@
 
 	 <script type="text/javascript">
         $(document).ready(function() {
-            $("#categories").tokenInput([
-                {id: 7, name: "cancer"},
-                {id: 11, name: "cancer"},
-                {id: 13, name: "cancer"},
-                {id: 17, name: "cancer"},
-                {id: 19, name: "cancer"},
-                {id: 23, name: "cancer"},
-                {id: 29, name: "cancer"},
-                {id: 31, name: "cancer"},
-                {id: 37, name: "cancer"},
-                {id: 41, name: "cancer"},
-                {id: 43, name: "cancer"},
-                {id: 47, name: "cancer"}
-            ]);
+			var drugs = "";
+			$.ajax({ 
+                url: "{{ route('getcategories') }}",
+                data: {"_token": "{{ csrf_token() }}"},
+                type: 'post',
+                success: function(response)
+                {
+					drugs = response['categories_drugs'];
+				}
+					
+				
+            });
+            $("#diseasecategories").tokenInput([
+				for(i=0;i< drugs.length;i++){
+						{name: drugs[i].name},
+					}
+                // { name: "Python"},
+                // { name: "JavaScript"},
+                // { name: "ActionScript"},
+                // { name: "Scheme"},
+                // { name: "Lisp"},
+                // { name: "C#"},
+                // { name: "Fortran"},
+                // { name: "Visual Basic"},
+                // { name: "C"},
+                // { name: "C++"},
+                // { name: "Java"}
+			]);
+			
 
-			$("#tags").tokenInput([
-                {id: 7, name: "Medical"},
-                {id: 11, name: "Health"},
-                {id: 13, name: "Disease"},
-                {id: 17, name: "Medicine"},
-                
-            ]);
+
+
+			[].forEach.call(document.getElementsByClassName('tags-input'), function (el) {
+		let hiddenInput = document.createElement('input'),
+			mainInput = document.createElement('input'),
+			tags = [];
+
+		hiddenInput.setAttribute('type', 'hidden');
+		hiddenInput.setAttribute('name', el.getAttribute('data-name'));
+
+		mainInput.setAttribute('type', 'text');
+		mainInput.classList.add('main-input');
+		mainInput.addEventListener('input', function () {
+			let enteredTags = mainInput.value.split(' ');
+			if (enteredTags.length > 1) {
+				enteredTags.forEach(function (t) {
+					let filteredTag = filterTag(t);
+					if (filteredTag.length > 0)
+						addTag(filteredTag);
+				});
+				mainInput.value = '';
+			}
+		});
+
+		mainInput.addEventListener('keydown', function (e) {
+			let keyCode = e.which || e.keyCode;
+			if (keyCode === 8 && mainInput.value.length === 0 && tags.length > 0) {
+				removeTag(tags.length - 1);
+			}
+		});
+
+		el.appendChild(mainInput);
+		el.appendChild(hiddenInput);
+
+		// addTag('hello!');
+
+		function addTag (text) {
+			let tag = {
+				text: text,
+				element: document.createElement('span'),
+			};
+
+			tag.element.classList.add('tag');
+			tag.element.textContent = tag.text;
+
+			let closeBtn = document.createElement('span');
+			closeBtn.classList.add('close');
+			closeBtn.addEventListener('click', function () {
+				removeTag(tags.indexOf(tag));
+			});
+			tag.element.appendChild(closeBtn);
+
+			tags.push(tag);
+
+			el.insertBefore(tag.element, mainInput);
+
+			refreshTags();
+		}
+
+		function removeTag (index) {
+			let tag = tags[index];
+			tags.splice(index, 1);
+			el.removeChild(tag.element);
+			refreshTags();
+		}
+
+		function refreshTags () {
+			let tagsList = [];
+			tags.forEach(function (t) {
+				tagsList.push(t.text);
+			});
+			hiddenInput.value = tagsList.join(',');
+		}
+
+		function filterTag (tag) {
+			return tag.replace(/[^\w -]/g, '').trim().replace(/\W+/g, '-');
+		}
+		});
+
         });
-        </script>
-		
+		</script>
 	<script src="{{ asset('assets/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
   <script>
   	tinymce.init({

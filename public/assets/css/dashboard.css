@@ -3002,3 +3002,55 @@ input[type="color"],
 .jf-basicformholder .jf-inputtypefile{border-top:1px solid #eff2f5;}
 .jf-reportissue{margin: 0 0 30px;}
 .jf-interviewprocess .jf-title h2, .jf-interviewprocess .jf-title h3{font-weight:400; }
+
+
+
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tags-input {
+	line-height: 18px;
+	display: inline-block;
+    padding: 10px 20px 10px 44px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+.tags-input .tag {
+    font-size: 85%;
+    padding: 0.5em 0.75em;
+    margin: 0.25em 0.1em;
+    display: inline-block;
+	background-color: #2774a3;
+	color: #fff;
+    transition: all 0.1s linear;
+	cursor: pointer;
+	border-radius: 20px;
+}
+
+.tags-input .tag:hover {
+    background-color: #2774a3;
+    color: white;
+}
+
+.tags-input .tag .close::after {
+    content: '×';
+    font-weight: bold;
+    display: inline-block;
+    transform: scale(1.4);
+    margin-left: 0.75em;
+}
+
+.tags-input .tag .close:hover::after {
+    color: red;
+}
+
+.tags-input .main-input {
+    border: 0;
+    outline: 0;
+    padding: 0.5em 0.1em;
+}

@@ -32,7 +32,7 @@
 											<input type="text" name="title" class="form-control" placeholder="Slug">
 										</div>
 										<div class="form-group jf-inputwithicon">
-										<input type="text" id="tags" name="blah" class="tokenfield" placeholder="Enter categories"/>
+											<input type="text" id="tags" name="blah" class="tokenfield" placeholder="Enter categories"/>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">

@@ -36,7 +36,13 @@
 											</span>
 										</div>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" placeholder="Category Name">
+											<input type="text" name="name" class="form-control" placeholder="Category Name">
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
+										</div>
+										<div class="form-group tags-input" data-name="tags_input">
+											
 										</div>
                                         <div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
