@@ -31,7 +31,11 @@
                                 <li>
                                     <div class="jf-featurejob">
                                         <figure class="jf-companyimg">
-                                            <img src="{{ asset($post->image) }}" alt="image description">
+                                            @if($post->image != null)
+                                                <img src="{{ asset($post->image) }}" alt="image description">
+                                            @else
+                                                <img src="{{ asset('assets/images/image-default.png') }}" alt="image description">
+                                            @endif
                                         </figure>
                                         <div class="jf-companycontent">
                                             <div class="jf-companyname">

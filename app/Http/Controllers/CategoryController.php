@@ -40,13 +40,22 @@ class CategoryController extends Controller
         // return $request;
         $request->validate([
             'name'=>'required',
+            // 'slug'=>'required|unique:posts',
+            'slug' => 'unique:category'
         ]);
+        
+        $slug = '';
+        if(empty($request->slug)){
+            $slug = str_slug($request->title, "-");
+        }else{
+            $slug = str_slug($request->slug, "-");
+        }
 
         $data = new Category();
         $data->user_id=Auth::User()->id;
         $data->name=$request->name;
         $data->parent_id=$request->parent;
-        $data->slug=$request->slug;
+        $data->slug=$slug;
         $data->tags=$request->tags_input;
         $data->description=$request->description;
         $data->access_level=$request->access_level;
@@ -143,10 +152,11 @@ class CategoryController extends Controller
         return back();
     }
 
-    public function getcategories(){
-        $data['categories_drugs'] =Category::where('parent_id', 1)->get('name');
-        $data['categories_disease'] =Category::where('parent_id', 5)->get('name');
-        $data['categories_health'] =Category::where('parent_id', 3)->get('name');
+    public function getcategories(Request $request){
+        // return $request;
+        $data['drugs'] =Category::where('parent_id', 1)->get(['id','name']);
+        $data['disease'] =Category::where('parent_id', 5)->get(['id','name']);
+        $data['health'] =Category::where('parent_id', 3)->get(['id','name']);
 
         return $data;
     }

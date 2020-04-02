@@ -25,6 +25,15 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="title" class="form-control" value="{{$posts->title}}">
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="diseasecategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}"/>
+										</div>
+										<div class="form-group tags-input">
+												
+										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">

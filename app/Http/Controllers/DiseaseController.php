@@ -40,13 +40,18 @@ class DiseaseController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
         $request->validate([
             'title'=>'required',
-            'status'=>'required',
-            'description'=>'required',
-            'category'=>'required',
+            'categories'=>'required',
         ]);
 
+        $slug = '';
+        if(empty($request->slug)){
+            $slug = str_slug($request->title, "-");
+        }else{
+            $slug = str_slug($request->slug, "-");
+        } 
         
         $founder_image_Name = '';
         if ($request->hasFile('uploadimg')) {
@@ -60,7 +65,9 @@ class DiseaseController extends Controller
         $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
-        $data->categories=implode(',' , $request->category);;
+        $data->categories=$request->categories;
+        $data->slug=$slug;
+        $data->tags=$request->tags_input;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Disease";
@@ -123,10 +130,15 @@ class DiseaseController extends Controller
     {
         $request->validate([
             'title'=>'required',
-            'status'=>'required',
-            'description'=>'required',
-            'category'=>'required',
+            'categories'=>'required',
         ]);
+
+        $slug = '';
+        if(empty($request->slug)){
+            $slug = str_slug($request->title, "-");
+        }else{
+            $slug = str_slug($request->slug, "-");
+        } 
 
         $founder_image_Name = '';
         if ($request->hasFile('uploadimg')) {
@@ -141,7 +153,9 @@ class DiseaseController extends Controller
         $data = Posts::find($id);
         $data->title=$request->title;
         $data->status=$request->status;
-        $data->categories=implode(',' , $request->category);
+        $data->categories=$request->categories;
+        $data->slug=$slug;
+        $data->tags=$request->tags_input;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Disease";

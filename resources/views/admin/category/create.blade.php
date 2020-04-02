@@ -30,22 +30,16 @@
 												<select name="parent">
 													<option value="">Category Type</option>
 													@foreach($category as $cat)
-													<option value="{{$cat->id}}">{{$cat->title}}</option>
+													<option value="{{$cat->id}}">{{$cat->name}}</option>
 													@endforeach
 												</select>
 											</span>
 										</div>	
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="name" class="form-control" placeholder="Category Name">
-										</div>
+										</div>	
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
-										</div>
-										<div class="form-group tags-input" data-name="tags_input">
-											
-										</div>
-                                        <div class="form-group jf-inputwithicon">
-											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -58,11 +52,17 @@
 											</span>
 										</div>
 										@endif
+										<div class="form-group tags-input" data-name="tags_input">
+												
+										</div>	
+                                        <div class="form-group jf-inputwithicon">
+											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
+										</div>
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
 									</fieldset>
-								</form>									
+								</form>								
 							</div>
 						</div>
 					</div>

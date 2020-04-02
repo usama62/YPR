@@ -39,7 +39,7 @@
                                     <div class="jf-featurejob">
                                         <div class="jf-companycontent jf-companycontentvtwo">
                                             <div class="jf-companyname">
-                                                <h3>{{$cat->title}}</h3>
+                                                <h3>{{$cat->name}}</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -50,7 +50,7 @@
                                                 @if($cat->parent_id == null)
                                                 <span>Base</span>
                                                 @else
-                                                <span>{{$cat->parent->title}}</span>
+                                                <span>{{$cat->parent->name}}</span>
                                                 @endif
                                             </div>
                                         </div>

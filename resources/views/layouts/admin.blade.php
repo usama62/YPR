@@ -33,37 +33,46 @@
 
 	 <script type="text/javascript">
         $(document).ready(function() {
-			var drugs = "";
+			var disease = [];
+			var health = [];
+            var _token = "{{ csrf_token() }}";
+			var drugs = [];
 			$.ajax({ 
                 url: "{{ route('getcategories') }}",
-                data: {"_token": "{{ csrf_token() }}"},
+                data: {_token : _token},
                 type: 'post',
                 success: function(response)
                 {
-					drugs = response['categories_drugs'];
-				}
-					
-				
-            });
-            $("#diseasecategories").tokenInput([
-				for(i=0;i< drugs.length;i++){
-						{name: drugs[i].name},
+					for(i=0;i<response.disease.length;i++){
+						console.log(response.disease[i])
+						disease.push(response.disease[i])
 					}
-                // { name: "Python"},
-                // { name: "JavaScript"},
-                // { name: "ActionScript"},
-                // { name: "Scheme"},
-                // { name: "Lisp"},
-                // { name: "C#"},
-                // { name: "Fortran"},
-                // { name: "Visual Basic"},
-                // { name: "C"},
-                // { name: "C++"},
-                // { name: "Java"}
-			]);
-			
 
+					for(i=0;i<response.drugs.length;i++){
+						console.log(response.drugs[i])
+						drugs.push(response.drugs[i])
+					}
 
+					for(i=0;i<response.health.length;i++){
+						console.log(response.health[i])
+						health.push(response.health[i])
+					}
+					 console.log(disease)
+
+					$("#diseasecategories").tokenInput(
+						disease
+					);
+					
+					$("#drugscategories").tokenInput(
+						drugs
+					);
+
+					$("#healthcategories").tokenInput(
+						health
+					);
+				}
+				
+			});
 
 			[].forEach.call(document.getElementsByClassName('tags-input'), function (el) {
 		let hiddenInput = document.createElement('input'),
@@ -71,9 +80,11 @@
 			tags = [];
 
 		hiddenInput.setAttribute('type', 'hidden');
-		hiddenInput.setAttribute('name', el.getAttribute('data-name'));
+		hiddenInput.setAttribute('name', 'tags_input');
+		// el.getAttribute('data-name')
 
 		mainInput.setAttribute('type', 'text');
+		mainInput.setAttribute('placeholder', 'Enter Tags');
 		mainInput.classList.add('main-input');
 		mainInput.addEventListener('input', function () {
 			let enteredTags = mainInput.value.split(' ');

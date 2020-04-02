@@ -26,13 +26,13 @@
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="categories" name="blah" class="tokenfield" placeholder="Enter categories"/>
+											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" placeholder="Slug">
+											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
 										</div>
-										<div class="form-group jf-inputwithicon">
-											<input type="text" id="tags" name="blah" class="tokenfield" placeholder="Enter categories"/>
+										<div class="form-group tags-input">
+												
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -40,7 +40,7 @@
 												<select name="status" required>
 													<option>Status</option>
 													@foreach($status as $key=>$value)
-														<option value="$key">{{$value}}</option>
+														<option value="{{$key}}">{{$value}}</option>
 													@endforeach
 												</select>
 											</span>
@@ -70,37 +70,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 float-left">
-					<div class="jf-dbsectionspace jf-haslayout">
-						<aside id="jf-sidebar" class="jf-sidebar jf-sidebarcol">
-							<div id="jf-narrowsearchcollapse" class="jf-themecollapse jf-narrowsearchcollapse">
-								<div class="jf-widget jf-themecollapsetitle open" data-collapse-summary="" aria-expanded="true"><a href="#">
-									<div class="jf-widgettitle">
-										<h3>Select Categories</h3>
-										<span class="fa fa-chevron-right"></span>
-									</div>
-								</a></div>
-								<div class="jf-widget jf-themecollapsecontent" aria-hidden="false" style="display: block;">
-									<div class="jf-checkboxgroup">
-										<ul>
-											@forelse($categories as $category)
-											<li style="list-style-type:none;">
-												<input type="checkbox" name="category[]" value="{{$category->title}}">
-												<label style="display: inline;">
-													<span>{{$category->title}}</span>
-												</label>
-											</li>
-											@empty
-												<p>No categories under Drugs</p>
-											@endforelse
-										</ul>	
-									</div>
-								</div>
-							</div>
-								
-						</aside>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</main>
