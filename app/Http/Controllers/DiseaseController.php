@@ -61,13 +61,26 @@ class DiseaseController extends Controller
             $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
         }
 
+        if($request->signed == "on"){
+            $signed = 1;
+        }else{
+            $signed = 0;
+        }
+
         $data = new Posts();
         $data->user_id=Auth::User()->id;
         $data->title=$request->title;
         $data->status=$request->status;
         $data->categories=$request->categories;
         $data->slug=$slug;
-        $data->tags=$request->tags_input;
+        $data->tags=$request->tags_input;  
+        $data->literal_group=$request->literal_group;
+        $data->disease_code=$request->disease_code;
+        $data->specialized_docs=$request->specialized_docs;
+        $data->hide_publisher=$signed;
+        $data->prohibited_drugs=$request->prohibited_drugs;
+        $data->related_drugs=$request->related_drugs;
+        $data->type_disease=$request->type_disease;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Disease";
@@ -140,6 +153,12 @@ class DiseaseController extends Controller
             $slug = str_slug($request->slug, "-");
         } 
 
+        if($request->signed == "on"){
+            $signed = 1;
+        }else{
+            $signed = 0;
+        }
+
         $founder_image_Name = '';
         if ($request->hasFile('uploadimg')) {
             $founder_image = $request->file('uploadimg');
@@ -156,6 +175,13 @@ class DiseaseController extends Controller
         $data->categories=$request->categories;
         $data->slug=$slug;
         $data->tags=$request->tags_input;
+        $data->literal_group=$request->literal_group;
+        $data->disease_code=$request->disease_code;
+        $data->specialized_docs=$request->specialized_docs;
+        $data->hide_publisher=$signed;
+        $data->prohibited_drugs=$request->prohibited_drugs;
+        $data->related_drugs=$request->related_drugs;
+        $data->type_disease=$request->type_disease;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Disease";

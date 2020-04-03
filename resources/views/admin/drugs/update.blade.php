@@ -34,6 +34,27 @@
 										<div class="form-group tags-input">
 												
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="types_drugs" name="types_drugs" class="tokenfield" />
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<span class="jf-select">
+												<select name="drugs_company" required>
+													<option>Company</option>
+													<option @if($posts->drugs_company == 'Company1') selected @endif >Company1</option>
+													<option @if($posts->drugs_company == 'Company2') selected @endif >Company2</option>
+													<option @if($posts->drugs_company == 'Company3') selected @endif >Company3</option>
+													<option @if($posts->drugs_company == 'Company4') selected @endif >Company4</option>
+													<option @if($posts->drugs_company == 'Company5') selected @endif >Company5</option>
+												</select>
+											</span>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="drugs_price" class="form-control" value="{{$posts->drugs_price}}">
+										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -46,6 +67,17 @@
 											</span>
 										</div>
 										@endif
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="drugs_barcode" class="form-control" value="{{$posts->drugs_barcode}}">
+										</div>
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob" name="signed" @if($posts->hide_publisher == 1) checked @endif>
+												<label for="jf-postjob">
+													<span>Hide Publisher Data</span>
+												</label>
+											</span>
+										</div>
 										<div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control">{{$posts->description}}</textarea>
 										</div>

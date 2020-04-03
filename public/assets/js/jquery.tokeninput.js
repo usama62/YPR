@@ -30,7 +30,7 @@
     searchingText: "Searching...",
     deleteText: "&#215;",
     animateDropdown: true,
-    placeholder: null,
+    placeholder: 'placeholder',
     theme: null,
     zindex: 999,
     resultsLimit: null,
@@ -253,6 +253,7 @@
               outline: "none"
           })
           .attr("id", $(input).data("settings").idPrefix + input.id)
+          .attr("placeholder", "Enter " + input.id)
           .focus(function () {
               if ($(input).data("settings").disabled) {
                   return false;

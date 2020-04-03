@@ -53,6 +53,12 @@ class DrugsController extends Controller
         }else{
             $slug = str_slug($request->slug, "-");
         }
+
+        if($request->signed == "on"){
+            $signed = 1;
+        }else{
+            $signed = 0;
+        }
         
         $founder_image_Name = '';
         if ($request->hasFile('uploadimg')) {
@@ -69,6 +75,12 @@ class DrugsController extends Controller
         $data->categories=$request->categories;
         $data->slug=$slug;
         $data->tags=$request->tags_input;
+        $data->literal_group=$request->literal_group;
+        $data->types_drugs=$request->types_drugs;
+        $data->hide_publisher=$signed;
+        $data->drugs_barcode=$request->drugs_barcode;
+        $data->drugs_company=$request->drugs_company;
+        $data->drugs_price=$request->drugs_price;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Drugs";
@@ -158,6 +170,9 @@ class DrugsController extends Controller
         $data->categories=$request->categories;
         $data->slug=$slug;
         $data->tags=$request->tags_input;
+        $data->literal_group=$request->literal_group;
+        $data->types_drugs=$request->types_drugs;
+        $data->drugs_barcode=$request->drugs_barcode;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Drugs";

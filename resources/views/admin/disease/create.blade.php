@@ -26,13 +26,25 @@
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="diseasecategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
+											<input type="text" id="diseasecategories" name="categories" class="tokenfield"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
 										</div>
 										<div class="form-group tags-input">
 												
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="disease_code" class="form-control" placeholder="Enter Disease Code">
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="specialized_docs" name="specialized_docs" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="type_disease" name="type_disease" class="tokenfield"/>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -46,6 +58,20 @@
 											</span>
 										</div>
 										@endif
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="drugs1" name="prohibited_drugs" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="drugs2" name="related_drugs" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob" name="signed">
+												<label for="jf-postjob">
+													<span>Hide Publisher Data</span>
+												</label>
+											</span>
+										</div>
 										<div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
 										</div>

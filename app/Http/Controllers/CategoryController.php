@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\User;
+use App\Posts;
+use App\TypeDisease;
+use App\TypeDrugs;
 use Auth;
 
 class CategoryController extends Controller
@@ -158,6 +162,20 @@ class CategoryController extends Controller
         $data['disease'] =Category::where('parent_id', 5)->get(['id','name']);
         $data['health'] =Category::where('parent_id', 3)->get(['id','name']);
 
+        $data['doctors'] =User::where('role', 3)->get(['id','name']);
+
+        $drugs =Posts::where('post_type', "Drugs")->get(['id','title']);
+
+        $data['types'] =TypeDisease::All();
+        $data['types_drugs'] =TypeDrugs::All();
+
+        $arr = [];
+        foreach ($drugs as $key => $value) {
+            $item['name']  = $value->title;
+            $arr[] = $item;
+
+        }
+        $data['drugs_list']= $arr;
         return $data;
     }
 }

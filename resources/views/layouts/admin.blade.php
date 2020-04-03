@@ -37,6 +37,12 @@
 			var health = [];
             var _token = "{{ csrf_token() }}";
 			var drugs = [];
+			var doctors = [];
+			var drugs_list = [];
+			var types = [];
+			var types_drugs = [];
+			
+
 			$.ajax({ 
                 url: "{{ route('getcategories') }}",
                 data: {_token : _token},
@@ -57,8 +63,28 @@
 						console.log(response.health[i])
 						health.push(response.health[i])
 					}
-					 console.log(disease)
 
+					for(i=0;i<response.doctors.length;i++){
+						console.log(response.doctors[i])
+						doctors.push(response.doctors[i])
+					}
+
+					for(i=0;i<response.drugs_list.length;i++){
+						console.log(response.drugs_list[i])
+						drugs_list.push(response.drugs_list[i])
+					}
+
+					for(i=0;i<response.types.length;i++){
+						console.log(response.types[i])
+						types.push(response.types[i])
+					}
+
+					for(i=0;i<response.types_drugs.length;i++){
+						console.log(response.types_drugs[i])
+						types_drugs.push(response.types_drugs[i])
+					}
+					 console.log(doctors)
+					 
 					$("#diseasecategories").tokenInput(
 						disease
 					);
@@ -70,8 +96,66 @@
 					$("#healthcategories").tokenInput(
 						health
 					);
+
+					$("#specialized_docs").tokenInput(
+						doctors
+					);
+
+					$("#drugs1").tokenInput(
+						drugs_list
+					);
+
+					$("#drugs2").tokenInput(
+						drugs_list
+					);
+
+					$("#type_disease").tokenInput(
+						types
+					);
+
+					$("#types_drugs").tokenInput(
+						types_drugs
+					);
+
+					$("#literal_group").tokenInput([
+						{name:"A"},
+						{name:"B"},
+						{name:"C"},
+						{name:"D"},
+						{name:"E"},
+						{name:"F"},
+						{name:"G"},
+						{name:"H"},
+						{name:"I"},
+						{name:"J"},
+						{name:"K"},
+						{name:"L"},
+						{name:"M"},
+						{name:"N"},
+						{name:"O"},
+						{name:"P"},
+						{name:"Q"},
+						{name:"R"},
+						{name:"S"},
+						{name:"T"},
+						{name:"U"},
+						{name:"V"},
+						{name:"W"},
+						{name:"X"},
+						{name:"Y"},
+						{name:"Z"},
+						{name:"0"},
+						{name:"1"},
+						{name:"2"},
+						{name:"3"},
+						{name:"4"},
+						{name:"5"},
+						{name:"6"},
+						{name:"7"},
+						{name:"8"},
+						{name:"9"},
+					]);
 				}
-				
 			});
 
 			[].forEach.call(document.getElementsByClassName('tags-input'), function (el) {

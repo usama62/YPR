@@ -34,6 +34,27 @@
 										<div class="form-group tags-input">
 												
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="types_drugs" name="types_drugs" class="tokenfield" placeholder="Enter type of drug"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<span class="jf-select">
+												<select name="drugs_company" required>
+													<option>Company</option>
+													<option>Company1</option>
+													<option>Company2</option>
+													<option>Company3</option>
+													<option>Company4</option>
+													<option>Company5</option>
+												</select>
+											</span>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="drugs_price" class="form-control" placeholder="Enter Price">
+										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -46,6 +67,17 @@
 											</span>
 										</div>
 										@endif
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="drugs_barcode" class="form-control" placeholder="Enter Barcode">
+										</div>
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob" name="signed">
+												<label for="jf-postjob">
+													<span>Hide Publisher Data</span>
+												</label>
+											</span>
+										</div>
 										<div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
 										</div>

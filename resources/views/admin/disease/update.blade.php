@@ -34,6 +34,15 @@
 										<div class="form-group tags-input">
 												
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="disease_code" class="form-control" value="{{$posts->disease_code}}">
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="specialized_docs" name="specialized_docs" class="tokenfield"/>
+										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -46,6 +55,23 @@
 											</span>
 										</div>
 										@endif
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="drugs1" name="prohibited_drugs" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="drugs2" name="related_drugs" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="type_disease" name="type_disease" class="tokenfield"/>
+										</div>
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob" name="signed" @if($posts->hide_publisher == 1) checked @endif>
+												<label for="jf-postjob">
+													<span>Hide Publisher Data</span>
+												</label>
+											</span>
+										</div>
 										<div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control">{{$posts->description}}</textarea>
 										</div>
