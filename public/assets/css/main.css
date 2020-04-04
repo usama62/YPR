@@ -3808,8 +3808,8 @@ body.jf-userlogin .jf-userlogedin{display:block;}
 	width: 100%;
 }
 .jf-angrycreative{
-	width: 125px;
-	height:125px;
+	/* width: 125px;
+	height:125px; */
 	padding: 5px;
 	margin: 0 auto 20px;
 	display: inline-block;

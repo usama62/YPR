@@ -26,7 +26,7 @@
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
+											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter Drugs categories"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
@@ -35,7 +35,7 @@
 												
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="literal_group" name="literal_group" class="tokenfield"/>
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield"  placeholder="Enter Literal Group"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="types_drugs" name="types_drugs" class="tokenfield" placeholder="Enter type of drug"/>

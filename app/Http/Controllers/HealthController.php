@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Posts;
 use App\Category;
 use App\Helper;
+use App\Saved;
 use Auth;
 
 class HealthController extends Controller
@@ -167,6 +168,8 @@ class HealthController extends Controller
     }
 
     public function details($id){
+        $data['saved'] =Saved::where('post_id', $id)->get();
+        $data['recents'] = Posts::where('post_type','Health')->orderBy('id','desc')->limit(4)->get(); 
         $data['posts'] = Posts::find($id);
         return view('health_detail',$data);
     }

@@ -26,7 +26,7 @@
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="diseasecategories" name="categories" class="tokenfield"/>
+											<input type="text" id="diseasecategories" name="categories" class="tokenfield" placeholder="Enter Disease Categories"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
@@ -35,16 +35,16 @@
 												
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="literal_group" name="literal_group" class="tokenfield"/>
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield" placeholder="Enter Literal Group"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="disease_code" class="form-control" placeholder="Enter Disease Code">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="specialized_docs" name="specialized_docs" class="tokenfield"/>
+											<input type="text" id="specialized_docs" name="specialized_docs" class="tokenfield" placeholder="Enter Specialized Doctors"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="type_disease" name="type_disease" class="tokenfield"/>
+											<input type="text" id="type_disease" name="type_disease" class="tokenfield"  placeholder="Enter Disease Type"/>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -59,10 +59,10 @@
 										</div>
 										@endif
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="drugs1" name="prohibited_drugs" class="tokenfield"/>
+											<input type="text" id="drugs1" name="prohibited_drugs" class="tokenfield" placeholder="Enter Prohibited drugs"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="drugs2" name="related_drugs" class="tokenfield"/>
+											<input type="text" id="drugs2" name="related_drugs" class="tokenfield" placeholder="Enter Related drugs"/>
 										</div>
 										<div class="form-group jf-signedcheck">
 											<span class="jf-checkbox">

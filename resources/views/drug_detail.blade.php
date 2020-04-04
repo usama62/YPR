@@ -6,69 +6,209 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <ol class="jf-breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li>Drug Details</li>
+                        <li><a href="index-2.html">Home</a></li>
+                        <li>Drug Detail</li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
     <main id="jf-main" class="jf-main jf-haslayout">
-        <div class="jf-sectionspace jf-haslayout">
-            <div class="container">
-                <div class="row">
-                    <div id="jf-twocolumns" class="jf-twocolumns">
-                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 pull-right">
-                            <div id="jf-content" class="jf-content jf-blogdetail">
-                                <div class="jf-innersectionhead">
-                                    <div class="jf-title">
-                                        <h2>{{ $posts->title}}</h2>
+    <div class="jf-haslayout jf-sectionspace">
+        <div class="container">
+            <div class="row">
+                <div id="jf-twocolumns" class="jf-twocolumns">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-9 float-left">
+                        <div class="jf-jobapplycenter jf-jobapplycentervfour">
+                            <figure class="jf-companyimg">
+                                @if($posts->image != null)
+                                    <img src="{{ asset($posts->image) }}" alt="image description" style="height:72px">
+                                @else
+                                    <img src="{{ asset('assets/images/successstory/grid/img-01.png') }}" alt="image description">
+                                @endif
+                            </figure>
+                            <div class="jf-companycontent">
+                                <div class="jf-jobapplydetails">
+                                    <div class="jf-companyhead">
+                                    </div>
+                                    <div class="jf-companyname">
+                                        <h3><a href="javascript:void(0);">{{$posts->title}}</a></h3>
+                                        
+                                        <ul class="jf-postarticlemetavthree">
+                                            <li>
+                                                <a href="javascript:void(0);">
+                                                    <i class="lnr lnr-calendar-full"></i>
+                                                    <span>Posted on {{ \Carbon\Carbon::parse($posts->created_at)->format('M d, Y') }}</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);">
+                                                    <span>Market Price: {{$posts->drugs_price}} USD</span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <ul class="jf-postarticlemetavtwo">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <i class="lnr lnr-calendar-full"></i>
-                                            <span>{{ \Carbon\Carbon::parse($posts->created_at)->format('M d, Y') }}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <i class="lnr lnr-user"></i>
-                                            <span>{{$posts->abc->name}}</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <figure class="">
-                                    <img src="{{ asset($posts->image) }}" alt="image description">
-                                </figure>
-                                <div class="jf-description">
-                                    <?= html_entity_decode($posts->description)?>
+                                <div class="jf-jobapplybtnlike">
+                                    <div class="jf-likebtnbox">
+                                        @if(count($saved) != 0)
+                                        <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+                                        @endif
+                                    </div>
+                                    <ul class="jf-socialiconssimple">
+                                        <li class="jf-sharejob"><span>Share</span></li>
+                                        <li class="jf-facebook"><a href="http://www.facebook.com/sharer.php?u=http://www.mywebsite.com"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 float-left">
-                            <aside id="jf-sidebar" class="jf-sidebar">
-                                <div class="jf-widget jf-widgettags">
-                                    <div class="jf-widgettitle">
-                                        <h3>Categories</h3>
-                                    </div>
-                                    <div class="jf-tag">
-                                        <?php
-                                        $var = explode(',',$posts->categories);
-                                        
-                                        for($i=0;$i<count($var);$i++){?>
-                                            <a href="javascript:void(0);"> <?=  $var[$i]; ?> </a>
-                                        <?php
-                                        }
-                                        ?>
-                                    </div>
+                        <div class="jf-jobdetails">
+                            <div class="jf-jobdetaildescription">
+                                <div class="jf-title">
+                                    <h2>Drug Description</h2>
                                 </div>
-                            </aside>
+                                <div class="jf-jobdescription">
+                                    <?= html_entity_decode($posts->description)?>
+                                </div>
+                            </div>
+                            <div class="jf-jobbenefits">
+                                <div class="jf-title">
+                                    <h2>Related Tags</h2>
+                                </div>
+                                <div class="jf-tagvtwo jf-withicon">
+                                <?php 
+                                    $arr = (explode(",",$posts->tags ));
+                                    for($i=0;$i<count($arr);$i++){?>
+                                    <a href="javascript:void(0);"><?php echo $arr[$i];?></a>
+                                <?php
+                                    }
+                                ?>
+                                </div>
+                            </div>
                         </div>
+                        <div class="jf-aboutcompany">
+								<div class="jf-sectionhead">
+									<h2>About Company</h2>
+								</div>
+								<div class="jf-aboutcompanybox">
+									<!-- <figure class="jf-aboutimg">
+										<img src="images/topcompanies/img-05.png" alt="image description">
+									</figure> -->
+									<div class="jf-aboutdetails">
+										<div class="jf-aboutdetailsfeature">
+											<!-- <a class="jf-tagfeature" href="javascript:void(0);">feature</a> -->
+											<!-- <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a> -->
+										</div>
+										<h3>{{$posts->drugs_company}}</h3>
+										<!-- <h4><span>Member Since: Jun 27, 2010</span><span><i class="lnr lnr-eye"></i>1,744,588 views</span></h4> -->
+										<ul class="jf-employerjobs">
+											<li><a href="javascript:void(0);">Open Jobs</a></li>
+											<li><a href="javascript:void(0);">Reviews</a></li>
+											<li><a href="javascript:void(0);">Q &amp; A</a></li>
+										</ul>
+										<!-- <a href="javascript:void(0);" class="jf-btn">View Full Profile</a> -->
+									</div>
+									<div class="jf-description">
+										<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adanim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor aderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...<a href="javascript:void(0);">read more</a></p>
+									</div>
+								</div>
+							</div>
+                        
+                        <div class="jf-similarjobs" style="padding-top:50px">
+                            <div class="jf-sectionhead">
+                                <h2>Recent Drugs</h2>
+                            </div>
+                            <div class="jf-featuredjobs">
+                            @foreach($recents as $recent)
+							<div class="jf-featurejobholder">
+								<div class="jf-featurejob">
+									<figure class="jf-companyimg">
+										@if($recent->image != null)
+											<img src="{{ asset($recent->image) }}" alt="image description" style="height: 45px;">
+										@else
+											<img src="{{ asset('assets/images/image-default.png') }}" style="height:45px" alt="image description">
+										@endif
+									</figure>
+									<div class="jf-companycontent">
+										<div class="jf-companyname">
+											<h3><a href="{{ route('disease.detail',['id'=>$recent->id]) }}">{{str_limit($recent->title,20)}}</a></h3>
+											<span>Posted On: {{\Carbon\Carbon::parse($recent->created_at)->format('M d, Y') }}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							@endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 float-left">
+                        <aside id="jf-sidebar" class="jf-sidebar jf-sidebarvtwo">
+                            <div class="jf-widget jf-myrecentrearches">
+                                <div class="jf-widgettitle">
+                                    <h3>Categories</h3>
+                                </div>
+                                <ul class="jf-recentsearches">
+                                <?php 
+                                    $arr = (explode(",",$posts->categories ));
+                                    for($i=0;$i<count($arr);$i++){?>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                        <?php echo $arr[$i];?>
+                                        </a>
+                                    </li>
+                                <?php
+                                    }
+                                ?>
+                                </ul>
+                            </div>
+                            @if($posts->specialized_docs != null)
+                            <div class="jf-widget jf-myrecentrearches">
+                                <div class="jf-widgettitle">
+                                    <h3>Specialized Doctors</h3>
+                                </div>
+                                <ul class="jf-recentsearches">
+                                    <div class="jf-tagvtwo jf-withicon">
+                                    <?php 
+                                        $arr = (explode(",",$posts->specialized_docs ));
+                                        for($i=0;$i<count($arr);$i++){?>
+                                        <a href="javascript:void(0);"><?php echo $arr[$i];?></a>
+                                    <?php
+                                        }
+                                    ?>
+                                    </div>
+                                </ul>
+                            </div>
+                            @endif
+                            @if($posts->hide_publisher == 0)
+                            <div class="jf-widget jf-employerweek">
+                                <div class="jf-widgettitle">
+                                    <h3>Author</h3>
+                                </div>
+                                <div class="jf-angrycreative">
+                                    <img src="{{ asset($posts->abc->profile_image)}}" alt="img description">
+                                </div>
+                                <div class="jf-employerdetails">
+                                    <h3>{{$posts->abc->name}}</h3>
+                                    <h4><span>Member Since: {{ \Carbon\Carbon::parse($posts->abc->created_at)->format('M d, Y') }}</span>
+                                    </h4>
+                                </div>
+                            </div>
+                            @endif
+                            <div class="jf-adds jf-jobsearchadd">
+                                <a href="javascript:void(0);" title="">
+                                    <figure>	
+                                        <img src="{{ asset('assets/images/adds-02.jpg') }}" alt="img description">
+                                    </figure>
+                                </a>
+                                <span>Advertisement  540px X 80px</span>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </main>
 @endsection

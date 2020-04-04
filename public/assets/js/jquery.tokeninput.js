@@ -30,7 +30,7 @@
     searchingText: "Searching...",
     deleteText: "&#215;",
     animateDropdown: true,
-    placeholder: 'placeholder',
+    placeholder: null,
     theme: null,
     zindex: 999,
     resultsLimit: null,
@@ -250,10 +250,11 @@
       // Create a new text input an attach keyup events
       var input_box = $("<input type=\"text\" autocomplete=\"off\" autocapitalize=\"off\"/>")
           .css({
-              outline: "none"
+              outline: "none",
+              width: "500px !important"
           })
           .attr("id", $(input).data("settings").idPrefix + input.id)
-          .attr("placeholder", "Enter " + input.id)
+          .attr("placeholder", input.placeholder)
           .focus(function () {
               if ($(input).data("settings").disabled) {
                   return false;
@@ -577,8 +578,9 @@
           // Enter new content into resizer and resize input accordingly
           input_resizer.html(_escapeHTML(input_val) || _escapeHTML(settings.placeholder));
           // Get maximum width, minimum the size of input and maximum the widget's width
-          input_box.width(Math.min(token_list.width(),
-                                   Math.max(width_left, input_resizer.width() + 30)));
+        //   input_box.width(Math.min(token_list.width(),
+        //                            Math.max(width_left, input_resizer.width() + 30)));
+        input_box.width(500)
       }
 
       function add_freetagging_tokens() {

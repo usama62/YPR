@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Posts;
 use App\Category;
 use App\Helper;
+use App\Saved;
 use Auth;
 
 
@@ -128,7 +129,9 @@ class DrugsController extends Controller
     }
 
     public function details($id){
+        $data['saved'] =Saved::where('post_id', $id)->get();
         $data['posts'] = Posts::find($id);
+        $data['recents'] = Posts::where('post_type','Drugs')->orderBy('id','desc')->limit(4)->get(); 
         return view('drug_detail',$data);
     }
 
