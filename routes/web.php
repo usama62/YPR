@@ -21,6 +21,22 @@ Route::get('/admin123', function () {
 
 Route::group(['middleware' => ['verified']], function () {
 
+    // Doctors
+    Route::get('/doctor', 'DoctorsController@show');
+    Route::get('/create-doctor', 'DoctorsController@create');
+    Route::get('/update-doctor/{id}', 'DoctorsController@edit')->name("doctor.edit");
+    Route::post('/doctor/create','DoctorsController@store')->name("doctor.store");
+    Route::get('/doctor/delete/{id}', 'DoctorsController@destroy')->name("doctor.delete");
+    Route::post('/doctor/update/{id}', 'DoctorsController@update')->name("doctor.update");
+
+    // company
+    Route::get('/company', 'CompanyController@show');
+    Route::get('/create-company', 'CompanyController@create');
+    Route::get('/update-company/{id}', 'CompanyController@edit')->name("company.edit");
+    Route::post('/company/create','CompanyController@store')->name("company.store");
+    Route::get('/company/delete/{id}', 'CompanyController@destroy')->name("company.delete");
+    Route::post('/company/update/{id}', 'CompanyController@update')->name("company.update");
+
     // Photos
     Route::get('/photos', 'PhotosController@index');
     Route::get('/upload-photos', 'PhotosController@create');

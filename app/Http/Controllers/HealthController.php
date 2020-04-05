@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use App\Category;
+use App\Article;
 use App\Helper;
 use App\Saved;
 use Auth;
@@ -27,7 +28,7 @@ class HealthController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {          
         $data['categories'] = Category::where('parent_id', 3)->get();
         $data['status'] = Helper::getStatus();
         return view('admin.health.create',$data);
@@ -53,6 +54,12 @@ class HealthController extends Controller
             $slug = str_slug($request->slug, "-");
         } 
 
+        if($request->signed == "on"){
+            $signed = 1;
+        }else{
+            $signed = 0;
+        }
+
         $founder_image_Name = '';
         if ($request->hasFile('uploadimg')) {
             $founder_image = $request->file('uploadimg');
@@ -66,8 +73,14 @@ class HealthController extends Controller
         $data->title=$request->title;
         $data->status=$request->status;
         $data->categories=$request->categories;
+        $data->hide_publisher=$signed;
         $data->slug=$slug;
         $data->tags=$request->tags_input;
+        $data->literal_group=$request->literal_group;
+        $data->related_diseases=$request->related_diseases;
+        $data->type_health=$request->type_health;
+        $data->competent_company=$request->competent_company;
+        $data->health_code=$request->health_code;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Health";
@@ -135,6 +148,12 @@ class HealthController extends Controller
             $slug = str_slug($request->slug, "-");
         } 
 
+        if($request->signed == "on"){
+            $signed = 1;
+        }else{
+            $signed = 0;
+        }
+
         $founder_image_Name = '';
         if ($request->hasFile('uploadimg')) {
             $founder_image = $request->file('uploadimg');
@@ -149,8 +168,14 @@ class HealthController extends Controller
         $data->title=$request->title;
         $data->status=$request->status;
         $data->categories=$request->categories;
+        $data->hide_publisher=$signed;
         $data->slug=$slug;
         $data->tags=$request->tags_input;
+        $data->literal_group=$request->literal_group;
+        $data->related_diseases=$request->related_diseases;
+        $data->health_code=$request->health_code;
+        $data->type_health=$request->type_health;
+        $data->competent_company=$request->competent_company;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Health";

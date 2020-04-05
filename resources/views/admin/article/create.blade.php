@@ -23,7 +23,20 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" placeholder="Title" required>
+											<input type="text" name="name" class="form-control" placeholder="Title" required>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<span class="jf-select">
+												<select name="type_blog">
+													<option value="">Type of Blog</option>
+													@foreach($categories as $cat)
+													<option value="{{$cat->id}}">{{$cat->name}}</option>
+													@endforeach
+												</select>
+											</span>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="blogcategories" name="categories" class="tokenfield" placeholder="Enter Categories"/>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -31,12 +44,20 @@
 												<select name="status" required>
 													<option>Status</option>
 													@foreach($status as $key=>$value)
-														<option value="$key">{{$value}}</option>
+														<option value="{{$key}}">{{$value}}</option>
 													@endforeach
 												</select>
 											</span>
 										</div>
 										@endif
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob" name="signed">
+												<label for="jf-postjob">
+													<span>Hide Publisher Data</span>
+												</label>
+											</span>
+										</div>
 										<div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
 										</div>
@@ -55,40 +76,10 @@
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
-									</fieldset>								
+									</fieldset>
+								</form>								
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 float-left">
-					<div class="jf-dbsectionspace jf-haslayout">
-						<aside id="jf-sidebar" class="jf-sidebar jf-sidebarcol">
-							<div id="jf-narrowsearchcollapse" class="jf-themecollapse jf-narrowsearchcollapse">
-								<div class="jf-widget jf-themecollapsetitle open" data-collapse-summary="" aria-expanded="true"><a href="#">
-									<div class="jf-widgettitle">
-										<h3>Select Categories</h3>
-										<span class="fa fa-chevron-right"></span>
-									</div>
-								</a></div>
-								<div class="jf-widget jf-themecollapsecontent" aria-hidden="false" style="display: block;">
-									<div class="jf-checkboxgroup">
-										<ul>
-											@forelse($categories as $category)
-											<li style="list-style-type:none;">
-												<input type="checkbox" id="jf-salesexecutive" name="category[]" value="{{$category->title}}">
-												<label for="jf-salesexecutive" style="display: inline;">
-													<span>{{$category->title}}</span>
-												</label>
-											</li>
-											@empty
-												<p>No categories under Drugs</p>
-											@endforelse
-										</ul>	
-									</div>
-								</div>
-							</div>
-							</form>	
-						</aside>
 					</div>
 				</div>
 			</div>

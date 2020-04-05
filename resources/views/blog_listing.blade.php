@@ -34,7 +34,7 @@
                                         @endif
                                         </figure>
                                         <div class="jf-employerdetails">
-                                            <a href="{{ route('health.detail',['id'=>$value->id]) }}"><h3>{{$value->title}}</h3></a>
+                                            <a href="{{ route('article.detail',['id'=>$value->id]) }}"><h3>{{$value->name}}</h3></a>
                                             <h4><span>Author: {{ $value->abc->name }}</span></h4>
                                             <h4>
                                                 <span>Posted On</span>

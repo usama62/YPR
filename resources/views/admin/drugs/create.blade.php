@@ -26,7 +26,7 @@
 											<input type="text" name="title" class="form-control" placeholder="Title">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter Drugs categories"/>
+											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter Drugs categories" />
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
@@ -35,25 +35,16 @@
 												
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="literal_group" name="literal_group" class="tokenfield"  placeholder="Enter Literal Group"/>
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield" placeholder="Enter Literal Group" >
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="types_drugs" name="types_drugs" class="tokenfield" placeholder="Enter type of drug"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<span class="jf-select">
-												<select name="drugs_company" required>
-													<option>Company</option>
-													<option>Company1</option>
-													<option>Company2</option>
-													<option>Company3</option>
-													<option>Company4</option>
-													<option>Company5</option>
-												</select>
-											</span>
+											<input type="text" id="drugs_company" name="drugs_company" class="tokenfield" placeholder="Enter drug comapny"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="drugs_price" class="form-control" placeholder="Enter Price">
+											<input type="number" name="drugs_price" class="form-control" placeholder="Enter Price">
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">

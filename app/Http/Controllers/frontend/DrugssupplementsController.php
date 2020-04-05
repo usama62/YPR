@@ -16,7 +16,7 @@ class DrugssupplementsController extends Controller
      */
     public function index()
     {
-        $data['values'] = Posts::where(['post_type'=>"Drugs",'status'=>"publish"])->paginate(10);
+        $data['values'] = Posts::where(['post_type'=>"Drugs",'status'=>"publish"])->paginate(6);
         return view('drugs_listing',$data);
     }
 

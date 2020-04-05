@@ -16,7 +16,7 @@ class DiseasefrontController extends Controller
      */
     public function index()
     {
-        $data['values'] = Posts::where(['post_type'=>"Disease",'status'=>"publish"])->paginate(10);
+        $data['values'] = Posts::where(['post_type'=>"Disease",'status'=>"publish"])->paginate(6);
         return view('disease_listing',$data);
     }
 

@@ -25,6 +25,19 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="title" class="form-control" value="{{$posts->title}}" required>
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<span class="jf-select">
+												<select name="parent">
+													<option value="">Type of Blog</option>
+													@foreach($categories as $cat)
+													<option value="{{$cat->id}}">{{$cat->name}}</option>
+													@endforeach
+												</select>
+											</span>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="blogcategories" name="categories" class="tokenfield" placeholder="Enter Categories"/>
+										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -37,6 +50,14 @@
 											</span>
 										</div>
 										@endif
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob" name="signed" @if($posts->hide_publisher == 1) checked @endif>
+												<label for="jf-postjob">
+													<span>Hide Publisher Data</span>
+												</label>
+											</span>
+										</div>
 										<div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description">{{$posts->description}}</textarea>
 										</div>

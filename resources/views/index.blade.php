@@ -310,7 +310,7 @@
 										</figure>
 										<div class="jf-articlecontent">
 											<div class="jf-articletitle">
-												<h3><a href="javascript:void(0);">{{ str_limit($article->title,20) }}</a></h3>
+												<h3><a href="javascript:void(0);">{{ str_limit($article->name,20) }}</a></h3>
 											</div>
 											<span class="jf-authorname"><a href="javascript:void(0);">{{$article->abc->name}}</a></span>
 										</div>

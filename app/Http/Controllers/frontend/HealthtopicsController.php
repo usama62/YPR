@@ -16,7 +16,7 @@ class HealthtopicsController extends Controller
      */
     public function index()
     {
-        $data['values'] = Posts::where(['post_type'=>"Health",'status'=>"publish"])->paginate(10);
+        $data['values'] = Posts::where(['post_type'=>"Health",'status'=>"publish"])->paginate(6);
         return view('health_listing',$data);
     }
 

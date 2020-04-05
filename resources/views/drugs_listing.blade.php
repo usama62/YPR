@@ -39,7 +39,7 @@
                                     <div id="jf-narrowsearchcollapse" class="jf-themecollapse jf-narrowsearchcollapse">
                                         <div class="jf-widget jf-themecollapsetitle">
                                             <div class="jf-widgettitle">
-                                                <h3>Job Title</h3>
+                                                <h3>Drug Types</h3>
                                                 <span class="fa fa-chevron-right"></span>
                                             </div>
                                         </div>
@@ -48,37 +48,19 @@
                                                 <span class="jf-checkbox">
                                                     <input type="checkbox" id="jf-salesexecutive" name="bycondition" value="Sales Executive">
                                                     <label for="jf-salesexecutive">
-                                                        <span>Sales Executive</span>
+                                                        <span>cardio</span>
                                                     </label>
                                                 </span>
                                                 <span class="jf-checkbox">
                                                     <input type="checkbox" id="jf-graphicdesigner" name="bycondition" value="Graphic Designer" checked="">
                                                     <label for="jf-graphicdesigner">
-                                                        <span>Graphic Designer</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-marketingexecutive" name="bycondition" value="Marketing Executive">
-                                                    <label for="jf-marketingexecutive">
-                                                        <span>Marketing Executive</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-accountant" name="bycondition" value="Accountant">
-                                                    <label for="jf-accountant">
-                                                        <span>Accountant</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-salesmarketingexecutive" name="bycondition" value="Sales / Marketing Executive">
-                                                    <label for="jf-salesmarketingexecutive">
-                                                        <span>Sales / Marketing Executive</span>
+                                                        <span>abdominal</span>
                                                     </label>
                                                 </span>
                                                 <a href="javascript:void(0);" class="jf-viewmore">View More</a>
                                             </div>
                                         </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
+                                        <!-- <div class="jf-widget jf-themecollapsetitle">
                                             <div class="jf-widgettitle">
                                                 <h3>City</h3>
                                                 <span class="fa fa-chevron-right"></span>
@@ -415,7 +397,7 @@
                                                 </span>
                                                 <a href="javascript:void(0);" class="jf-viewmore">View More</a>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="jf-widget jf-Jobssearch">
                                             <div class="jf-Jobssearchbtn">
                                                 <a href="javascript:void(0);" class="jf-btn jf-active">Search Jobs Now</a>
@@ -494,12 +476,8 @@
                                             <h3>My Recent Searches</h3>
                                         </div>
                                         <ul class="jf-recentsearches">
-                                            <li><a href="javascript:void(0);">php developer</a></li>
-                                            <li><a href="javascript:void(0);">sale associate</a></li>
-                                            <li><a href="javascript:void(0);">Graphic Designer</a></li>
-                                            <li><a href="javascript:void(0);">Graphic Designer</a></li>
-                                            <li><a href="javascript:void(0);">Graphic Designer</a></li>
-                                            <li><a href="javascript:void(0);" class="jf-clearsearches"><span class="lnr lnr-cross"></span>Clear Searches</a></li>
+                                            <!-- <li><a href="javascript:void(0);">php developer</a></li>
+                                            <li><a href="javascript:void(0);" class="jf-clearsearches"><span class="lnr lnr-cross"></span>Clear Searches</a></li> -->
                                         </ul>
                                     </div>
                                     <!-- <div class="jf-widget jf-employerweek">
@@ -536,4 +514,7 @@
             </div>
         </div>
     </main>
+    <nav class="jf-pagination">
+            {{ $values->links() }}
+        </nav>
 @endsection

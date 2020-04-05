@@ -37,10 +37,14 @@
 			var health = [];
             var _token = "{{ csrf_token() }}";
 			var drugs = [];
+			var all = [];
 			var doctors = [];
 			var drugs_list = [];
 			var types = [];
 			var types_drugs = [];
+			var blogs = [];
+			var type_health = [];
+			var drugs_company = [];
 			
 
 			$.ajax({ 
@@ -50,40 +54,44 @@
                 success: function(response)
                 {
 					for(i=0;i<response.disease.length;i++){
-						console.log(response.disease[i])
 						disease.push(response.disease[i])
 					}
 
 					for(i=0;i<response.drugs.length;i++){
-						console.log(response.drugs[i])
 						drugs.push(response.drugs[i])
 					}
 
 					for(i=0;i<response.health.length;i++){
-						console.log(response.health[i])
 						health.push(response.health[i])
 					}
 
 					for(i=0;i<response.doctors.length;i++){
-						console.log(response.doctors[i])
 						doctors.push(response.doctors[i])
 					}
 
 					for(i=0;i<response.drugs_list.length;i++){
-						console.log(response.drugs_list[i])
 						drugs_list.push(response.drugs_list[i])
 					}
 
 					for(i=0;i<response.types.length;i++){
-						console.log(response.types[i])
 						types.push(response.types[i])
 					}
 
 					for(i=0;i<response.types_drugs.length;i++){
-						console.log(response.types_drugs[i])
 						types_drugs.push(response.types_drugs[i])
 					}
-					 console.log(doctors)
+
+					for(i=0;i<response.all.length;i++){
+						all.push(response.all[i])
+					}
+
+					for(i=0;i<response.type_health.length;i++){
+						type_health.push(response.type_health[i])
+					}
+					for(i=0;i<response.drugs_company.length;i++){
+						drugs_company.push(response.drugs_company[i])
+					}
+					 console.log(health)
 					 
 					$("#diseasecategories").tokenInput(
 						disease
@@ -117,6 +125,20 @@
 						types_drugs
 					);
 
+					$("#blogcategories").tokenInput(
+						all
+					);
+					$("#healthrelatedblogs").tokenInput(
+						blogs
+					);
+					$("#type_health").tokenInput(
+						type_health
+					);
+					$("#drugs_company").tokenInput(
+						drugs_company
+					);
+					
+					
 					$("#literal_group").tokenInput([
 						{name:"A"},
 						{name:"B"},
@@ -322,8 +344,22 @@
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="ti-user"></i><span>Users</span></a>
 								<ul class="sub-menu children">
-									<li><a href="{{ url('/create-users') }}"><span>Create User</span></a></li>
-									<li><a href="{{ url('/manage-users ') }}"><span>Manage Users</span></a></li>
+									<li><a href="{{ url('/create-users') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/manage-users ') }}"><span>Manage</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-user"></i><span>Doctors</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create-doctor') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/doctor ') }}"><span>Manage</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="ti-user"></i><span>Company</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create-company') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('/company ') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							@endif

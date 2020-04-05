@@ -175,7 +175,10 @@ class DrugsController extends Controller
         $data->tags=$request->tags_input;
         $data->literal_group=$request->literal_group;
         $data->types_drugs=$request->types_drugs;
+        $data->hide_publisher=$signed;
         $data->drugs_barcode=$request->drugs_barcode;
+        $data->drugs_company=$request->drugs_company;
+        $data->drugs_price=$request->drugs_price;
         $data->description=$request->description;
         $data->image=$founder_image_Name;
         $data->post_type="Drugs";

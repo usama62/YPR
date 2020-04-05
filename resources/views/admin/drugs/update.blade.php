@@ -35,10 +35,10 @@
 												
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="literal_group" name="literal_group" class="tokenfield"/>
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield" placeholder="Enter Literal Group"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="types_drugs" name="types_drugs" class="tokenfield" />
+											<input type="text" id="types_drugs" name="types_drugs" class="tokenfield" placeholder="Enter Types of drugs"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -53,7 +53,7 @@
 											</span>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="drugs_price" class="form-control" value="{{$posts->drugs_price}}">
+											<input type="number" name="drugs_price" class="form-control" value="{{$posts->drugs_price}}">
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">

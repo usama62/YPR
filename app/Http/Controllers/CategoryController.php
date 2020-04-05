@@ -7,7 +7,10 @@ use App\Category;
 use App\User;
 use App\Posts;
 use App\TypeDisease;
+use App\TypeHealth;
+use App\Article;
 use App\TypeDrugs;
+use App\Company;
 use Auth;
 
 class CategoryController extends Controller
@@ -159,14 +162,18 @@ class CategoryController extends Controller
     public function getcategories(Request $request){
         // return $request;
         $data['drugs'] =Category::where('parent_id', 1)->get(['id','name']);
+        $data['all'] =Category::whereNotNull('parent_id')->get(['id','name']);
         $data['disease'] =Category::where('parent_id', 5)->get(['id','name']);
         $data['health'] =Category::where('parent_id', 3)->get(['id','name']);
+        $data['blogs'] = Article::Where('category', 'like', "%Health%")->get();
+        $data['drugs_company'] = Company::Where('company_type', 'drugs')->get();
 
         $data['doctors'] =User::where('role', 3)->get(['id','name']);
 
         $drugs =Posts::where('post_type', "Drugs")->get(['id','title']);
 
         $data['types'] =TypeDisease::All();
+        $data['type_health'] =TypeHealth::All();
         $data['types_drugs'] =TypeDrugs::All();
 
         $arr = [];
