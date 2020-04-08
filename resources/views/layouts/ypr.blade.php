@@ -103,6 +103,7 @@
 									<nav class="jf-usernav">
 										<ul>
 											<li><a href="{{ url('/profile') }}"><i class="ti-briefcase"></i><span>My Profile</span></a></li>
+											<li><a href="{{ url('/update-password') }}"><i class="ti-key"></i><span>Change Password</span></a></li>	
 											<li>
 												<a href="{{ route('logout') }}"
 													onclick="event.preventDefault();

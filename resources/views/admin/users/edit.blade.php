@@ -26,10 +26,16 @@
 											<input type="text" name="name" class="form-control" value="{{$user->name}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
+											<input type="text" name="last_name" class="form-control" value="{{$user->last_name}}">
+										</div>
+										<div class="form-group jf-inputwithicon">
 											<input type="email" name="email" class="form-control" value="{{$user->email}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="password" name="password" class="form-control" value="{{$user->password}}" required>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="date" name="dob" class="form-control" value="{{$user->dob}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="phone" class="form-control" value="{{$user->phone}}" required>
@@ -64,6 +70,24 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="address" class="form-control" value="{{$user->address}}" required>
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<span class="jf-select">
+												<select name="interest">
+													<option>Specify Interest</option>
+													<option value="drug" @if($user->interest == 'drug') selected @endif>Drug</option>
+													<option value="disease" @if($user->interest == 'disease') selected @endif>Disease</option>
+													<option value="health" @if($user->interest == 'health') selected @endif>Health</option>
+												</select>
+											</span>
+										</div>
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob" name="alert"  @if($user->alert == 1) checked @endif>
+												<label for="jf-postjob">
+													<span>Receive alerts?</span>
+												</label>
+											</span>
+										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">
 												<label for="jf-uploadimg">
@@ -77,8 +101,16 @@
 												</label>
 											</div>
 										</fieldset>
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob1" name="agree_terms" @if($user->agree_terms == 1) checked @endif>
+												<label for="jf-postjob1">
+													<span>confirm the commitment to the site's policy?</span>
+												</label>
+											</span>
+										</div>
 										<div class="form-group jf-inputwithicon jf-textarea">
-											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
+											<button type="submit" id="user-btn" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
 									</fieldset>
 								</form>									

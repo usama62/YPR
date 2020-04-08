@@ -91,7 +91,7 @@
 					for(i=0;i<response.drugs_company.length;i++){
 						drugs_company.push(response.drugs_company[i])
 					}
-					 console.log(health)
+					//  console.log(health)
 					 
 					$("#diseasecategories").tokenInput(
 						disease
@@ -315,6 +315,7 @@
 					<nav class="jf-usernav">
 						<ul>
 							<li><a href="{{ url('/profile') }}"><i class="ti-briefcase"></i><span>My Profile</span></a></li>						
+							<li><a href="{{ url('/update-password') }}"><i class="ti-key"></i><span>Change Password</span></a></li>						
 							<li>
 								<a href="{{ route('logout') }}"
 									onclick="event.preventDefault();
@@ -342,21 +343,21 @@
 						<ul>
 							@if(Auth::User()->role == 1)
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-user"></i><span>Users</span></a>
+								<a href="#"><i class="fa fa-user"></i><span>Users</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create-users') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/manage-users ') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-user"></i><span>Doctors</span></a>
+								<a href="#"><i class="fa fa-medkit"></i><span>Doctors</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create-doctor') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/doctor ') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-user"></i><span>Company</span></a>
+								<a href="#"><i class="fa fa-building"></i><span>Company</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create-company') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/company ') }}"><span>Manage</span></a></li>
@@ -364,49 +365,49 @@
 							</li>
 							@endif
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-plus"></i><span>Drugs</span></a>
+								<a href="#"><i class="fa fa-plus-square"></i><span>Drugs</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create/drugs') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/drugs') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-pulse"></i><span>Health</span></a>
+								<a href="#"><i class="fa fa-heartbeat"></i><span>Health</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create/health') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/health') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-widget"></i><span>Disease</span></a>
+								<a href="#"><i class="	fa fa-stethoscope"></i><span>Disease</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create/disease') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/disease') }}"><span>Manage</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-image"></i><span>Photos</span></a>
+								<a href="#"><i class="fa fa-image"></i><span>Photos</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/upload-photos') }}"><span>Upload Photos</span></a></li>
 									<li><a href="{{ url('/photos') }}"><span>Manage Photos</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-video-camera"></i><span>Videos</span></a>
+								<a href="#"><i class="fa fa-youtube-play"></i><span>Videos</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/upload-videos') }}"><span>Upload Videos</span></a></li>
 									<li><a href="{{ url('/videos') }}"><span>Manage Videos</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-layout-grid2"></i><span>Categories</span></a>
+								<a href="#"><i class="fa fa-list-alt"></i><span>Categories</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create-category') }}"><span>Create Categories</span></a></li>
 									<li><a href="{{ url('/category') }}"><span>Manage Categories</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="ti-notepad"></i><span>Blogs</span></a>
+								<a href="#"><i class="fab fa-blogger"></i><span>Blogs</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create-blog') }}"><span>Create Blog</span></a></li>
 									<li><a href="{{ url('/blogs') }}"><span>Manage Blogs</span></a></li>
@@ -414,7 +415,7 @@
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">
 								<a href="{{ url('/saved-posts') }}">
-									<i class="ti-save"></i>
+									<i class="fa fa-save"></i>
 									<span>Saved Items</span>
 								</a>
 							</li>						
@@ -501,6 +502,22 @@
 			}
 		});
 	</script>
+	<script>
+	$(document).ready(function(){
+		document.getElementById("user-btn").disabled = true;
+		$('#user-btn').addClass('grey');
+        $('#jf-postjob1').click(function(){
+            if($(this).prop("checked") == true){
+                document.getElementById("user-btn").disabled = false;
+				$('#user-btn').removeClass('grey');
+            }
+            else if($(this).prop("checked") == false){
+                document.getElementById("user-btn").disabled = true;
+				$('#user-btn').addClass('grey');
+            }
+        });
+    });
+	 </script>
 </body>
 
 </html>

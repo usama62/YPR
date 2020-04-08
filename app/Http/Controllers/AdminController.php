@@ -56,14 +56,19 @@ class AdminController extends Controller
             'name'=>'required',
             'email'=>'required',
             'password'=>'required',
-            'phone'=>'required',
-            'age'=>'required',
-            'gender'=>'required',
-            'disease'=>'required',
-            'pills'=>'required',
-            'role'=>'required',
-            'address'=>'required',
         ]);
+
+        if($request->alert == "on"){
+            $alert = 1;
+        }else{
+            $alert = 0;
+        }
+
+        if($request->agree_terms == "on"){
+            $agree_terms = 1;
+        }else{
+            $agree_terms = 0;
+        }
 
         $founder_image_Name = '';
         if ($request->hasFile('profile_image')) {
@@ -75,14 +80,19 @@ class AdminController extends Controller
 
         $data = new User();
         $data->name=$request->name;
+        $data->last_name=$request->last_name;
         $data->email=$request->email;
         $data->password=Hash::make($request->password);
         $data->phone=$request->phone;
+        $data->dob=$request->dob;
         $data->age=$request->age;
         $data->gender=$request->gender;
         $data->disease=$request->disease;
         $data->pills=$request->pills;
         $data->address=$request->address;
+        $data->interest=$request->interest;
+        $data->alert=$alert;
+        $data->agree_terms=$agree_terms;
         $data->profile_image=$founder_image_Name;
 
         if($data->save()){
@@ -132,14 +142,19 @@ class AdminController extends Controller
             'name'=>'required',
             'email'=>'required',
             'password'=>'required',
-            'phone'=>'required',
-            'age'=>'required',
-            'gender'=>'required',
-            'disease'=>'required',
-            'pills'=>'required',
-            'role'=>'required',
-
         ]);
+
+        if($request->alert == "on"){
+            $alert = 1;
+        }else{
+            $alert = 0;
+        }
+                
+        if($request->agree_terms == "on"){
+            $agree_terms = 1;
+        }else{
+            $agree_terms = 0;
+        }
 
         $founder_image_Name = '';
         if ($request->hasFile('profile_image')) {
@@ -153,14 +168,19 @@ class AdminController extends Controller
 
         $data = User::find($id);
         $data->name=$request->name;
+        $data->last_name=$request->last_name;
         $data->email=$request->email;
         $data->password=Hash::make($request->password);
         $data->phone=$request->phone;
+        $data->dob=$request->dob;
         $data->age=$request->age;
         $data->gender=$request->gender;
         $data->disease=$request->disease;
         $data->pills=$request->pills;
         $data->address=$request->address;
+        $data->interest=$request->interest;
+        $data->alert=$alert;
+        $data->agree_terms=$agree_terms;
         $data->profile_image=$founder_image_Name;
 
         if($data->save()){

@@ -23,7 +23,10 @@
 									@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="name" class="form-control" placeholder="Name">
+											<input type="text" name="name" class="form-control" placeholder="First Name">
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="last_name" class="form-control" placeholder="Last Name">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="email" name="email" class="form-control" placeholder="Email">
@@ -32,10 +35,7 @@
 											<input type="password" name="password" class="form-control" placeholder="Password">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="phone" class="form-control" placeholder="Phone">
-										</div>
-										<div class="form-group jf-inputwithicon">
-											<input type="text" name="age" class="form-control" placeholder="Age">
+											<input type="date" name="dob" class="form-control" placeholder="Date of Birth">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -47,10 +47,17 @@
 											</span>
 										</div>
 										<div class="form-group jf-inputwithicon">
+											<input type="text" name="phone" class="form-control" placeholder="Phone">
+										</div>
+										
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="age" class="form-control" placeholder="Age">
+										</div>
+										<div class="form-group jf-inputwithicon">
 											<input type="text" name="disease" class="form-control" placeholder="Disease">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="pills" class="form-control" placeholder="Pills">
+											<input type="text" name="pills" class="form-control" placeholder="Medication">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -64,6 +71,24 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="address" placeholder=" Address" class="form-control">
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<span class="jf-select">
+												<select name="interest">
+													<option>Specify Interest</option>
+													<option value="drug">Drug</option>
+													<option value="disease">Disease</option>
+													<option value="health">Health</option>
+												</select>
+											</span>
+										</div>
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob" name="alert">
+												<label for="jf-postjob">
+													<span>Receive alerts?</span>
+												</label>
+											</span>
+										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">
 												<label for="jf-uploadimg">
@@ -76,8 +101,16 @@
 												</label>
 											</div>
 										</fieldset>
+										<div class="form-group jf-signedcheck">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-postjob1" name="agree_terms">
+												<label for="jf-postjob1">
+													<span>confirm the commitment to the site's policy?</span>
+												</label>
+											</span>
+										</div>
 										<div class="form-group jf-inputwithicon jf-textarea">
-											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
+											<button type="submit" id="user-btn" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
 									</fieldset>
 								</form>									

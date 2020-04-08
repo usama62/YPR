@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Hash;
 
 class ProfileController extends Controller
 {
@@ -93,7 +94,7 @@ class ProfileController extends Controller
         $user->gender=$request->gender;
         $user->disease=$request->disease;
         $user->pills=$request->pills;
-        $user->address=$request->address;;
+        $user->address=$request->address;
         
         if($user->save()){
             session()->flash('message','your details have been updated successfully');
@@ -115,5 +116,42 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function update_pass(){
+        return view('update_pass');
+    }
+
+    public function change_pass(Request $request, $id){
+        // return $request->old_password;
+        $request->validate([
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $data = User::find($id);
+
+        // if (Hash::check($request->old_password, $data->password)) {
+        //     // The passwords match...
+        // }
+
+        if(Hash::check($request->old_password, $data->password)){
+            $data->password=Hash::make($request->password);
+
+            if($data->save()){
+                session()->flash('message','Password has been updated successfully');
+                session()->flash('class','success');
+            }else{
+                session()->flash('message','Password Update failed');
+                session()->flash('class','danger');
+            }
+        }else{
+            session()->flash('message','Please enter correct old password');
+            session()->flash('class','danger');
+        }
+
+        
+        
+        return back();
+        
     }
 }
