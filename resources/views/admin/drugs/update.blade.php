@@ -27,6 +27,7 @@
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
+											<input type="hidden" id="drugs_hidden" value="{{$posts->categories}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}"/>
@@ -105,17 +106,32 @@
 				</div>
 			</div>
 		</div>
-		@php
-			function category_separator($current_category,$all_category){
-				$var = explode(",",$current_category);
-				for($i=0;$i<count($var);$i++){
-					if($var[$i]==$all_category){
-						echo 'checked';
-					}
-				}
-			}
-		@endphp
 	</main>
+	<script>
+		$(document).ready(function() {
+			// var drugs = [];
+			// var kuchbhi = "{{$posts->categories}}";
+			// var nameArr = kuchbhi.split(',');
+			// // console.log(nameArr[0]);
+			// for(i=0;i<nameArr.length;i++){
+			// 	// drugs.push(nameArr[i]);
+			// 	name:
+			// }
+
+			// console.log(drugs);
+			// $("#drugscategories").tokenInput(
+			// 	drugs,
+			// 	{
+			// 		prePopulate: [
+			// 			{name: "Slurms MacKenzie"},
+			// 			{name: "Bob Hoskins"},
+			// 			{name: "Kriss Akabusi"}
+			// 		]
+			// 	}
+			// );
+		});
+		
+	</script>
 	<script>
     function readURL(input) {
         if (input.files && input.files[0]) {

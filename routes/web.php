@@ -136,8 +136,8 @@ Route::post('/saved-items','frontend\SavedController@store')->name("saved");
 Route::get('/saved-posts','frontend\SavedController@show');
 
 
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 

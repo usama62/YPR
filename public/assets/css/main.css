@@ -6077,3 +6077,24 @@ li.token-input-token {
 .grey{
 	background: grey !important;
 }
+
+.abcd{
+	padding: 15px;
+}
+
+.abcd-btn{
+    font-size: 1rem !important;
+    font-weight: bold !important;
+	width: 44px;
+	height: 40px;
+	border-radius: 5px;
+	color: #2b6183 !important;
+    background-color: #e3eef2 !important;
+    border-color: #e3eef2 !important;
+}
+
+.abcd-btn:hover{
+	color: #fff !important;
+	background-color: #025aa5 !important;
+	border-color: #01549b !important;
+}

@@ -37,6 +37,7 @@
 			var health = [];
             var _token = "{{ csrf_token() }}";
 			var drugs = [];
+			var drugs_hidden = [];
 			var all = [];
 			var doctors = [];
 			var drugs_list = [];
@@ -91,14 +92,20 @@
 					for(i=0;i<response.drugs_company.length;i++){
 						drugs_company.push(response.drugs_company[i])
 					}
-					//  console.log(health)
 					 
 					$("#diseasecategories").tokenInput(
 						disease
 					);
-					
+					console.log($('#drugs_hidden').val());
 					$("#drugscategories").tokenInput(
-						drugs
+						drugs,
+						{
+							prePopulate: [
+								{name: "Slurms MacKenzie"},
+								{name: "Bob Hoskins"},
+								{name: "Kriss Akabusi"}
+							]
+						}
 					);
 
 					$("#healthcategories").tokenInput(
@@ -179,6 +186,28 @@
 					]);
 				}
 			});
+		// 	$(document).ready(function() {
+		// 	// var drugs = [];
+		// 	// var kuchbhi = "{{$posts->categories}}";
+		// 	// var nameArr = kuchbhi.split(',');
+		// 	// // console.log(nameArr[0]);
+		// 	// for(i=0;i<nameArr.length;i++){
+		// 	// 	// drugs.push(nameArr[i]);
+		// 	// 	name:
+		// 	// }
+
+		// 	// console.log(drugs);
+		// 	$("#drugscategories").tokenInput(
+		// 		drugs,
+		// 		{
+		// 			prePopulate: [
+		// 				{name: "Slurms MacKenzie"},
+		// 				{name: "Bob Hoskins"},
+		// 				{name: "Kriss Akabusi"}
+		// 			]
+		// 		}
+		// 	);
+		// });
 
 			[].forEach.call(document.getElementsByClassName('tags-input'), function (el) {
 		let hiddenInput = document.createElement('input'),

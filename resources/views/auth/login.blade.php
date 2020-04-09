@@ -79,7 +79,17 @@
 										</div>
 									</fieldset>
 								</form>
-								
+								<div class="jf-socialiconssignin">
+									<span class="jf-signinnext">or</span>
+									<div class="jf-signinicons">
+										<a href="{{ URL::to('/login/facebook') }}" class="jf-signinfacebook">
+											<i class="fa fa-facebook-f"></i><span>Sign In with facebook</span>
+										</a>
+										<a href="javascript:void(0);" class="jf-signingoogle">
+											<span><i class="fa fa-google"></i>Sign In with google</span>
+										</a>
+									</div>
+								</div>
 								<div class="jf-loginfooter">
 									<div class="jf-description">
 										<p>By signing in to your account, you agree to these <a href="">Terms &amp; Conditions </a>and consent to our <a href="">Cookie Policy &amp; Privacy Policy.</a></p>

@@ -22,7 +22,7 @@
 
     // Prepopulation settings
     prePopulate: null,
-    processPrePopulate: false,
+    processPrePopulate: true,
 
     // Display settings
     hintText: "Type in a search term",

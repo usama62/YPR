@@ -17,6 +17,38 @@
             <div class="jf-haslayout">
                 <div class="container">
                     <div class="row">
+                        <div class="text-center">
+                            <div class="btn-toolbar abcd">
+                                <div class="btn-group btn-group-sm">
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">A</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">B</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">C</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">D</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">E</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">F</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">G</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">H</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">I</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">J</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">K</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">L</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">M</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">N</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">O</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">P</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">Q</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">R</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">S</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">T</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">U</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">V</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">W</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">X</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">Y</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">Z</button>
+                                </div>
+                            </div>
+                        </div>
                         <div id="jf-threecolumns" class="jf-threecolumns">
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 float-left">
                                 <aside id="jf-sidebar" class="jf-sidebar jf-sidebarcol">
