@@ -108,7 +108,7 @@
 										<a href="{{ URL::to('/login/facebook') }}" class="jf-signinfacebook">
 											<i class="fa fa-facebook-f"></i><span>Sign In with facebook</span>
 										</a>
-										<a href="javascript:void(0);" class="jf-signingoogle">
+										<a href="{{ URL::to('/login/google') }}" class="jf-signingoogle">
 											<span><i class="fa fa-google"></i>Sign In with google</span>
 										</a>
 									</div>

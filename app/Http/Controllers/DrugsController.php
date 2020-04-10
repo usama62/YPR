@@ -114,6 +114,18 @@ class DrugsController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['posts'] = Posts::where('post_type',"Drugs")->where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.drugs.manage',$data);
+        }else{
+            $data['posts'] = Posts::where(['user_id'=> Auth::User()->id,'post_type'=>'Drugs'])->where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.drugs.manage',$data);
+        }
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

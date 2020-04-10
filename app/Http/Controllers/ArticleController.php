@@ -101,6 +101,18 @@ class ArticleController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['posts'] = Article::where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.article.manage',$data);
+        }else{
+            $data['posts'] = Article::where('user_id', Auth::User()->id)->where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.article.manage',$data);
+        }
+    }
+
     public function details($id)
     {
         $data['saved'] =Saved::where('post_id', $id)->get();

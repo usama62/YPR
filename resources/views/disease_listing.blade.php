@@ -17,6 +17,38 @@
             <div class="jf-haslayout">
                 <div class="container">
                     <div class="row">
+                        <div class="text-center">
+                            <div class="btn-toolbar abcd">
+                                <div class="btn-group btn-group-sm">
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">A</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">B</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">C</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">D</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">E</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">F</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">G</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">H</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">I</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">J</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">K</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">L</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">M</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">N</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">O</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">P</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">Q</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">R</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">S</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">T</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">U</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">V</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">W</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">X</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">Y</button>
+                                    <button class="btn btn-sq-lg btn-primary abcd-btn">Z</button>
+                                </div>
+                            </div>
+                        </div>
                         <div id="jf-threecolumns" class="jf-threecolumns">
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 float-left">
                                 <aside id="jf-sidebar" class="jf-sidebar jf-sidebarcol">
@@ -60,344 +92,6 @@
                                                 <a href="javascript:void(0);" class="jf-viewmore">View More</a>
                                             </div>
                                         </div>
-                                        <!-- <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>City</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-armagh" name="bycondition" value="Armagh">
-                                                    <label for="jf-armagh">
-                                                        <span>Armagh</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-bangor" name="bycondition" value="bangor" checked="">
-                                                    <label for="jf-bangor">
-                                                        <span>Bangor</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-bath" name="bycondition" value="Bath">
-                                                    <label for="jf-bath">
-                                                        <span>Bath</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-belfast" name="bycondition" value="belfast">
-                                                    <label for="jf-belfast">
-                                                        <span>Belfast</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-cambridge" name="bycondition" value="cambridge">
-                                                    <label for="jf-cambridge">
-                                                        <span>Cambridge</span>
-                                                    </label>
-                                                </span>
-                                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>Experience</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-fresh" name="bycondition" value="fresh">
-                                                    <label for="jf-fresh">
-                                                        <span>Fresh</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-lessthan" name="bycondition" value="lessthan" checked="">
-                                                    <label for="jf-lessthan">
-                                                        <span>Less than 1 Year</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-1year" name="bycondition" value="1year">
-                                                    <label for="jf-1year">
-                                                        <span>1 Year</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-2years" name="bycondition" value="2years">
-                                                    <label for="jf-2years">
-                                                        <span>2 Years</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-3years" name="bycondition" value="3years">
-                                                    <label for="jf-3years">
-                                                        <span>3 Years</span>
-                                                    </label>
-                                                </span>
-                                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>Job Type</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-fulltimepermanent" name="bycondition" value="fulltimepermanent">
-                                                    <label for="jf-fulltimepermanent">
-                                                        <span>Full Time/Permanent</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-internship" name="bycondition" value="internship" checked="">
-                                                    <label for="jf-internship">
-                                                        <span>Internship</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-contract" name="bycondition" value="contract">
-                                                    <label for="jf-contract">
-                                                        <span>Contract</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-parttime" name="bycondition" value="parttime">
-                                                    <label for="jf-parttime">
-                                                        <span>Part Time</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-freelance" name="bycondition" value="freelance">
-                                                    <label for="jf-freelance">
-                                                        <span>Freelance</span>
-                                                    </label>
-                                                </span>
-                                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>Skills</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-communicationskills" name="bycondition" value="communicationskills">
-                                                    <label for="jf-communicationskills">
-                                                        <span>Communication Skills</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-englishfluency" name="bycondition" value="englishfluency" checked="">
-                                                    <label for="jf-englishfluency">
-                                                        <span>English Fluency</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-php" name="bycondition" value="php">
-                                                    <label for="jf-php">
-                                                        <span>PHP</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-adobephotoshop" name="bycondition" value="adobephotoshop">
-                                                    <label for="jf-adobephotoshop">
-                                                        <span>Adobe Photoshop</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-Javascript" name="bycondition" value="Javascript">
-                                                    <label for="jf-Javascript">
-                                                        <span>JavaScript</span>
-                                                    </label>
-                                                </span>
-                                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>Career Level</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-entrylevel" name="bycondition" value="entrylevel" checked="">
-                                                    <label for="jf-entrylevel">
-                                                        <span>Entry Level</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-internstudent" name="bycondition" value="internstudent">
-                                                    <label for="jf-internstudent">
-                                                        <span>Intern/Student</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-departmenthead" name="bycondition" value="Department Head">
-                                                    <label for="jf-departmenthead">
-                                                        <span>Department Head</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-experiencedprofessional" name="bycondition" value="Experienced Professional">
-                                                    <label for="jf-experiencedprofessional">
-                                                        <span>Experienced Professional</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-countryhead" name="bycondition" value="GM / CEO / Country Head">
-                                                    <label for="jf-countryhead">
-                                                        <span>GM / CEO / Country Head</span>
-                                                    </label>
-                                                </span>
-                                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>Industry</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-informationtechnology" name="bycondition" value="informationtechnology" checked="">
-                                                    <label for="jf-informationtechnology">
-                                                        <span>Information Technology</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-services" name="bycondition" value="services">
-                                                    <label for="jf-services">
-                                                        <span>Services</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-educationtraining" name="bycondition" value="educationtraining">
-                                                    <label for="jf-educationtraining">
-                                                        <span>Education/Training</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-manufacturing" name="bycondition" value="Manufacturing">
-                                                    <label for="jf-manufacturing">
-                                                        <span>Manufacturing</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-callcenter" name="bycondition" value="callcenter">
-                                                    <label for="jf-callcenter">
-                                                        <span>Call Center</span>
-                                                    </label>
-                                                </span>
-                                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>Gender</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>Functional Area</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-businessdevelopment" name="bycondition" value="businessdevelopment" checked="">
-                                                    <label for="jf-businessdevelopment">
-                                                        <span>Business Development</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-accountsfinance" name="bycondition" value="accountsfinance">
-                                                    <label for="jf-accountsfinance">
-                                                        <span>Accounts, Finance</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-marketing" name="bycondition" value="marketing">
-                                                    <label for="jf-marketing">
-                                                        <span>Marketing</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-creativedesign" name="bycondition" value="creativedesign">
-                                                    <label for="jf-creativedesign">
-                                                        <span>Creative Design</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-telemarketing" name="bycondition" value="telemarketing">
-                                                    <label for="jf-telemarketing">
-                                                        <span>Telemarketing</span>
-                                                    </label>
-                                                </span>
-                                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsetitle">
-                                            <div class="jf-widgettitle">
-                                                <h3>Featured Company</h3>
-                                                <span class="fa fa-chevron-right"></span>
-                                            </div>
-                                        </div>
-                                        <div class="jf-widget jf-themecollapsecontent">
-                                            <div class="jf-checkboxgroup">
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-angrycreativebears" name="bycondition" value="angrycreativebears" checked="">
-                                                    <label for="jf-angrycreativebears">
-                                                        <span>Angry Creative Bears</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-aviatogroup" name="bycondition" value="aviatogroup">
-                                                    <label for="jf-aviatogroup">
-                                                        <span>Aviato Group of Company</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-emberspa" name="bycondition" value="emberspa">
-                                                    <label for="jf-emberspa">
-                                                        <span>Ember Spa &amp; Saloon</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-fastruncargo" name="bycondition" value="fastruncargo">
-                                                    <label for="jf-fastruncargo">
-                                                        <span>Fast Run Cargo &amp; Movers</span>
-                                                    </label>
-                                                </span>
-                                                <span class="jf-checkbox">
-                                                    <input type="checkbox" id="jf-vavofoceans" name="bycondition" value="vavofoceans">
-                                                    <label for="jf-vavofoceans">
-                                                        <span>VAV of Oceans</span>
-                                                    </label>
-                                                </span>
-                                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
-                                            </div>
-                                        </div> -->
                                         <div class="jf-widget jf-Jobssearch">
                                             <div class="jf-Jobssearchbtn">
                                                 <a href="javascript:void(0);" class="jf-btn jf-active">Search Jobs Now</a>

@@ -27,12 +27,31 @@
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="healthcategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
+											<input type="hidden" id="drugs_hidden" value="{{$posts->categories}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}"/>
 										</div>
 										<div class="form-group tags-input">
 												
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="literal_group" name="literal_group" class="tokenfield" placeholder="Enter Literal Group" >
+											<input type="hidden" id="literal_hidden" value="{{$posts->literal_group}}">
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="diseasecategories" name="related_diseases" class="tokenfield" placeholder="Enter related diseases" >
+											<input type="hidden" id="diseasecategories_hidden" value="{{$posts->related_diseases}}">
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="health_code" class="form-control" placeholder="Enter health code"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="competent_company" class="form-control" placeholder="Enter competent company"/>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="type_health" name="type_health" class="tokenfield" placeholder="Enter type of health">
+											<input type="hidden" id="type_health_hidden" value="{{$posts->type_health}}">
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -65,51 +84,10 @@
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
-									</fieldset>						
+									</fieldset>		
+								</form>					
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 float-left">
-					<div class="jf-dbsectionspace jf-haslayout">
-						<aside id="jf-sidebar" class="jf-sidebar jf-sidebarcol">
-							<div id="jf-narrowsearchcollapse" class="jf-themecollapse jf-narrowsearchcollapse">
-								<div class="jf-widget jf-themecollapsetitle open" data-collapse-summary="" aria-expanded="true"><a href="#">
-									<div class="jf-widgettitle">
-										<h3>Select Categories</h3>
-										<span class="fa fa-chevron-right"></span>
-									</div>
-								</a></div>
-								<div class="jf-widget jf-themecollapsecontent" aria-hidden="false" style="display: block;">
-									<div class="jf-checkboxgroup">
-                                        <ul>
-                                            @forelse($categories as $category)
-                                                <li style="list-style-type:none;">
-                                                    <input type="checkbox" id="jf-salesexecutive" name="category[]" value="{{$category->title}}" <?php category_separator($posts->categories,$category->title); ?>>
-                                                    <label for="jf-salesexecutive" style="display: inline;">
-                                                        <span>{{$category->title}}</span>
-                                                    </label>
-                                                </li>
-                                            @empty
-                                                <p>No categories under Health</p>
-                                            @endforelse
-                                        </ul>                                       	
-										<!-- <a href="javascript:void(0);" class="jf-viewmore">View More</a> -->
-									</div>
-								</div>
-							</div>
-                            </form>	
-                            @php
-                                function category_separator($current_category,$all_category){
-                                    $var = explode(",",$current_category);
-                                    for($i=0;$i<count($var);$i++){
-                                        if($var[$i]==$all_category){
-                                            echo 'checked';
-                                        }
-                                    }
-                                }
-                            @endphp
-						</aside>
 					</div>
 				</div>
 			</div>

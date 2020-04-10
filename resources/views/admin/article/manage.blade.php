@@ -18,6 +18,15 @@
                                 <h2>Blogs</h2>
                                 <span>Your Latest Blogs</span>
                             </div>
+                            <form class="jf-formtheme jf-questsearch" action="{{ route('article.search') }}">
+                                <fieldset>
+                                    <div class="form-group jf-inputwithicon">
+                                        <i class="lnr lnr-magnifier"></i>
+                                        <input type="text" name="s" class="form-control" placeholder="Search Here">
+                                    </div>
+                                    <button type="submit" class="jf-btn jf-active btn-primary"><i class="lnr lnr-magnifier"></i></button>
+                                </fieldset>
+                            </form>
                         </div>
                         <div class="jf-dashbboardcontent jf-myjobsapplications">
                             <ul>
@@ -39,7 +48,7 @@
                                         </figure>
                                         <div class="jf-companycontent">
                                             <div class="jf-companyname">
-                                                <h3><a href="javascript:void(0);">{{ $post->title }}</a></h3>
+                                                <h3><a href="javascript:void(0);">{{ $post->name }}</a></h3>
                                                 <span>{{ $post->category }}</span>
                                             </div>
                                         </div>
@@ -86,7 +95,11 @@
             </div>
         </div>
         <nav class="jf-pagination">
-            {{ $posts->links() }}
+            @if(isset($_GET['s']))
+                {{ $posts->appends(['s' => $_GET['s'] ])->links() }}
+            @else
+                {{ $posts->links() }}
+            @endif
         </nav>
     </main>
 @endsection

@@ -18,6 +18,15 @@
                                 <h2>Disease</h2>
                                 <span>Disease Listing</span>
                             </div>
+                            <form class="jf-formtheme jf-questsearch" action="{{ route('disease.search') }}">
+                                <fieldset>
+                                    <div class="form-group jf-inputwithicon">
+                                        <i class="lnr lnr-magnifier"></i>
+                                        <input type="text" name="s" class="form-control" placeholder="Search Here">
+                                    </div>
+                                    <button type="submit" class="jf-btn jf-active btn-primary"><i class="lnr lnr-magnifier"></i></button>
+                                </fieldset>
+                            </form>
                         </div>
                         <div class="jf-dashbboardcontent jf-myjobsapplications">
                             <ul>
@@ -85,7 +94,11 @@
             </div>
         </div>
         <nav class="jf-pagination">
-            {{ $posts->links() }}
+        @if(isset($_GET['s']))
+        {{ $posts->appends(['s' => $_GET['s'] ])->links() }}
+        @else
+        {{ $posts->links() }}
+        @endif
         </nav>
     </main>
 @endsection

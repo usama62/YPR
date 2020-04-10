@@ -16,7 +16,13 @@ class SavedController extends Controller
      */
     public function index()
     {
-        // return $request;
+        if(Auth::User()->role == 1){
+            $data['saved_items'] = Saved::paginate(6);
+            return view('saved',$data);
+        }else{
+            $data['saved_items'] = Saved::where('user_id', Auth::User()->id)->paginate(6);
+            return view('saved',$data);
+        }
     }
 
     /**
@@ -25,8 +31,8 @@ class SavedController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+        
     }
 
     /**

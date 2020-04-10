@@ -37,9 +37,11 @@
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="literal_group" name="literal_group" class="tokenfield" placeholder="Enter Literal Group"/>
+											<input type="hidden" id="literal_hidden" value="{{$posts->literal_group}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="types_drugs" name="types_drugs" class="tokenfield" placeholder="Enter Types of drugs"/>
+											<input type="hidden" id="types_drug_hidden" value="{{$posts->types_drugs}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -107,31 +109,6 @@
 			</div>
 		</div>
 	</main>
-	<script>
-		$(document).ready(function() {
-			// var drugs = [];
-			// var kuchbhi = "{{$posts->categories}}";
-			// var nameArr = kuchbhi.split(',');
-			// // console.log(nameArr[0]);
-			// for(i=0;i<nameArr.length;i++){
-			// 	// drugs.push(nameArr[i]);
-			// 	name:
-			// }
-
-			// console.log(drugs);
-			// $("#drugscategories").tokenInput(
-			// 	drugs,
-			// 	{
-			// 		prePopulate: [
-			// 			{name: "Slurms MacKenzie"},
-			// 			{name: "Bob Hoskins"},
-			// 			{name: "Kriss Akabusi"}
-			// 		]
-			// 	}
-			// );
-		});
-		
-	</script>
 	<script>
     function readURL(input) {
         if (input.files && input.files[0]) {

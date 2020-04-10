@@ -28,6 +28,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/doctor/create','DoctorsController@store')->name("doctor.store");
     Route::get('/doctor/delete/{id}', 'DoctorsController@destroy')->name("doctor.delete");
     Route::post('/doctor/update/{id}', 'DoctorsController@update')->name("doctor.update");
+    Route::get('/doctor/search', 'DoctorsController@search')->name("doctor.search");
 
     // company
     Route::get('/company', 'CompanyController@show');
@@ -35,7 +36,8 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/update-company/{id}', 'CompanyController@edit')->name("company.edit");
     Route::post('/company/create','CompanyController@store')->name("company.store");
     Route::get('/company/delete/{id}', 'CompanyController@destroy')->name("company.delete");
-    Route::post('/company/update/{id}', 'CompanyController@update')->name("company.update");
+    Route::get('/company/delete/{id}', 'CompanyController@destroy')->name("company.delete");
+    Route::get('/company/search', 'CompanyController@search')->name("company.search");
 
     // Photos
     Route::get('/photos', 'PhotosController@index');
@@ -43,6 +45,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/update-photos/{id}', 'PhotosController@edit')->name("photo.edit");
     Route::post('/photos/upload','PhotosController@store')->name("photos.store");
     Route::get('/photo/delete/{id}', 'PhotosController@destroy')->name("photo.delete");
+    Route::get('/photo/search', 'PhotosController@search')->name("photo.search");
     Route::post('/photo/update/{id}', 'PhotosController@update')->name("photo.update");
 
     // Videos
@@ -52,6 +55,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/videos/upload','VideosController@store')->name("videos.store");
     Route::post('/video/update/{id}', 'VideosController@update')->name("videos.update");
     Route::get('/video/delete/{id}', 'VideosController@destroy')->name("videos.delete");
+    Route::get('/video/search', 'VideosController@search')->name("videos.search");
 
     // Category
     Route::get('/create-category', 'CategoryController@create');
@@ -59,6 +63,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/category/create','CategoryController@store')->name("category.store");
     Route::get('/category/edit/{id}','CategoryController@edit')->name("category.edit");
     Route::get('/category/delete/{id}', 'CategoryController@destroy')->name("category.delete");
+    Route::get('/category/search', 'CategoryController@search')->name("category.search");
     Route::post('/getcategories', 'CategoryController@getcategories')->name("getcategories");
 
     // Article
@@ -68,6 +73,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/blog/update/{id}', 'ArticleController@update')->name("article.update");
     Route::post('/blog/create','ArticleController@store')->name("article.store");
     Route::get('/blog/delete/{id}', 'ArticleController@destroy')->name("article.delete");
+    Route::get('/blog/search', 'ArticleController@search')->name("article.search");
 
     // Drugs
     Route::get('/create/drugs', 'DrugsController@create');
@@ -76,6 +82,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/drugs/updated/{id}', 'DrugsController@update')->name("drugs.update");
     Route::post('/drugs/create','DrugsController@store')->name("drugs.store");
     Route::get('/drugs/delete/{id}', 'DrugsController@destroy')->name("drugs.delete");
+    Route::get('/drugs/search', 'DrugsController@search')->name("drugs.search");
 
     // Health
     Route::get('/create/health', 'HealthController@create');
@@ -84,6 +91,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/health', 'HealthController@show');
     Route::post('/health/create','HealthController@store')->name("health.store");
     Route::get('/health/delete/{id}', 'HealthController@destroy')->name("health.delete");
+    Route::get('/health/search/', 'HealthController@search')->name("health.search");
 
     // Disease
     Route::get('/create/disease', 'DiseaseController@create');
@@ -92,6 +100,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/disease', 'DiseaseController@show');
     Route::post('/disease/create','DiseaseController@store')->name("disease.store");
     Route::get('/disease/delete/{id}', 'DiseaseController@destroy')->name("disease.delete");
+    Route::get('/disease/search', 'DiseaseController@search')->name("disease.search");
 
     // Saved Items
     Route::get('/saveditems', 'SaveditemsController@index');
@@ -104,6 +113,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/user-edit/{id}','AdminController@edit')->name("user.edit");
     Route::post('/user-update/{id}', 'AdminController@update')->name("user.update");
     Route::get('/user-delete/{id}', 'AdminController@destroy')->name("user.delete");
+    Route::get('/users/search', 'AdminController@search')->name("user.search");
 
 
     Route::get('/profile', 'ProfileController@index');
@@ -131,7 +141,7 @@ Route::get('/health/detail/{id}', 'HealthController@details')->name("health.deta
 Route::get('/disease/detail/{id}', 'DiseaseController@details')->name("disease.detail");
 Route::get('/video/detail/{id}', 'frontend\VideosController@show')->name("video.detail");
 
-Route::get('/saved', 'frontend\SavedController@index')->name("video.saved");
+Route::get('/saved', 'frontend\SavedController@index');
 Route::post('/saved-items','frontend\SavedController@store')->name("saved");
 Route::get('/saved-posts','frontend\SavedController@show');
 

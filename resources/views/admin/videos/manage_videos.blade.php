@@ -18,15 +18,15 @@
 									<h2>Videos</h2>
 									<span>Your Latest Posted Videos</span>
 								</div>
-								<!-- <form class="jf-formtheme jf-questsearch">
+								<form class="jf-formtheme jf-questsearch" action="{{ route('videos.search') }}">
 									<fieldset>
 										<div class="form-group jf-inputwithicon">
 											<i class="lnr lnr-magnifier"></i>
-											<input type="text" name="jobtitle" class="form-control" placeholder="Search Here">
+											<input type="text" name="s" class="form-control" placeholder="Search Here">
 										</div>
 										<a class="jf-btnsearch" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
 									</fieldset>
-								</form> -->
+								</form>
 							</div>
 							<div class="jf-dashbboardcontent jf-myjobsapplications">
 								<ul>
@@ -90,7 +90,11 @@
 				</div>
 			</div>
 			<nav class="jf-pagination">
-				{{ $videos->links() }}
+				@if(isset($_GET['s']))
+					{{ $videos->appends(['s' => $_GET['s'] ])->links() }}
+				@else
+					{{ $videos->links() }}
+				@endif
 			</nav>
 		</main>
 @endsection

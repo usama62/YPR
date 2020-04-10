@@ -22,6 +22,18 @@ class HealthController extends Controller
         //
     }
 
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['posts'] = Posts::where('post_type',"Health")->where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.health.manage',$data);
+        }else{
+            $data['posts'] = Posts::where(['user_id'=> Auth::User()->id,'post_type'=>'Health'])->where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.health.manage',$data);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Doctors;
+use Auth;
 
 class DoctorsController extends Controller
 {
@@ -79,6 +80,18 @@ class DoctorsController extends Controller
     {
         $data['doctors'] = Doctors::paginate(6);
         return view('admin.doctor.manage',$data);
+    }
+
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['doctors'] = Doctors::where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.doctor.manage',$data);
+        }else{
+            $data['doctors'] = Doctors::where('user_id', Auth::User()->id)->where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.doctor.manage',$data);
+        }
     }
 
     /**

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\User;
 use App\Posts;
+use App\Doctors;
 use App\TypeDisease;
 use App\TypeHealth;
 use App\Article;
@@ -95,6 +96,18 @@ class CategoryController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['category'] = Category::where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.category.manage',$data);
+        }else{
+            $data['category'] = Category::where('user_id', Auth::User()->id)->where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.category.manage',$data);
+        }
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -168,7 +181,7 @@ class CategoryController extends Controller
         $data['blogs'] = Article::Where('category', 'like', "%Health%")->get();
         $data['drugs_company'] = Company::Where('company_type', 'drugs')->get();
 
-        $data['doctors'] =User::where('role', 3)->get(['id','name']);
+        $data['doctors'] =Doctors::All();
 
         $drugs =Posts::where('post_type', "Drugs")->get(['id','title']);
 

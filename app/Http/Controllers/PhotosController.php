@@ -26,6 +26,18 @@ class PhotosController extends Controller
         
     }
 
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['photos'] = Photos::where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.photos.manage_photos',$data);
+        }else{
+            $data['photos'] = Photos::where('user_id', Auth::User()->id)->where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.photos.manage_photos',$data);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

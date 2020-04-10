@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Company;
 use App\Category;
+use Auth;
 
 class CompanyController extends Controller
 {
@@ -79,6 +80,18 @@ class CompanyController extends Controller
     {
         $data['companies'] = Company::paginate(6);
         return view('admin.company.manage',$data);
+    }
+
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['companies'] = Company::where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.company.manage',$data);
+        }else{
+            $data['companies'] = Company::where('user_id', Auth::User()->id)->where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.company.manage',$data);
+        }
     }
 
     /**

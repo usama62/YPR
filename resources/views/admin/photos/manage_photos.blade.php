@@ -1,9 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-		<!--************************************
-				Dashboard Inner Banner Start
-		*************************************-->
 		<div id="jf-dashboardbanner" class="jf-dashboardbanner">
 			<h1>Photos</h1>
 			<ol class="jf-breadcrumb">
@@ -11,13 +8,6 @@
 				<li><a href="javascript:void(0);">Photos</a></li>
 			</ol>
 		</div>
-		<!--************************************
-				Dashboard Inner Banner End
-		*************************************-->
-		
-        <!--************************************
-				Main Start
-		*************************************-->
 		<main id="jf-main" class="jf-main jf-haslayout">
 			<div class="jf-dbsectionspace jf-haslayout">
 				<div class="row">
@@ -28,15 +18,15 @@
 									<h2>Photos</h2>
 									<span>Your Latest Posted Photos</span>
 								</div>
-								<!-- <form class="jf-formtheme jf-questsearch">
+								<form class="jf-formtheme jf-questsearch" action="{{ route('photo.search') }}">
 									<fieldset>
 										<div class="form-group jf-inputwithicon">
 											<i class="lnr lnr-magnifier"></i>
-											<input type="text" name="jobtitle" class="form-control" placeholder="Search Here">
+											<input type="text" name="s" class="form-control" placeholder="Search Here">
 										</div>
-										<a class="jf-btnsearch" href="javascript:void(0)"><i class="lnr lnr-magnifier"></i></a>
+										<button type="submit" class="jf-btn jf-active btn-primary"><i class="lnr lnr-magnifier"></i></button>
 									</fieldset>
-								</form> -->
+								</form>
 							</div>
 							<div class="jf-dashbboardcontent jf-myjobsapplications">
 								<ul>
@@ -104,7 +94,11 @@
 				</div>
 			</div>
 			<nav class="jf-pagination">
-				{{ $photos->links() }}
+			@if(isset($_GET['s']))
+			{{ $photos->appends(['s' => $_GET['s'] ])->links() }}
+			@else
+			{{ $photos->links() }}
+			@endif
 			</nav>
 		</main>
 @endsection

@@ -24,6 +24,12 @@ class AdminController extends Controller
         //  return view('admin.index');
         return view('profile');
     }
+
+    public function search(Request $request)
+    {
+        $data['users'] = User::where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);
+        return view('admin.users.manage',$data);
+    }
  
     public function users()
     {

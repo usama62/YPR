@@ -37,7 +37,7 @@
 			var health = [];
             var _token = "{{ csrf_token() }}";
 			var drugs = [];
-			var drugs_hidden = [];
+		
 			var all = [];
 			var doctors = [];
 			var drugs_list = [];
@@ -46,6 +46,128 @@
 			var blogs = [];
 			var type_health = [];
 			var drugs_company = [];
+
+			let globArr = [];
+			let arr1 = $('#drugs_hidden').val();
+			if(arr1 != null){
+				var nameArr = arr1.split(',');
+				for(i=0;i<nameArr.length;i++){
+					globArr.push(
+						{
+							name: nameArr[i]
+						}
+					);
+				}
+			}
+			
+
+			let globArr2 = [];
+			let arr2 = $('#literal_hidden').val();
+			if(arr2 != null){
+				var nameArr2 = arr2.split(',');
+				for(i=0;i<nameArr2.length;i++){
+					globArr2.push(
+						{
+							name: nameArr2[i]
+						}
+					);
+				}
+			}
+			
+
+			let globArr3 = [];
+			let arr3 = $('#types_drug_hidden').val();
+			if(arr3 != null){
+				var nameArr3 = arr3.split(',');
+				for(i=0;i<nameArr3.length;i++){
+					globArr3.push(
+						{
+							name: nameArr3[i]
+						}
+					);
+				}
+			}
+
+			let globArr4 = [];
+			let arr4 = $('#specialized_docs_hidden').val();
+			if(arr4 != null){
+				var nameArr4 = arr4.split(',');
+				for(i=0;i<nameArr4.length;i++){
+					globArr4.push(
+						{
+							name: nameArr4[i]
+						}
+					);
+				}
+			}
+
+			let globArr5 = [];
+			let arr5 = $('#type_health_hidden').val();
+			if(arr5 != null){
+				var nameArr5 = arr5.split(',');
+				for(i=0;i<nameArr5.length;i++){
+					globArr5.push(
+						{
+							name: nameArr5[i]
+						}
+					);
+				}
+			}
+
+			let globArr6 = [];
+			let arr6 = $('#prohibited_drugs_hidden').val();
+			if(arr6 != null){
+				var nameArr6 = arr6.split(',');
+				for(i=0;i<nameArr6.length;i++){
+					globArr6.push(
+						{
+							name: nameArr6[i]
+						}
+					);
+				}
+			}
+
+			let globArr7 = [];
+			let arr7 = $('#related_drugs_hidden').val();
+			if(arr7 != null){
+				var nameArr7 = arr7.split(',');
+				for(i=0;i<nameArr7.length;i++){
+					globArr7.push(
+						{
+							name: nameArr7[i]
+						}
+					);
+				}
+			}
+
+			let globArr8 = [];
+			let arr8 = $('#type_disease_hidden').val();
+			if(arr8 != null){
+				var nameArr8 = arr8.split(',');
+				for(i=0;i<nameArr8.length;i++){
+					globArr8.push(
+						{
+							name: nameArr8[i]
+						}
+					);
+				}
+			}
+
+			let globArr9 = [];
+			let arr9 = $('#article_hidden').val();
+			if(arr9 != null){
+				var nameArr9 = arr9.split(',');
+				for(i=0;i<nameArr9.length;i++){
+					globArr9.push(
+						{
+							name: nameArr9[i]
+						}
+					);
+				}
+			}
+			
+			
+
 			
 
 			$.ajax({ 
@@ -94,52 +216,76 @@
 					}
 					 
 					$("#diseasecategories").tokenInput(
-						disease
+						disease,
+						{
+							prePopulate: globArr
+						}
 					);
-					console.log($('#drugs_hidden').val());
+
 					$("#drugscategories").tokenInput(
 						drugs,
 						{
-							prePopulate: [
-								{name: "Slurms MacKenzie"},
-								{name: "Bob Hoskins"},
-								{name: "Kriss Akabusi"}
-							]
+							prePopulate: globArr
 						}
 					);
 
 					$("#healthcategories").tokenInput(
-						health
+						health,
+						{
+							prePopulate: globArr
+						}
 					);
 
 					$("#specialized_docs").tokenInput(
-						doctors
+						doctors,
+						{
+							prePopulate: globArr4
+						}
 					);
 
 					$("#drugs1").tokenInput(
-						drugs_list
+						drugs_list,
+						{
+							prePopulate: globArr6
+						}
 					);
 
 					$("#drugs2").tokenInput(
-						drugs_list
+						drugs_list,
+						{
+							prePopulate: globArr7
+						}
 					);
 
 					$("#type_disease").tokenInput(
-						types
+						types,
+						{
+							prePopulate: globArr8
+						}
 					);
 
 					$("#types_drugs").tokenInput(
-						types_drugs
+						types_drugs,
+						{
+							prePopulate: globArr3
+						}
+
 					);
 
 					$("#blogcategories").tokenInput(
-						all
+						all,
+						{
+							prePopulate: globArr9
+						}
 					);
 					$("#healthrelatedblogs").tokenInput(
 						blogs
 					);
 					$("#type_health").tokenInput(
-						type_health
+						type_health,
+						{
+							prePopulate: globArr5
+						}
 					);
 					$("#drugs_company").tokenInput(
 						drugs_company
@@ -183,31 +329,15 @@
 						{name:"7"},
 						{name:"8"},
 						{name:"9"},
-					]);
+					],
+						{
+							prePopulate: globArr2
+						}
+					
+					);
 				}
 			});
-		// 	$(document).ready(function() {
-		// 	// var drugs = [];
-		// 	// var kuchbhi = "{{$posts->categories}}";
-		// 	// var nameArr = kuchbhi.split(',');
-		// 	// // console.log(nameArr[0]);
-		// 	// for(i=0;i<nameArr.length;i++){
-		// 	// 	// drugs.push(nameArr[i]);
-		// 	// 	name:
-		// 	// }
-
-		// 	// console.log(drugs);
-		// 	$("#drugscategories").tokenInput(
-		// 		drugs,
-		// 		{
-		// 			prePopulate: [
-		// 				{name: "Slurms MacKenzie"},
-		// 				{name: "Bob Hoskins"},
-		// 				{name: "Kriss Akabusi"}
-		// 			]
-		// 		}
-		// 	);
-		// });
+		
 
 			[].forEach.call(document.getElementsByClassName('tags-input'), function (el) {
 		let hiddenInput = document.createElement('input'),
@@ -442,27 +572,16 @@
 									<li><a href="{{ url('/blogs') }}"><span>Manage Blogs</span></a></li>
 								</ul>
 							</li>
-							<li class="jf-myresumenoti jf-notificationicon">
+							<!-- <li class="jf-myresumenoti jf-notificationicon">
 								<a href="{{ url('/saved-posts') }}">
 									<i class="fa fa-save"></i>
 									<span>Saved Items</span>
 								</a>
-							</li>						
+							</li>						 -->
 						</ul>
 					</nav>
 					<div id="weather"></div>
 				</div>
-				<!-- <a href="{{ route('logout') }}"
-					class="jf-btnlogout"
-					onclick="event.preventDefault();
-					document.getElementById('logout-form').submit();">
-					<i class="ti-power-off"></i>
-					{{ __('Logout') }}
-				</a>
-
-				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-					@csrf
-				</form> -->
 			</div>
 		</header>
 		
@@ -484,14 +603,14 @@
         $(".wish_list").click(function(){
             var item_id = $(this).data('item');
             var _token = $("input[name=_token]").val();
-            console.log(item_id);
+            // console.log(item_id);
             $.ajax({ 
                 url: "{{ route('saved') }}",
                 data: {item_id : item_id, _token : _token},
                 type: 'post',
                 success: function(response)
                 {
-                    console.log(response);
+                    // console.log(response);
                     if(response > 0){
                         $('#wish_list_icon_'+response).removeClass('lnr lnr-heart');
                         $('#wish_list_icon_'+response).addClass('fa fa-heart-o');

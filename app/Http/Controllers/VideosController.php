@@ -25,6 +25,18 @@ class VideosController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['videos'] = Videos::where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.videos.manage_videos',$data);
+        }else{
+            $data['videos'] = Videos::where('user_id', Auth::User()->id)->where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.videos.manage_videos',$data);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

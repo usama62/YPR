@@ -114,6 +114,18 @@ class DiseaseController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        // return $request;
+        if(Auth::User()->role == 1){
+            $data['posts'] = Posts::where('post_type',"Disease")->where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.disease.manage',$data);
+        }else{
+            $data['posts'] = Posts::where(['user_id'=> Auth::User()->id,'post_type'=>'Disease'])->where('title', 'LIKE', '%' . $request->s . '%')->paginate(6);
+            return view('admin.disease.manage',$data);
+        }
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

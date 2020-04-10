@@ -153,9 +153,11 @@
 											<li class="menu-item-has-children page_item_has_children">
 												<a href="{{  url('/videos-listing') }}">Videos </a>
 											</li>
-											<li class="menu-item-has-children page_item_has_children">
+											
+											<!-- <li class="menu-item-has-children page_item_has_children">
 												<a href="{{  url('/saved') }}">Saved</a>
-											</li>
+											</li> -->
+										
 										</ul>
 									</div>
 								</nav>

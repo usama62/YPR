@@ -23,7 +23,7 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" value="{{$posts->title}}" required>
+											<input type="text" name="title" class="form-control" value="{{$posts->name}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
@@ -37,6 +37,7 @@
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="blogcategories" name="categories" class="tokenfield" placeholder="Enter Categories"/>
+											<input type="hidden" id="article_hidden" value="{{$posts->category}}">
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -77,50 +78,10 @@
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
-									</fieldset>								
+									</fieldset>		
+								</form>							
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 float-left">
-					<div class="jf-dbsectionspace jf-haslayout">
-						<aside id="jf-sidebar" class="jf-sidebar jf-sidebarcol">
-							<div id="jf-narrowsearchcollapse" class="jf-themecollapse jf-narrowsearchcollapse">
-								<div class="jf-widget jf-themecollapsetitle open" data-collapse-summary="" aria-expanded="true"><a href="#">
-									<div class="jf-widgettitle">
-										<h3>Select Categories</h3>
-										<span class="fa fa-chevron-right"></span>
-									</div>
-								</a></div>
-								<div class="jf-widget jf-themecollapsecontent" aria-hidden="false" style="display: block;">
-									<div class="jf-checkboxgroup">
-										<ul>
-											@forelse($categories as $category)
-											<li style="list-style-type:none;">
-												<input type="checkbox" id="jf-salesexecutive" name="category[]" value="{{$category->title}}" <?php category_separator($posts->category,$category->title); ?>>
-												<label for="jf-salesexecutive" style="display: inline;">
-													<span>{{$category->title}}</span>
-												</label>
-											</li>
-											@empty
-												<p>No categories under Drugs</p>
-											@endforelse
-										</ul>	
-									</div>
-								</div>
-							</div>
-                            </form>	
-                            @php
-                                function category_separator($current_category,$all_category){
-                                    $var = explode(",",$current_category);
-                                    for($i=0;$i<count($var);$i++){
-                                        if($var[$i]==$all_category){
-                                            echo 'checked';
-                                        }
-                                    }
-                                }
-                            @endphp
-						</aside>
 					</div>
 				</div>
 			</div>
