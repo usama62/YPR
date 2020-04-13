@@ -174,24 +174,6 @@
                                             <li><a href="javascript:void(0);" class="jf-clearsearches"><span class="lnr lnr-cross"></span>Clear Searches</a></li> -->
                                         </ul>
                                     </div>
-                                    <!-- <div class="jf-widget jf-employerweek">
-                                        <div class="jf-widgettitle">
-                                            <h3>Employer Of The Week</h3>
-                                        </div>
-                                        <div class="jf-angrycreative">
-                                            <span class="fab fa-angrycreative"></span>
-                                        </div>
-                                        <div class="jf-employerdetails">
-                                            <h3>Angry Creative Bears</h3>
-                                            <h4><span>Member Since: Jun 27, 2010</span><span><i class="lnr lnr-eye"></i>1,744,588 views</span></h4>
-                                            <ul class="jf-employerjobs">
-                                                <li><a href="javascript:void(0);">Open Jobs</a></li>
-                                                <li><a href="javascript:void(0);">Reviews</a></li>
-                                                <li><a href="javascript:void(0);">Q &amp; A</a></li>
-                                            </ul>
-                                            <a href="javascript:void(0);" class="jf-btn">View Full Profile</a>
-                                        </div>
-                                    </div> -->
                                     <div class="jf-adds jf-jobsearchadd">
                                         <a href="javascript:void(0);" title="">
                                             <figure>	

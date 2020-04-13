@@ -84,6 +84,15 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/drugs/delete/{id}', 'DrugsController@destroy')->name("drugs.delete");
     Route::get('/drugs/search', 'DrugsController@search')->name("drugs.search");
 
+    // Drugs Brand
+    Route::get('/create/drugs-brands', 'DrugBrandController@create');
+    Route::get('/drugs-brands', 'DrugBrandController@show');
+    Route::get('/drugs-brands/update/{id}', 'DrugBrandController@edit')->name("drugs_brand.edit");
+    Route::post('/drugs-brands/updated/{id}', 'DrugBrandController@update')->name("drugs_brand.update");
+    Route::post('/drugs-brands/create','DrugBrandController@store')->name("drugs_brand.store");
+    Route::get('/drugs-brands/delete/{id}', 'DrugBrandController@destroy')->name("drugs_brand.delete");
+    Route::get('/drugs-brands/search', 'DrugBrandController@search')->name("drugs_brand.search");
+
     // Health
     Route::get('/create/health', 'HealthController@create');
     Route::get('/health/update/{id}', 'HealthController@edit')->name("health.edit");
@@ -101,6 +110,15 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/disease/create','DiseaseController@store')->name("disease.store");
     Route::get('/disease/delete/{id}', 'DiseaseController@destroy')->name("disease.delete");
     Route::get('/disease/search', 'DiseaseController@search')->name("disease.search");
+
+    // Pages
+    Route::get('/create/page', 'PageController@create');
+    Route::get('/page/update/{id}', 'PageController@edit')->name("page.edit");
+    Route::post('/page/updated/{id}', 'PageController@update')->name("page.update");
+    Route::post('/page/create','PageController@store')->name("page.store");
+    Route::get('/page/delete/{id}', 'PageController@destroy')->name("page.delete");
+    Route::get('/page/search', 'PageController@search')->name("page.search");
+    Route::get('/pages-listing', 'PageController@index');
 
     // Saved Items
     Route::get('/saveditems', 'SaveditemsController@index');
@@ -140,6 +158,7 @@ Route::get('/blog/detail/{id}', 'ArticleController@details')->name("article.deta
 Route::get('/health/detail/{id}', 'HealthController@details')->name("health.detail");
 Route::get('/disease/detail/{id}', 'DiseaseController@details')->name("disease.detail");
 Route::get('/video/detail/{id}', 'frontend\VideosController@show')->name("video.detail");
+Route::get('/page/{slug}', 'PageController@show')->name("page.show");
 
 Route::get('/saved', 'frontend\SavedController@index');
 Route::post('/saved-items','frontend\SavedController@store')->name("saved");

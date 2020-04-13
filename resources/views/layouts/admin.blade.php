@@ -46,6 +46,7 @@
 			var blogs = [];
 			var type_health = [];
 			var drugs_company = [];
+			var changing = [];
 
 			let globArr = [];
 			let arr1 = $('#drugs_hidden').val();
@@ -165,10 +166,6 @@
 					);
 				}
 			}
-			
-			
-
-			
 
 			$.ajax({ 
                 url: "{{ route('getcategories') }}",
@@ -272,12 +269,27 @@
 
 					);
 
-					$("#blogcategories").tokenInput(
-						all,
+					$("#blogcategories1").tokenInput(
+						drugs,
 						{
 							prePopulate: globArr9
 						}
 					);
+
+					$("#blogcategories2").tokenInput(
+						disease,
+						{
+							prePopulate: globArr9
+						}
+					);
+
+					$("#blogcategories3").tokenInput(
+						health,
+						{
+							prePopulate: globArr9
+						}
+					);
+
 					$("#healthrelatedblogs").tokenInput(
 						blogs
 					);
@@ -531,6 +543,13 @@
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="fa fa-plus-square"></i><span>Drugs Brand</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/create/drugs-brands') }}"><span>Create</span></a></li>
+									<li><a href="{{ url('drugs-brands') }}"><span>Manage</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
 								<a href="#"><i class="fa fa-heartbeat"></i><span>Health</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create/health') }}"><span>Create</span></a></li>
@@ -572,12 +591,20 @@
 									<li><a href="{{ url('/blogs') }}"><span>Manage Blogs</span></a></li>
 								</ul>
 							</li>
-							<!-- <li class="jf-myresumenoti jf-notificationicon">
+							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
+								<a href="#"><i class="fab fa-blogger"></i><span>CMS</span></a>
+								<ul class="sub-menu children">
+									<li><a href="{{ url('/pages-listing') }}"><span>All Pages</span></a></li>
+									<li><a href="{{ url('/blogs') }}"><span>Menus</span></a></li>
+									<li><a href="{{ url('/blogs') }}"><span>Settings</span></a></li>
+								</ul>
+							</li>
+							<li class="jf-myresumenoti jf-notificationicon">
 								<a href="{{ url('/saved-posts') }}">
 									<i class="fa fa-save"></i>
 									<span>Saved Items</span>
 								</a>
-							</li>						 -->
+							</li>						
 						</ul>
 					</nav>
 					<div id="weather"></div>

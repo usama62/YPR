@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/transitions.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body class="jf-home jf-signupuser">
@@ -88,7 +89,13 @@
 											<i class="lnr lnr-lock"></i>
 											<input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Retype Password">
                                         </div>
-										<div class="form-group jf-signedcheck">
+										@if($errors->has('g-recaptcha-response'))
+											<span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+										@endif
+										<div form-group jf-inputwithicon >
+                                            <div class="g-recaptcha" data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}"></div>
+                                        </div>
+										<div class="form-group jf-signedcheck"style="margin-top:20px">
 											<span class="jf-checkbox">
 												<input type="checkbox" id="jf-signed" name="signed" value="">
 												<label for="jf-signed">

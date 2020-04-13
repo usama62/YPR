@@ -6098,3 +6098,12 @@ li.token-input-token {
 	background-color: #025aa5 !important;
 	border-color: #01549b !important;
 }
+
+
+.newbrand{
+	height: 30px;
+    border: 1px solid;
+    padding: 2px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}

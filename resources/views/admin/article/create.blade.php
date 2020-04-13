@@ -27,7 +27,7 @@
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
-												<select name="type_blog">
+												<select name="type_blog" class="run_time" >
 													<option value="">Type of Blog</option>
 													@foreach($categories as $cat)
 													<option value="{{$cat->id}}">{{$cat->name}}</option>
@@ -35,8 +35,14 @@
 												</select>
 											</span>
 										</div>
-										<div class="form-group jf-inputwithicon">
-											<input type="text" id="blogcategories" name="categories" class="tokenfield" placeholder="Enter Categories"/>
+										<div class="form-group jf-inputwithicon" id="blog1">
+											<input type="text" id="blogcategories1" name="categories" class="tokenfield" placeholder="Enter Categories"/>
+										</div>
+										<div class="form-group jf-inputwithicon" id="blog2">
+											<input type="text" id="blogcategories2" name="categories" class="tokenfield" placeholder="Enter Categories"/>
+										</div>
+										<div class="form-group jf-inputwithicon" id="blog3">
+											<input type="text" id="blogcategories3" name="categories" class="tokenfield" placeholder="Enter Categories"/>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -85,6 +91,30 @@
 			</div>
 		</div>
 	</main>
+	<script>
+	$(document).ready(function(){
+		$("#blog2").hide();
+		$("#blog3").hide();
+		$("select.run_time").change(function(){
+			var run_time = 1;
+			run_time = $(this).children("option:selected").val();
+			if(run_time == 1){
+				$("#blog1").show();
+				$("#blog2").hide();
+				$("#blog3").hide();
+			}else if(run_time == 5){
+				$("#blog1").hide();
+				$("#blog2").show();
+				$("#blog3").hide();
+			}else{
+				$("#blog1").hide();
+				$("#blog2").hide();
+				$("#blog3").show();
+			}
+			console.log(run_time)
+		});
+	});
+	</script>
 	<script>
 		function readURL(input) {
 			if (input.files && input.files[0]) {
