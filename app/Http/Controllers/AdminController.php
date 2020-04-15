@@ -25,6 +25,16 @@ class AdminController extends Controller
         return view('profile');
     }
 
+    public function deactivate($id)
+    {
+        $data = User::find($id);
+        $data->status=1;
+        $data->save();
+
+        return back();
+
+    }
+
     public function search(Request $request)
     {
         $data['users'] = User::where('name', 'LIKE', '%' . $request->s . '%')->paginate(6);

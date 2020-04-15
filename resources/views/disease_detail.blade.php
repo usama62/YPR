@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="jf-jobdetails">
+                        <div class="jf-jobdetails" id="print">
                             <div class="jf-jobdetaildescription">
                                 <div class="jf-title">
                                     <h2>Disease Description</h2>
@@ -83,6 +83,7 @@
                                 </div>
                             </div>
                         </div>
+                        <button onclick="myfunction()" class="jf-btn jf-active btn-primary" style="width: 200px;float: right;margin-top: 20px;">Print</button>
                         
                         <div class="jf-similarjobs" style="padding-top:50px">
                             <div class="jf-sectionhead">

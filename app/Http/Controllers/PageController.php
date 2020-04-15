@@ -41,7 +41,7 @@ class PageController extends Controller
         // return $request;
         $request->validate([
             'name'=>'required',
-            'slug'=>'required',
+            'description'=>'required',
         ]);
 
         $slug = '';
@@ -58,7 +58,7 @@ class PageController extends Controller
         $data->slug=$slug;
         
         if($data->save()){
-            session()->flash('message','Drug has been uploaded successfully');
+            session()->flash('message','Page has been Created successfully');
             session()->flash('class','success');
         }else{
             session()->flash('message','Creation failed');
@@ -95,7 +95,9 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['pages'] = Pages::find($id);
+        $data['status'] = Helper::getStatus();
+        return view('admin.website_management.pages.update',$data);
     }
 
     /**
@@ -107,7 +109,33 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'description'=>'required',
+        ]);
+
+        $slug = '';
+        if(empty($request->slug)){
+            $slug = str_slug($request->title, "-");
+        }else{
+            $slug = str_slug($request->slug, "-");
+        }
+     
+        $data = Pages::find($id);
+        $data->name=$request->name;
+        $data->status=$request->status;
+        $data->content=$request->description;
+        $data->slug=$slug;
+        
+        if($data->save()){
+            session()->flash('message','Page has been updated successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Update failed');
+            session()->flash('class','danger');
+        }
+        
+        return redirect('/pages-listing');
     }
 
     /**

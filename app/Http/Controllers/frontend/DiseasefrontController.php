@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Posts;
+use App\TypeDisease;
 
 class DiseasefrontController extends Controller
 {
@@ -16,8 +17,9 @@ class DiseasefrontController extends Controller
      */
     public function index()
     {
-        $data['values'] = Posts::where(['post_type'=>"Disease",'status'=>"publish"])->paginate(6);
-        return view('disease_listing',$data);
+        $data = Posts::where(['post_type'=>"Disease",'status'=>"publish"])->paginate(6);
+        $type_diseases = TypeDisease::All();
+        return view('disease_listing',compact('data','type_diseases'));
     }
 
     /**
@@ -84,5 +86,24 @@ class DiseasefrontController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getdata(Request $request){
+        $data = Posts::select('*');
+        if(!empty($request->s)){
+            $data = $data->Where('title', 'like', '%' . $request->s . '%');
+        }
+        if(count($request->bycondition)){
+            $arr = implode(',',$request->bycondition);
+            $data = $data->Where('type_disease', 'like', '%' . $arr . '%');
+        }
+        if(count($request->literal)){
+            $literal = implode(',',$request->literal);
+            $data = $data->Where('literal_group', 'like', '%' . $literal . '%');
+        }
+        $data = $data->where('post_type', 'Disease')->paginate(6);
+        $type_diseases = TypeDisease::All();
+
+        return view('disease_listing',compact('data','type_diseases'));
     }
 }

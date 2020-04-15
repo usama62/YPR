@@ -44,16 +44,8 @@
 											<input type="hidden" id="types_drug_hidden" value="{{$posts->types_drugs}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<span class="jf-select">
-												<select name="drugs_company" required>
-													<option>Company</option>
-													<option @if($posts->drugs_company == 'Company1') selected @endif >Company1</option>
-													<option @if($posts->drugs_company == 'Company2') selected @endif >Company2</option>
-													<option @if($posts->drugs_company == 'Company3') selected @endif >Company3</option>
-													<option @if($posts->drugs_company == 'Company4') selected @endif >Company4</option>
-													<option @if($posts->drugs_company == 'Company5') selected @endif >Company5</option>
-												</select>
-											</span>
+											<input type="text" id="drugs_company" name="drugs_company" class="tokenfield" placeholder="Enter drug comapny"/>
+											<input type="hidden" id="drugs_company_hidden" value="{{$posts->drugs_company}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="number" name="drugs_price" class="form-control" value="{{$posts->drugs_price}}">

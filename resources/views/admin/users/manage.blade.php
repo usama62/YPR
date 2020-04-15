@@ -75,8 +75,12 @@
 										<li>
 											<i class="ti-bell"></i>
 											<div class="jf-matacontent">
-												<span>Application Status</span>
-												<time datetime="2019-12-12">Active</time>
+												<span>Activation Status</span>
+												@if($user->status == 0)
+												<time datetime="2019-12-12">Activated</time>
+												@else
+												<time datetime="2019-12-12">Deactivated</time>
+												@endif	
 											</div>
 										</li>
 									</ul>

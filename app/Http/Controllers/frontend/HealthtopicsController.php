@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Posts;
+use App\TypeHealth;
 
 class HealthtopicsController extends Controller
 {
@@ -16,8 +17,9 @@ class HealthtopicsController extends Controller
      */
     public function index()
     {
-        $data['values'] = Posts::where(['post_type'=>"Health",'status'=>"publish"])->paginate(6);
-        return view('health_listing',$data);
+        $data = Posts::where(['post_type'=>"Health",'status'=>"publish"])->paginate(6);
+        $type_health = TypeHealth::All();
+        return view('health_listing',compact('data','type_health'));
     }
 
     /**
@@ -84,5 +86,26 @@ class HealthtopicsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getdata(Request $request){
+        // return $request;
+        $data = Posts::select('*');
+        if(!empty($request->s)){
+            $data = $data->Where('title', 'like', '%' . $request->s . '%');
+        }
+        if(count($request->bycondition)){
+            $arr = implode(',',$request->bycondition);
+            $data = $data->Where('type_health', 'like', '%' . $arr . '%');
+        }
+        if(count($request->literal)){
+            $literal = implode(',',$request->literal);
+            $data = $data->Where('literal_group', 'like', '%' . $literal . '%');
+        }
+        $data = $data->where('post_type', 'Health')->paginate(6);
+        $type_health = TypeHealth::All();
+
+        return view('health_listing',compact('data','type_health'));
+    
     }
 }

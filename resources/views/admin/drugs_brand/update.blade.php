@@ -23,25 +23,28 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="name" class="form-control" placeholder="Title">
+											<input type="text" name="name" class="form-control" value="{{$posts->name}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter Drugs categories" />
+											<input type="hidden" id="drugs_hidden" value="{{$posts->category}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="drugs2" name="related_drugs" class="tokenfield" placeholder="Enter Related drugs"/>
+											<input type="hidden" id="related_drugs_hidden" value="{{$posts->related_drugs}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
+											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}"/>
 										</div>
 										<div class="form-group tags-input">
 												
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="drugs_company" name="drugs_company" class="tokenfield" placeholder="Enter drug comapny"/>
+											<input type="hidden" id="drugs_company_hidden" value="{{$posts->drugs_company}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="number" name="price" class="form-control" placeholder="Enter Price">
+											<input type="number" name="price" class="form-control" value="{{$posts->drug_price}}">
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -49,18 +52,18 @@
 												<select name="status" required>
 													<option>Status</option>
 													@foreach($status as $key=>$value)
-														<option value="{{$key}}">{{$value}}</option>
+														<option value="{{$key}}" @if($posts->status == $key) selected @endif>{{$value}}</option>
 													@endforeach
 												</select>
 											</span>
 										</div>
 										@endif
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="barcode" class="form-control" placeholder="Enter Barcode">
+											<input type="text" name="barcode" class="form-control" value="{{$posts->barcode}}">
 										</div>
 										<div class="form-group jf-signedcheck" style="width:50%">
 											<span class="jf-checkbox">
-												<input type="checkbox" id="jf-postjob1" name="signed">
+												<input type="checkbox" id="jf-postjob1" name="signed"  @if($posts->hide_publisher == 1) checked @endif>
 												<label for="jf-postjob1">
 													<span>Hide Publisher Data</span>
 												</label>
@@ -68,7 +71,7 @@
 										</div>
 										<div class="form-group jf-signedcheck" style="width:50%">
 											<span class="jf-checkbox">
-												<input type="checkbox" id="jf-postjob" name="ads">
+												<input type="checkbox" id="jf-postjob" name="ads"  @if($posts->ads == 1) checked @endif>
 												<label for="jf-postjob">
 													<span>Advertise?</span>
 												</label>
@@ -80,13 +83,13 @@
 											<div id="show_brand_type"></div>
 										</div>
 										<div class="form-group jf-inputwithicon" style="margin-top: 15px;">
-											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
+											<textarea type="text" name="description" class="form-control">{{$posts->description}}</textarea>
 										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">
 												<label for="jf-uploadimg">
 													<div>
-														<img id="profile-img-tag" src="" style="height:150px" alt="">
+														<img id="profile-img-tag" src="{{ $posts->image }}" style="height:150px" alt="">
 													</div>
 													<span>Drag Files Here or <a href="javascript:void(0);">Browse</a></span>
 													<em>Maximum upload file size: 500 KB Maximum image size: 300px X 300px</em>
@@ -94,6 +97,7 @@
 												</label>
 											</div>
 										</fieldset>
+										<input type="hidden" name="hiddenimage" value="{{ $posts->image }}">
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>

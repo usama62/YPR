@@ -26,6 +26,17 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 	<script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		function myfunction(){
+			var prtContent = document.getElementById("print");
+			var WinPrint = window.open('', '', 'left=0,top=0,width=1000,height=900');
+			WinPrint.document.write(prtContent.innerHTML);
+			WinPrint.document.close();
+			WinPrint.focus();
+			WinPrint.print();
+			WinPrint.close();
+		}
+	</script>
 </head>
 <body class="jf-home jf-userlogin">
 	<div class="preloader-outer">
@@ -133,7 +144,10 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12">
-							<strong class="jf-logo"><a href=""><img src="{{ asset('assets/images/logo.png') }}" alt="company logo here"></a></strong>
+							<?php 
+								$logo = \App\Settings::where(['setting_name' => 'logo_settings'])->first();
+							?>
+							<strong class="jf-logo"><a href=""><img src="{{ $logo->setting_value }}" alt="company logo here"></a></strong>
 							<div class="jf-rightarea">
 								<nav id="jf-nav" class="jf-nav navbar-expand-lg navbar-toggleable-sm">
 									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -191,6 +205,22 @@
 		</footer>
 		
 	</div>
+	<script>
+	$(".abcd-btn").click(function(){
+		var a = $(this).data("alphabet");
+
+		$.ajax({ 
+                url: "{{ route('getdata') }}",
+                data: {char : a},
+                type: 'post',
+                success: function(response)
+                {
+					console.log(response)
+				}
+			});
+		console.log(a);
+	});
+	</script>
 	<script>   
         $(".wish_list").click(function(){
             var item_id = $(this).data('item');

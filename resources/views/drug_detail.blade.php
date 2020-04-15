@@ -64,7 +64,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="jf-jobdetails">
+                        <div class="jf-jobdetails" id="print">
                             <div class="jf-jobdetaildescription">
                                 <div class="jf-title">
                                     <h2>Drug Description</h2>
@@ -88,27 +88,16 @@
                                 </div>
                             </div>
                         </div>
+                        <button onclick="myfunction()" class="jf-btn jf-active btn-primary" style="width: 200px;float: right;margin-top: 20px;">Print</button>
                         <div class="jf-aboutcompany">
 								<div class="jf-sectionhead">
 									<h2>About Company</h2>
 								</div>
 								<div class="jf-aboutcompanybox">
-									<!-- <figure class="jf-aboutimg">
-										<img src="images/topcompanies/img-05.png" alt="image description">
-									</figure> -->
 									<div class="jf-aboutdetails">
 										<div class="jf-aboutdetailsfeature">
-											<!-- <a class="jf-tagfeature" href="javascript:void(0);">feature</a> -->
-											<!-- <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a> -->
 										</div>
 										<h3>{{$posts->drugs_company}}</h3>
-										<!-- <h4><span>Member Since: Jun 27, 2010</span><span><i class="lnr lnr-eye"></i>1,744,588 views</span></h4> -->
-										<ul class="jf-employerjobs">
-											<li><a href="javascript:void(0);">Open Jobs</a></li>
-											<li><a href="javascript:void(0);">Reviews</a></li>
-											<li><a href="javascript:void(0);">Q &amp; A</a></li>
-										</ul>
-										<!-- <a href="javascript:void(0);" class="jf-btn">View Full Profile</a> -->
 									</div>
 									<div class="jf-description">
 										<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adanim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure dolor aderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...<a href="javascript:void(0);">read more</a></p>

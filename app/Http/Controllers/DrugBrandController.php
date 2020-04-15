@@ -85,7 +85,7 @@ class DrugBrandController extends Controller
         $data->hide_publisher=$signed;
         $data->ads=$ads;
         $data->barcode=$request->barcode;
-        $data->drug_company=$request->company;
+        $data->drugs_company=$request->drugs_company;
         $data->drug_price=$request->price;
         $data->description=$request->description;
         $data->drug_brand_type=$request->drug_brand_type;
@@ -143,6 +143,7 @@ class DrugBrandController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $request;
         $request->validate([
             'name'=>'required',
             'categories'=>'required',
@@ -179,14 +180,14 @@ class DrugBrandController extends Controller
 
         $data = DrugBrand::find($id);
         $data->name=$request->name;
-        $data->categories=$request->categories;
+        $data->category=$request->categories;
         $data->slug=$slug;
         $data->tags=$request->tags_input;
         $data->status=$request->status;
         $data->hide_publisher=$signed;
         $data->ads=$ads;
         $data->barcode=$request->barcode;
-        $data->drug_company=$request->company;
+        $data->drugs_company=$request->drugs_company;
         $data->drug_price=$request->price;
         $data->description=$request->description;
         $data->drug_brand_type=$request->drug_brand_type;
@@ -214,7 +215,7 @@ class DrugBrandController extends Controller
     {
         $data = DrugBrand::find($id);
         if( $data->delete()){
-            session()->flash('message','Drug has been deleted successfully');
+            session()->flash('message','Drug brand has been deleted successfully');
             session()->flash('class','danger');
         }else{
             session()->flash('message','Delete failed');

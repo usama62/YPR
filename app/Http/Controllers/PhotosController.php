@@ -145,7 +145,7 @@ class PhotosController extends Controller
         $data->title=$request->title;
         $data->status=$request->status;
         $data->description=$request->description;
-        $data->image_path=$founder_image_Name;;
+        $data->image_path=$founder_image_Name;
         
         if($data->save()){
             session()->flash('message','Photo has been updated successfully');

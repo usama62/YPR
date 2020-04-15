@@ -52,8 +52,8 @@
                                     <ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
                                     
                                         <li class="jf-btnnewwindow"><a href="{{ route('page.show',['id'=>$post->slug]) }}" target="_blank"><i class="ti-new-window"></i></a></li>
-                                        <li class="jf-btneditjob"><a href="{{ route('drugs_brand.edit',['id'=>$post->id]) }}"><i class="ti-pencil"></i></a></li>
-                                        <li class="jf-btndell"><a href="{{ route('drugs_brand.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
+                                        <li class="jf-btneditjob"><a href="{{ route('page.edit',['id'=>$post->id]) }}"><i class="ti-pencil"></i></a></li>
+                                        <li class="jf-btndell"><a href="{{ route('page.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>
                                     <ul class="jf-jobmatadata">
                                         <li>

@@ -169,6 +169,12 @@ class DrugsController extends Controller
             $slug = str_slug($request->slug, "-");
         }
 
+        if($request->signed == "on"){
+            $signed = 1;
+        }else{
+            $signed = 0;
+        }
+
         $founder_image_Name = '';
         if ($request->hasFile('uploadimg')) {
             $founder_image = $request->file('uploadimg');

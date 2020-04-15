@@ -120,6 +120,10 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/page/search', 'PageController@search')->name("page.search");
     Route::get('/pages-listing', 'PageController@index');
 
+    // Settings
+    Route::get('/settings', 'SettingsController@index');
+    Route::post('/logo','SettingsController@store')->name("logo.store");
+
     // Saved Items
     Route::get('/saveditems', 'SaveditemsController@index');
 
@@ -130,6 +134,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/store-user','AdminController@store')->name("store.user");
     Route::get('/user-edit/{id}','AdminController@edit')->name("user.edit");
     Route::post('/user-update/{id}', 'AdminController@update')->name("user.update");
+    Route::get('/user-deactivate/{id}', 'AdminController@deactivate')->name("user.deactivate");
     Route::get('/user-delete/{id}', 'AdminController@destroy')->name("user.delete");
     Route::get('/users/search', 'AdminController@search')->name("user.search");
 
@@ -164,6 +169,10 @@ Route::get('/saved', 'frontend\SavedController@index');
 Route::post('/saved-items','frontend\SavedController@store')->name("saved");
 Route::get('/saved-posts','frontend\SavedController@show');
 
+Route::post('/get-by-literal-group', 'HealthtopicsController@getdata')->name("getdata");
+Route::get('/health-search/', 'frontend\HealthtopicsController@getdata')->name("health_front.search");
+Route::get('/disease-search/', 'frontend\DiseasefrontController@getdata')->name("disease_front.search");
+Route::get('/drug-search/', 'frontend\DrugssupplementsController@getdata')->name("drug_front.search");
 
 Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');

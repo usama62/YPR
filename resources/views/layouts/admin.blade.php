@@ -167,6 +167,19 @@
 				}
 			}
 
+			let globArr10 = [];
+			let arr10 = $('#drugs_company_hidden').val();
+			if(arr10 != null){
+				var nameArr10 = arr10.split(',');
+				for(i=0;i<nameArr10.length;i++){
+					globArr10.push(
+						{
+							name: nameArr10[i]
+						}
+					);
+				}
+			}
+
 			$.ajax({ 
                 url: "{{ route('getcategories') }}",
                 data: {_token : _token},
@@ -300,7 +313,10 @@
 						}
 					);
 					$("#drugs_company").tokenInput(
-						drugs_company
+						drugs_company,
+						{
+							prePopulate: globArr10
+						}
 					);
 					
 					
@@ -596,7 +612,7 @@
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/pages-listing') }}"><span>All Pages</span></a></li>
 									<li><a href="{{ url('/blogs') }}"><span>Menus</span></a></li>
-									<li><a href="{{ url('/blogs') }}"><span>Settings</span></a></li>
+									<li><a href="{{ url('/settings') }}"><span>Settings</span></a></li>
 								</ul>
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">

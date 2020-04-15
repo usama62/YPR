@@ -26,7 +26,7 @@
 											<input type="text" name="name" class="form-control" placeholder="Title" required>
 										</div>
                                         <div class="form-group jf-inputwithicon">
-											<input type="text" name="slug" class="form-control" placeholder="Enter Slug" required>
+											<input type="text" name="slug" class="form-control" placeholder="Enter Slug">
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">

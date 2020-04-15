@@ -37,13 +37,13 @@ return [
     'facebook' => [
         'client_id' => env('CLIENT_ID'),
         'client_secret' => env('CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/login/facebook/callback',
+        'redirect' => 'http://yemenpr.com/login/facebook/callback',
     ],
 
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/login/google/callback',
+        'redirect' => 'http://yemenpr.com/login/google/callback',
     ],
 
 ];
