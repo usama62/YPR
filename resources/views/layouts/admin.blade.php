@@ -611,7 +611,7 @@
 								<a href="#"><i class="fab fa-blogger"></i><span>CMS</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/pages-listing') }}"><span>All Pages</span></a></li>
-									<li><a href="{{ url('/blogs') }}"><span>Menus</span></a></li>
+									<!-- <li><a href="{{ url('/blogs') }}"><span>Menus</span></a></li> -->
 									<li><a href="{{ url('/settings') }}"><span>Settings</span></a></li>
 								</ul>
 							</li>
