@@ -7,6 +7,7 @@ use App\Posts;
 use App\Category;
 use App\Helper;
 use App\Saved;
+use App\DrugConsumption;
 use Auth;
 
 
@@ -80,6 +81,7 @@ class DrugsController extends Controller
         $data->types_drugs=$request->types_drugs;
         $data->hide_publisher=$signed;
         $data->drugs_barcode=$request->drugs_barcode;
+        $data->drug_consumption=$request->drug_consumption;
         $data->drugs_company=$request->drugs_company;
         $data->drugs_price=$request->drugs_price;
         $data->description=$request->description;
@@ -95,6 +97,26 @@ class DrugsController extends Controller
         }
         
         return redirect('drugs');
+    }
+
+    public function newDrugConsumption(Request $request){
+        return $request;
+        $request->validate([
+            'new_drug_consumption'=>'required',
+        ]);
+
+        $data = new DrugConsumption();
+        $data->name=$request->new_drug_consumption;
+
+        if($data->save()){
+            session()->flash('message','Drug has been uploaded successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Creation failed');
+            session()->flash('class','danger');
+        }
+
+        return back();
     }
 
     /**
@@ -195,6 +217,7 @@ class DrugsController extends Controller
         $data->types_drugs=$request->types_drugs;
         $data->hide_publisher=$signed;
         $data->drugs_barcode=$request->drugs_barcode;
+        $data->drug_consumption=$request->drug_consumption;
         $data->drugs_company=$request->drugs_company;
         $data->drugs_price=$request->drugs_price;
         $data->description=$request->description;

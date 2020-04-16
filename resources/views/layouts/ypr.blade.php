@@ -162,6 +162,9 @@
 												<a href="{{  url('/health-listing') }}">Health Topics</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">
+												<a href="{{  url('/disease-listing') }}">Disease</a>
+											</li>
+											<li class="menu-item-has-children page_item_has_children">
 												<a href="{{  url('/drugs-listing') }}">Drugs & Supplements</a>
 											</li>
 											<li class="menu-item-has-children page_item_has_children">

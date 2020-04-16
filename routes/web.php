@@ -83,6 +83,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/drugs/create','DrugsController@store')->name("drugs.store");
     Route::get('/drugs/delete/{id}', 'DrugsController@destroy')->name("drugs.delete");
     Route::get('/drugs/search', 'DrugsController@search')->name("drugs.search");
+    Route::get('/drug/consumption', 'DrugsController@newDrugConsumption')->name("drug.consumption");
 
     // Drugs Brand
     Route::get('/create/drugs-brands', 'DrugBrandController@create');

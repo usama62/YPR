@@ -12,6 +12,7 @@ use App\TypeHealth;
 use App\Article;
 use App\TypeDrugs;
 use App\Company;
+use App\DrugConsumption;
 use Auth;
 
 class CategoryController extends Controller
@@ -188,6 +189,7 @@ class CategoryController extends Controller
         $data['types'] =TypeDisease::All();
         $data['type_health'] =TypeHealth::All();
         $data['types_drugs'] =TypeDrugs::All();
+        $data['drug_consumption'] =DrugConsumption::All();
 
         $arr = [];
         foreach ($drugs as $key => $value) {

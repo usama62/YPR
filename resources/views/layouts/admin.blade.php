@@ -46,6 +46,7 @@
 			var blogs = [];
 			var type_health = [];
 			var drugs_company = [];
+			var drug_consumption = [];
 			var changing = [];
 
 			let globArr = [];
@@ -180,6 +181,19 @@
 				}
 			}
 
+			let globArr11 = [];
+			let arr11 = $('#drug_consumption_hidden').val();
+			if(arr11 != null){
+				var nameArr11 = arr11.split(',');
+				for(i=0;i<nameArr11.length;i++){
+					globArr11.push(
+						{
+							name: nameArr11[i]
+						}
+					);
+				}
+			}
+
 			$.ajax({ 
                 url: "{{ route('getcategories') }}",
                 data: {_token : _token},
@@ -221,8 +235,13 @@
 					for(i=0;i<response.type_health.length;i++){
 						type_health.push(response.type_health[i])
 					}
+
 					for(i=0;i<response.drugs_company.length;i++){
 						drugs_company.push(response.drugs_company[i])
+					}
+
+					for(i=0;i<response.drug_consumption.length;i++){
+						drug_consumption.push(response.drug_consumption[i])
 					}
 					 
 					$("#diseasecategories").tokenInput(
@@ -316,6 +335,13 @@
 						drugs_company,
 						{
 							prePopulate: globArr10
+						}
+					);
+
+					$("#drug_consumption").tokenInput(
+						drug_consumption,
+						{
+							prePopulate: globArr11
 						}
 					);
 					

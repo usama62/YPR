@@ -65,6 +65,10 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="drugs_barcode" class="form-control" value="{{$posts->drugs_barcode}}">
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" id="drug_consumption" name="drug_consumption" class="tokenfield" placeholder="Enter drug comapny"/>
+											<input type="hidden" id="drug_consumption_hidden" value="{{$posts->drug_consumption}}">
+										</div>
 										<div class="form-group jf-signedcheck">
 											<span class="jf-checkbox">
 												<input type="checkbox" id="jf-postjob" name="signed" @if($posts->hide_publisher == 1) checked @endif>
