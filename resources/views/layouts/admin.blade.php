@@ -523,7 +523,7 @@
 					</figure>
 					<div class="jf-username">
 						<h3>{{ auth::user()->name }}</h3>
-						<span>Sr. Creative Designer</span>
+						<!-- <span>Sr. Creative Designer</span> -->
 					</div>
 					<nav class="jf-usernav">
 						<ul>

@@ -85,6 +85,17 @@ iframe {
 	float: left;
 	border: none;
 }
+
+.custom_thumbnail iframe {
+	width: 100% !important;
+	height: 80px !important;
+	float: left;
+	border: none;
+}
+
+.custom_thumbnail {
+	width: 20% !important;
+}
 .wp-caption,
 .wp-caption-text,
 .gallery-caption,

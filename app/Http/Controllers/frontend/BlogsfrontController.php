@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Article;
+use App\Category;
 
 class BlogsfrontController extends Controller
 {
@@ -16,8 +17,9 @@ class BlogsfrontController extends Controller
      */
     public function index()
     {
-        $data['values'] = Article::where('status',"publish")->paginate(10);
-        return view('blog_listing',$data);
+        $data = Article::where('status',"publish")->paginate(10);
+        $type_blog = Category::where('parent_id',null)->get();
+        return view('blog_listing',compact('data','type_blog'));
     }
 
     /**
@@ -84,5 +86,20 @@ class BlogsfrontController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getdata(Request $request){
+        $data = Article::select('*');
+        if(!empty($request->s)){
+            $data = $data->Where('name', 'like', '%' . $request->s . '%');
+        }
+        if(count($request->bycondition)){
+            $arr = implode(',',$request->bycondition);
+            $data = $data->Where('category', 'like', '%' . $arr . '%');
+        }
+        $data = $data->paginate(6);
+        $type_blog = Category::where('parent_id',null)->get();
+
+        return view('blog_listing',compact('data','type_blog'));
     }
 }

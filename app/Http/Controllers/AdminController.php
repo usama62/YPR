@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use App\User;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -29,9 +30,22 @@ class AdminController extends Controller
     {
         $data = User::find($id);
         $data->status=1;
+        $data->email_verified_at=null;
         $data->save();
 
-        return back();
+        return redirect('manage-users');
+
+    }
+
+    public function activate($id)
+    {
+        $current_timestamp = Carbon::now()->timestamp;
+        $data = User::find($id);
+        $data->status=0;
+        $data->email_verified_at=$current_timestamp;
+        $data->save();
+
+        return redirect('manage-users');
 
     }
 

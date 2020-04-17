@@ -19,6 +19,14 @@
             <div class="row">
                 <div id="jf-twocolumns" class="jf-twocolumns">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-9 float-left">
+                        <div class="jf-adds jf-addsvtwo">
+                            <a href="javascript:void(0);" title="">
+                                <figure>	
+                                    <img src="{{ asset('assets/images/adds-03.jpg') }}" alt="img description">
+                                </figure>
+                            </a>
+                            <span>Advertisement  540px X 80px</span>
+                        </div>
                         <div class="jf-jobapplycenter jf-jobapplycentervfour">
                             <figure class="jf-companyimg">
                                 @if($posts->image != null)
@@ -33,7 +41,15 @@
                                     </div>
                                     <div class="jf-companyname">
                                         <h3><a href="javascript:void(0);">{{$posts->title}}</a></h3>
-                                        
+                                        <div>
+                                            <?php 
+                                                $arr = (explode(",",$posts->types_drugs));
+                                                for($i=0;$i<count($arr);$i++){?>
+                                                <a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);"><?php echo $arr[$i];?></a>
+                                            <?php
+                                                }
+                                            ?>
+                                        </div>
                                         <ul class="jf-postarticlemetavthree">
                                             <li>
                                                 <a href="javascript:void(0);">
@@ -57,9 +73,9 @@
                                     </div>
                                     <ul class="jf-socialiconssimple">
                                         <li class="jf-sharejob"><span>Share</span></li>
-                                        <li class="jf-facebook"><a href="http://www.facebook.com/sharer.php?u=http://www.mywebsite.com"><i class="fa fa-facebook-f"></i></a></li>
-                                        <li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li class="jf-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li class="jf-twitter"><a href="https://twitter.com/intent/tweet?url={{url()->current()}}"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="jf-linkedin"><a href="https://plus.google.com/up/?continue=https://plus.google.com/share?url={{url()->current()}}"><i class="fab fa-google-plus"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -45,7 +45,7 @@
                                         </ul>
 									</div>
 								</div>
-								<!-- <div class="jf-jobapplybtnlike">
+								<div class="jf-jobapplybtnlike">
                                     <div class="jf-likebtnbox">
                                         @if(count($saved) != 0)
                                         <a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
@@ -53,11 +53,11 @@
                                     </div>
                                     <ul class="jf-socialiconssimple">
                                         <li class="jf-sharejob"><span>Share</span></li>
-                                        <li class="jf-facebook"><a href="http://www.facebook.com/sharer.php?u=http://www.mywebsite.com"><i class="fa fa-facebook-f"></i></a></li>
-                                        <li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
+										<li class="jf-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li class="jf-twitter"><a href="https://twitter.com/intent/tweet?url={{url()->current()}}"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="jf-linkedin"><a href="https://plus.google.com/up/?continue=https://plus.google.com/share?url={{url()->current()}}"><i class="fab fa-google-plus"></i></a></li>
                                     </ul>
-                                </div> -->
+                                </div>
 							</div>
 						</div>
 						<div class="jf-adds jf-addmargin">
@@ -78,35 +78,32 @@
 								</div>
 							</div>
 						</div>
-						<div class="jf-similarjobs">
-							<div class="jf-sectionhead">
-								<h2>Similar Jobs</h2>
-								<a class="jf-btnviewall" href="javascript:void(0);">View All</a>
-							</div>
-							<div class="jf-featuredjobs">
-								<div class="jf-featurejobholder">
-								@foreach($recents as $recent)
-								<div class="jf-featurejobholder">
-									<div class="jf-featurejob">
-										<figure class="jf-companyimg">
-											@if($recent->image != null)
-												<img src="{{ asset($recent->image) }}" alt="image description" style="height: 45px;">
-											@else
-												<img src="{{ asset('assets/images/image-default.png') }}" style="height:45px" alt="image description">
-											@endif
-										</figure>
-										<div class="jf-companycontent">
-											<div class="jf-companyname">
-												<h3><a href="{{ route('disease.detail',['id'=>$recent->id]) }}">{{str_limit($recent->title,20)}}</a></h3>
-												<span>Posted On: {{\Carbon\Carbon::parse($recent->created_at)->format('M d, Y') }}</span>
-											</div>
+						<div class="jf-similarjobs" style="padding-top:50px">
+                            <div class="jf-sectionhead">
+                                <h2>Recent Blogs</h2>
+                            </div>
+                            <div class="jf-featuredjobs">
+                            @foreach($recents as $recent)
+							<div class="jf-featurejobholder">
+								<div class="jf-featurejob">
+									<figure class="jf-companyimg">
+										@if($recent->image != null)
+											<img src="{{ asset($recent->image) }}" alt="image description" style="height: 45px;">
+										@else
+											<img src="{{ asset('assets/images/image-default.png') }}" style="height:45px" alt="image description">
+										@endif
+									</figure>
+									<div class="jf-companycontent">
+										<div class="jf-companyname">
+											<h3><a href="{{ route('disease.detail',['id'=>$recent->id]) }}">{{str_limit($recent->name,20)}}</a></h3>
+											<span>Posted On: {{\Carbon\Carbon::parse($recent->created_at)->format('M d, Y') }}</span>
 										</div>
 									</div>
 								</div>
-								@endforeach
-								</div>
 							</div>
-						</div>
+							@endforeach
+                            </div>
+                        </div>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 float-left">
 						<aside id="jf-sidebar" class="jf-sidebar jf-sidebarvtwo">

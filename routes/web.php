@@ -83,7 +83,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/drugs/create','DrugsController@store')->name("drugs.store");
     Route::get('/drugs/delete/{id}', 'DrugsController@destroy')->name("drugs.delete");
     Route::get('/drugs/search', 'DrugsController@search')->name("drugs.search");
-    Route::get('/drug/consumption', 'DrugsController@newDrugConsumption')->name("drug.consumption");
+    Route::post('/drug/consumption', 'DrugsController@newDrugConsumption')->name("drug.consumption");
 
     // Drugs Brand
     Route::get('/create/drugs-brands', 'DrugBrandController@create');
@@ -136,6 +136,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/user-edit/{id}','AdminController@edit')->name("user.edit");
     Route::post('/user-update/{id}', 'AdminController@update')->name("user.update");
     Route::get('/user-deactivate/{id}', 'AdminController@deactivate')->name("user.deactivate");
+    Route::get('/user-activate/{id}', 'AdminController@activate')->name("user.activate");
     Route::get('/user-delete/{id}', 'AdminController@destroy')->name("user.delete");
     Route::get('/users/search', 'AdminController@search')->name("user.search");
 
@@ -160,7 +161,7 @@ Route::get('/disease-listing', 'frontend\DiseasefrontController@index');
 Route::get('/blogs-listing', 'frontend\BlogsfrontController@index');
 
 Route::get('/drugs/detail/{id}', 'DrugsController@details')->name("drugs.detail");
-Route::get('/blog/detail/{id}', 'ArticleController@details')->name("article.detail");
+Route::get('/blog/detail/{id}', 'ArticleController@details')->name("blog.detail");
 Route::get('/health/detail/{id}', 'HealthController@details')->name("health.detail");
 Route::get('/disease/detail/{id}', 'DiseaseController@details')->name("disease.detail");
 Route::get('/video/detail/{id}', 'frontend\VideosController@show')->name("video.detail");
@@ -174,6 +175,8 @@ Route::post('/get-by-literal-group', 'HealthtopicsController@getdata')->name("ge
 Route::get('/health-search/', 'frontend\HealthtopicsController@getdata')->name("health_front.search");
 Route::get('/disease-search/', 'frontend\DiseasefrontController@getdata')->name("disease_front.search");
 Route::get('/drug-search/', 'frontend\DrugssupplementsController@getdata')->name("drug_front.search");
+Route::get('/blog-search/', 'frontend\BlogsfrontController@getdata')->name("blog_front.search");
+Route::get('/video-search/', 'frontend\VideosController@getdata')->name("video_front.search");
 
 Route::get('login/{service}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{service}/callback', 'Auth\LoginController@handleProviderCallback');

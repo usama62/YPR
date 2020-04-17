@@ -15,8 +15,8 @@ class VideosController extends Controller
      */
     public function index()
     {
-        $data['videos'] = Videos::paginate(12);
-        return view('video_listing',$data);
+        $data = Videos::where('status',"publish")->paginate(10);
+        return view('video_listing',compact('data'));
     }
 
     /**
@@ -84,5 +84,15 @@ class VideosController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getdata(Request $request){
+        $data = Videos::select('*');
+        if(!empty($request->s)){
+            $data = $data->Where('title', 'like', '%' . $request->s . '%');
+        }
+        $data = $data->paginate(6);
+
+        return view('video_listing',compact('data'));
     }
 }

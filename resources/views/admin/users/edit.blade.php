@@ -17,7 +17,11 @@
 							<div class="jf-dashboardboxtitle">
 								<h2>Edit Users</h2>
 								<span>Add User Details</span>
+								@if($user->status == 0)
 								<a href="{{ route('user.deactivate',$user->id) }}" class="jf-btn jf-active btn-primary" style="float:right;margin-top: -20px;">Deactivate User</a>
+								@else
+								<a href="{{ route('user.activate',$user->id) }}" class="jf-btn jf-active btn-primary" style="float:right;margin-top: -20px;">Activate User</a>
+								@endif
 							</div>
 							<div class="jf-dashbboardcontent">
 								<form method="POST" action="{{ route('user.update',$user->id) }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform">

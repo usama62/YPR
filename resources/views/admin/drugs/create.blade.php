@@ -114,20 +114,33 @@
 				<h4 class="modal-title">Add New Drug Consumption</h4>
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
-				<form method="POST" action="{{ route('drug.consumption') }}">
 					<div class="modal-body">
-						<input type="text" name="new_drug_consumption" style="width:100%">
+						<input type="text" id="new_drug_consumption" style="width:100%">
 					</div>
 					<div class="modal-footer">
 					<button type="submit" id="add_drug_consumption" class="jf-btn jf-active btn-primary" data-dismiss="modal">ADD</button>
-				</form>
-				
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	</main>
+	<script>
+		$("#add_drug_consumption").click(function(){
+			let	a = $("#new_drug_consumption").val();
+			var _token = $("input[name=_token]").val();
+			$.ajax({
+				url: "{{ route('drug.consumption') }}",
+				data: {_token : _token,data : a},
+				type: 'post',
+				success: function(response)
+				{
+					console.log("data saved")
+				}
+			});
+		});
+		
+	</script>
 	<script>
 		function readURL(input) {
 			if (input.files && input.files[0]) {

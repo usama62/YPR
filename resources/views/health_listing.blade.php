@@ -228,6 +228,14 @@
                                 </aside>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-6 float-left">
+                                <div class="jf-adds jf-addsvtwo">
+                                    <a href="javascript:void(0);" title="">
+                                        <figure>	
+                                            <img src="{{ asset('assets/images/adds-03.jpg') }}" alt="img description">
+                                        </figure>
+                                    </a>
+                                    <span>Advertisement  540px X 80px</span>
+                                </div>
                                 <div class="jf-innersectionhead">
                                     <div class="jf-title">
                                         <h2>Health Listing</h2>

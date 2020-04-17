@@ -100,21 +100,10 @@ class DrugsController extends Controller
     }
 
     public function newDrugConsumption(Request $request){
-        return $request;
-        $request->validate([
-            'new_drug_consumption'=>'required',
-        ]);
 
         $data = new DrugConsumption();
-        $data->name=$request->new_drug_consumption;
-
-        if($data->save()){
-            session()->flash('message','Drug has been uploaded successfully');
-            session()->flash('class','success');
-        }else{
-            session()->flash('message','Creation failed');
-            session()->flash('class','danger');
-        }
+        $data->name=$request->data;
+        $data->save();
 
         return back();
     }

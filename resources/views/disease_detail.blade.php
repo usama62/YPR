@@ -52,9 +52,9 @@
                                     </div>
                                     <ul class="jf-socialiconssimple">
                                         <li class="jf-sharejob"><span>Share</span></li>
-                                        <li class="jf-facebook"><a href="http://www.facebook.com/sharer.php?u=http://www.mywebsite.com"><i class="fa fa-facebook-f"></i></a></li>
-                                        <li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li class="jf-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li class="jf-twitter"><a href="https://twitter.com/intent/tweet?url={{url()->current()}}"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="jf-linkedin"><a href="https://plus.google.com/up/?continue=https://plus.google.com/share?url={{url()->current()}}"><i class="fab fa-google-plus"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
