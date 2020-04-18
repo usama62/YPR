@@ -31,7 +31,9 @@ class HomeController extends Controller
     }
 
     public function search(Request $request){
-        $data['values'] = Article::where('category',$request->category)->where('name', 'LIKE', '%' . $request->search . '%')->paginate(6);
+        // return $request;
+        $data['values'] = Posts::where('post_type',$request->category)->where('title', 'LIKE', '%' . $request->search . '%')->paginate(6);
+        $data['post_type'] = $request->category;
 
         return view('search_listing',$data);
     }

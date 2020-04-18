@@ -38,9 +38,9 @@
 											<span class="jf-select">
 												<select data-placeholder="All" class="chosen-select locations" name="category">
 													<option value="">Select catagory</option>
-													<option value="health">Health</option>
-													<option value="disease">Disease</option>
-													<option value="drug">Drug</option>
+													<option value="Health">Health</option>
+													<option value="Disease">Disease</option>
+													<option value="Drug">Drug</option>
 												</select>
 											</span>
 										</div>
