@@ -29,7 +29,7 @@
 											<input type="text" name="title" class="form-control" value="{{$photo->title}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="description" class="form-control" value="{{$photo->description}}" required>
+											<textarea type="text" name="description" class="form-control">{{$photo->description}}</textarea>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">

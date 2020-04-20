@@ -57,7 +57,7 @@
                                     
                                         <li class="jf-btnnewwindow"><a href="{{ route('drugs.detail',['id'=>$post->id]) }}"><i class="ti-new-window"></i></a></li>
                                         <li class="jf-btneditjob"><a href="{{ route('drugs.edit',['id'=>$post->id]) }}"><i class="ti-pencil"></i></a></li>
-                                        <li class="jf-btndell"><a href="{{ route('drugs.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
+                                        <li class="jf-btndell"><a onclick="return confirm('Are you sure?')" href="{{ route('drugs.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>
                                     <ul class="jf-jobmatadata">
                                         <li>

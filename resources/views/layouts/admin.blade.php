@@ -634,7 +634,7 @@
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
-								<a href="#"><i class="fab fa-blogger"></i><span>CMS</span></a>
+								<a href="#"><i class="fa fa-gears"></i><span>CMS</span></a>
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/pages-listing') }}"><span>All Pages</span></a></li>
 									<!-- <li><a href="{{ url('/blogs') }}"><span>Menus</span></a></li> -->
@@ -642,7 +642,7 @@
 								</ul>
 							</li>
 							<li class="jf-myresumenoti jf-notificationicon">
-								<a href="{{ url('/saved-posts') }}">
+								<a href="{{ url('/saveditems') }}">
 									<i class="fa fa-save"></i>
 									<span>Saved Items</span>
 								</a>

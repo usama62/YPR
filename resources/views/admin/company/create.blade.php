@@ -23,7 +23,7 @@
 									@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="name" class="form-control" placeholder="Name">
+											<input type="text" name="name" class="form-control" placeholder="Name" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">

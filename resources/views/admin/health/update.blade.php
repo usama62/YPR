@@ -23,14 +23,14 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" value="{{$posts->title}}">
+											<input type="text" name="title" class="form-control" value="{{$posts->title}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="healthcategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
 											<input type="hidden" id="drugs_hidden" value="{{$posts->categories}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}"/>
+											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}" required>
 										</div>
 										<div class="form-group tags-input">
 												
@@ -44,10 +44,10 @@
 											<input type="hidden" id="diseasecategories_hidden" value="{{$posts->related_diseases}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="health_code" class="form-control" placeholder="Enter health code"/>
+											<input type="text" name="health_code" class="form-control" value="{{$posts->health_code}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="competent_company" class="form-control" placeholder="Enter competent company"/>
+											<input type="text" name="competent_company" class="form-control" value="{{$posts->competent_company}}" required/>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="type_health" name="type_health" class="tokenfield" placeholder="Enter type of health">

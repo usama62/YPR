@@ -23,7 +23,17 @@
 									@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="name" class="form-control" value="{{$company->name}}">
+											<input type="text" name="name" class="form-control" value="{{$company->name}}" required>
+										</div>
+										<div class="form-group jf-inputwithicon">
+											<span class="jf-select">
+												<select name="company_type" required>
+													<option>Company Type</option>
+													@foreach($company_type as $comp)
+														<option value="{{$comp->id}}" @if($company->company_type == $comp->id) selected @endif>{{$comp->name}}</option>
+													@endforeach
+												</select>
+											</span>
 										</div>
                                         <div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description">{{$company->description}}</textarea>

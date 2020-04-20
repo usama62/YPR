@@ -61,7 +61,6 @@ class PhotosController extends Controller
         $request->validate([
             'title'=>'required',
             'status'=>'required',
-            'description'=>'required',
         ]);
 
         
@@ -128,7 +127,6 @@ class PhotosController extends Controller
         $request->validate([
             'title'=>'required',
             'status'=>'required',
-            'description'=>'required',
         ]);
 
         $founder_image_Name = '';

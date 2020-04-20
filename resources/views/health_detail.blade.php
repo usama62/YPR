@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <ol class="jf-breadcrumb">
-                        <li><a href="index-2.html">Home</a></li>
+                        <li><a href="{{  url('/home') }}">Home</a></li>
                         <li>Health Detail</li>
                     </ol>
                 </div>

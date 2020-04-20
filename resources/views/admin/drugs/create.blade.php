@@ -23,13 +23,13 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" placeholder="Title">
+											<input type="text" name="title" class="form-control" placeholder="Title" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter Drugs categories" />
+											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter Drugs categories"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
+											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias" required/>
 										</div>
 										<div class="form-group tags-input">
 												
@@ -44,7 +44,7 @@
 											<input type="text" id="drugs_company" name="drugs_company" class="tokenfield" placeholder="Enter drug comapny"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="number" name="drugs_price" class="form-control" placeholder="Enter Price">
+											<input type="number" name="drugs_price" class="form-control" placeholder="Enter Price" required>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -59,7 +59,7 @@
 										</div>
 										@endif
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="drugs_barcode" class="form-control" placeholder="Enter Barcode">
+											<input type="text" name="drugs_barcode" class="form-control" placeholder="Enter Barcode" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="drug_consumption" id="drug_consumption" class="tokenfield" placeholder="Enter Drug Consumption">

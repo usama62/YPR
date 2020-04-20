@@ -32,7 +32,7 @@
 											<input type="email" name="email" class="form-control" placeholder="Email">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="password" name="password" class="form-control" placeholder="Password">
+											<input type="password" name="password" minlength="8" class="form-control" placeholder="Password">
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="date" name="dob" class="form-control" placeholder="Date of Birth">

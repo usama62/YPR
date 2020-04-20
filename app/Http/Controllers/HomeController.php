@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Posts;
 use App\Videos;
+use App\Company;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,7 @@ class HomeController extends Controller
         $data['recents'] = Posts::where('post_type','Disease')->orderBy('id','desc')->limit(6)->get(); 
         $data['videos'] = Videos::orderBy('id','desc')->limit(6)->get(); 
         $data['articles'] = Article::orderBy('id','desc')->limit(3)->get(); 
+        $data['company'] = Company::All(); 
         
         return view('index',$data);
     }

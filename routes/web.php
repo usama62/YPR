@@ -37,6 +37,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/company/create','CompanyController@store')->name("company.store");
     Route::get('/company/delete/{id}', 'CompanyController@destroy')->name("company.delete");
     Route::get('/company/delete/{id}', 'CompanyController@destroy')->name("company.delete");
+    Route::post('/company/update/{id}', 'CompanyController@update')->name("company.update");
     Route::get('/company/search', 'CompanyController@search')->name("company.search");
 
     // Photos

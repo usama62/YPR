@@ -28,23 +28,23 @@
 										<div class="form-group jf-inputwithicon">
 											<input type="text" name="title" class="form-control" placeholder="Title" required>
 										</div>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="video_link" class="form-control" placeholder="Video Link" required>
+										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
 												<select name="status" required>
 													<option value="">Status</option>
 													@foreach($status as $key=>$value)
-														<option value="$key">{{$value}}</option>
+														<option value="{{$key}}">{{$value}}</option>
 													@endforeach
 												</select>
 											</span>
 										</div>
 										@endif 
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="video_link" class="form-control" placeholder="Video Link" required>
-										</div>
-										<div class="form-group jf-inputwithicon">
-											<textarea type="text" name="description" class="form-control" placeholder="Description" required></textarea>
+											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
 										</div>
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>

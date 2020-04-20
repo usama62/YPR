@@ -26,10 +26,10 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" value="{{$video->title}}">
+											<input type="text" name="title" class="form-control" value="{{$video->title}}" required>
 										</div>
-										<div class="form-group jf-inputwithicon">
-											<input type="text" name="description" class="form-control" value="{{$video->description}}">
+                                        <div class="form-group jf-inputwithicon">
+											<input type="text" name="video_link" class="form-control" value="{{$video->video_link}}" required>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -42,9 +42,9 @@
 												</select>
 											</span>
 										</div>
-										@endif 
-                                        <div class="form-group jf-inputwithicon">
-											<input type="text" name="video_link" class="form-control" value="{{$video->video_link}}">
+										@endif
+										<div class="form-group jf-inputwithicon">
+											<textarea type="text" name="description" class="form-control">{{$video->description}}</textarea>
 										</div>
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>

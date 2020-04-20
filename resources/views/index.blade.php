@@ -163,46 +163,13 @@
 						<div class="jf-topcompaniesholder">
 							<div class="col-12 col-sm-12 col-md-10 push-md-1 col-lg-10 push-lg-1 float-left">
 								<div id="jf-topcompaniesslider" class="jf-topcompaniesslider jf-topcompanies owl-carousel">
+									@foreach($company as $comp)
 									<figure class="jf-topcompany item">
 										<a class="jf-bglight" href="javascript:void(0)">
-											<img src="{{ asset('assets/images/topcompanies/img-01.png')}}" alt="image description">
+											<img src="{{ $comp->logo }}" alt="image description">
 										</a>
 									</figure>
-									<figure class="jf-topcompany item">
-										<a href="javascript:void(0)">
-											<img src="{{ asset('assets/images/topcompanies/img-02.png')}}" alt="image description">
-										</a>
-									</figure>
-									<figure class="jf-topcompany item">
-										<a class="jf-bglight" href="javascript:void(0)">
-											<img src="{{ asset('assets/images/topcompanies/img-03.png')}}" alt="image description">
-										</a>
-									</figure>
-									<figure class="jf-topcompany item">
-										<a href="javascript:void(0)">
-											<img src="{{ asset('assets/images/topcompanies/img-04.png')}}" alt="image description">
-										</a>
-									</figure>
-									<figure class="jf-topcompany item">
-										<a class="jf-bglight" href="javascript:void(0)">
-											<img src="{{ asset('assets/images/topcompanies/img-05.png')}}" alt="image description">
-										</a>
-									</figure>
-									<figure class="jf-topcompany item">
-										<a href="javascript:void(0)">
-											<img src="{{ asset('assets/images/topcompanies/img-06.png')}}" alt="image description">
-										</a>
-									</figure>
-									<figure class="jf-topcompany item">
-										<a class="jf-bglight" href="javascript:void(0)">
-											<img src="{{ asset('assets/images/topcompanies/img-01.png')}}" alt="image description">
-										</a>
-									</figure>
-									<figure class="jf-topcompany item">
-										<a href="javascript:void(0)">
-											<img src="{{ asset('assets/images/topcompanies/img-02.png')}}" alt="image description">
-										</a>
-									</figure>
+									@endforeach
 								</div>
 							</div>
 						</div>

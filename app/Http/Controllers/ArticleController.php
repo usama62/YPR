@@ -41,7 +41,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        return  $request;
+        // return $request;
         $request->validate([
             'name'=>'required',
             'description'=>'required',

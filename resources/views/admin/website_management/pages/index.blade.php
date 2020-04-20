@@ -14,7 +14,9 @@
                 <div style="padding: 30px 15px;">
                     <a href="{{ url('/create/page') }}" class="jf-btn jf-active btn-primary">Add New<a>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            </div>
+            <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="jf-dashboardbox jf-myappliedjobs">
                         <div class="jf-dashboardboxtitle jf-dashboardboxtitlevtwo">
                             <div class="jf-title">
@@ -53,7 +55,7 @@
                                     
                                         <li class="jf-btnnewwindow"><a href="{{ route('page.show',['id'=>$post->slug]) }}" target="_blank"><i class="ti-new-window"></i></a></li>
                                         <li class="jf-btneditjob"><a href="{{ route('page.edit',['id'=>$post->id]) }}"><i class="ti-pencil"></i></a></li>
-                                        <li class="jf-btndell"><a href="{{ route('page.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
+                                        <li class="jf-btndell"><a onclick="return confirm('Are you sure?')" href="{{ route('page.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>
                                     <ul class="jf-jobmatadata">
                                         <li>
@@ -87,7 +89,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
         <nav class="jf-pagination">

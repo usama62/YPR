@@ -37,7 +37,7 @@
 											<input type="email" name="email" class="form-control" value="{{$user->email}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="password" name="password" class="form-control" value="{{$user->password}}" required>
+											<input type="password" name="password" minlength="8" class="form-control" value="{{$user->password}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="date" name="dob" class="form-control" value="{{$user->dob}}">
@@ -108,7 +108,7 @@
 										</fieldset>
 										<div class="form-group jf-signedcheck">
 											<span class="jf-checkbox">
-												<input type="checkbox" id="jf-postjob1" name="agree_terms" @if($user->agree_terms == 1) checked @endif>
+												<input type="checkbox" id="jf-postjob1" name="agree_terms">
 												<label for="jf-postjob1">
 													<span>confirm the commitment to the site's policy?</span>
 												</label>

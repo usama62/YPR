@@ -23,14 +23,14 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" value="{{$posts->title}}">
+											<input type="text" name="title" class="form-control" value="{{$posts->title}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="diseasecategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
 											<input type="hidden" id="drugs_hidden" value="{{$posts->categories}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}"/>
+											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}" required/>
 										</div>
 										<div class="form-group tags-input">
 												
@@ -40,7 +40,7 @@
 											<input type="hidden" id="literal_hidden" value="{{$posts->literal_group}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="disease_code" class="form-control" value="{{$posts->disease_code}}">
+											<input type="text" name="disease_code" class="form-control" value="{{$posts->disease_code}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="specialized_docs" name="specialized_docs" class="tokenfield"  placeholder="Enter Specialized Doctors"/>

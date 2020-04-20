@@ -27,7 +27,7 @@
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<span class="jf-select">
-												<select name="type_blog" class="run_time" >
+												<select name="type_blog" class="run_time" required>
 													<option value="">Type of Blog</option>
 													@foreach($categories as $cat)
 													<option value="{{$cat->id}}">{{$cat->name}}</option>

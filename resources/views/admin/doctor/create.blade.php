@@ -23,16 +23,16 @@
 									@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="name" class="form-control" placeholder="Name">
+											<input type="text" name="name" class="form-control" placeholder="Name" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="email" name="email" class="form-control" placeholder="Email">
+											<input type="email" name="email" class="form-control" placeholder="Email" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="speciality" class="form-control" placeholder="Speciality">
+											<input type="text" name="speciality" class="form-control" placeholder="Speciality" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="experience" class="form-control" placeholder="Experience">
+											<input type="text" name="experience" class="form-control" placeholder="Experience" required>
 										</div>
                                         <div class="form-group jf-inputwithicon">
 											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>

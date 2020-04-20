@@ -57,7 +57,7 @@
                                     </div>
                                     <ul class="jf-btnjobalerts jf-btnjobalertsvthree" style="padding: 50px 25px;">
                                     <li class="jf-btneditjob"><a href="{{ route('category.edit',['id'=>$cat->id]) }}"><i class="ti-pencil"></i></a></li>
-                                        <li class="jf-btndell"><a href="{{ route('category.delete',['id'=>$cat->id]) }}"><i class="ti-trash"></i></a></li>
+                                        <li class="jf-btndell"><a onclick="return confirm('Are you sure?')" href="{{ route('category.delete',['id'=>$cat->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>
                                 </li>
                                 @empty

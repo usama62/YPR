@@ -145,7 +145,8 @@ class VideosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    {   
+        // return $id;
         $data = Videos::find($id);
         if( $data->delete()){
             session()->flash('message','Video has been deleted successfully');

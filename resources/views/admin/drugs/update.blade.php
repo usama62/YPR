@@ -23,14 +23,14 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" value="{{$posts->title}}">
+											<input type="text" name="title" class="form-control" value="{{$posts->title}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="drugscategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
 											<input type="hidden" id="drugs_hidden" value="{{$posts->categories}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}"/>
+											<input type="text" name="slug" class="form-control" value="{{$posts->slug}}" required/>
 										</div>
 										<div class="form-group tags-input">
 												
@@ -48,7 +48,7 @@
 											<input type="hidden" id="drugs_company_hidden" value="{{$posts->drugs_company}}">
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="number" name="drugs_price" class="form-control" value="{{$posts->drugs_price}}">
+											<input type="number" name="drugs_price" class="form-control" value="{{$posts->drugs_price}}" required>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -63,7 +63,7 @@
 										</div>
 										@endif
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="drugs_barcode" class="form-control" value="{{$posts->drugs_barcode}}">
+											<input type="text" name="drugs_barcode" class="form-control" value="{{$posts->drugs_barcode}}" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="drug_consumption" name="drug_consumption" class="tokenfield" placeholder="Enter drug comapny"/>

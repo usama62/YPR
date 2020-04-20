@@ -26,7 +26,7 @@
 											<input type="text" name="name" class="form-control" value="{{$pages->name}}" required>
 										</div>
                                         <div class="form-group jf-inputwithicon">
-											<input type="text" name="slug" class="form-control" value="{{$pages->slug}}" >
+											<input type="text" name="slug" class="form-control" value="{{$pages->slug}}" required>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">

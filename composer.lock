@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ea235de3d4cfb080b9dfb4ae97398bd",
+    "content-hash": "644878ad8b75ae71ca74a7607c48fc61",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -377,6 +377,106 @@
                 "trusted proxy"
             ],
             "time": "2020-02-22T01:51:47+00:00"
+        },
+        {
+            "name": "google/recaptcha",
+            "version": "1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/recaptcha.git",
+                "reference": "614f25a9038be4f3f2da7cbfd778dc5b357d2419"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/614f25a9038be4f3f2da7cbfd778dc5b357d2419",
+                "reference": "614f25a9038be4f3f2da7cbfd778dc5b357d2419",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.2.20|^2.15",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^4.8.36|^5.7.27|^6.59|^7.5.11"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReCaptcha\\": "src/ReCaptcha"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Client library for reCAPTCHA, a free service that protects websites from spam and abuse.",
+            "homepage": "https://www.google.com/recaptcha/",
+            "keywords": [
+                "Abuse",
+                "captcha",
+                "recaptcha",
+                "spam"
+            ],
+            "time": "2020-03-31T17:50:54+00:00"
+        },
+        {
+            "name": "greggilbert/recaptcha",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/greggilbert/recaptcha.git",
+                "reference": "298cbc072e8ba734df2b8af798f848dacd27a4c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/greggilbert/recaptcha/zipball/298cbc072e8ba734df2b8af798f848dacd27a4c9",
+                "reference": "298cbc072e8ba734df2b8af798f848dacd27a4c9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-4": {
+                    "Greggilbert\\Recaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Gilbert",
+                    "email": "greg@greg-gilbert.com"
+                }
+            ],
+            "description": "reCAPTCHA Validator for Laravel 5",
+            "homepage": "http://github.com/greggilbert/recaptcha",
+            "keywords": [
+                "captcha",
+                "laravel",
+                "laravel5",
+                "recaptcha"
+            ],
+            "abandoned": true,
+            "time": "2017-04-06T17:10:49+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

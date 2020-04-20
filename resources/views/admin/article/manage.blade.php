@@ -55,9 +55,9 @@
                                     </div>
                                     <ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
                                     
-                                    <li class="jf-btnnewwindow"><a href="{{ route('article.detail',['id'=>$post->id]) }}"><i class="ti-new-window"></i></a></li>
+                                    <li class="jf-btnnewwindow"><a href="{{ route('blog.detail',['id'=>$post->id]) }}"><i class="ti-new-window"></i></a></li>
                                         <li class="jf-btneditjob"><a href="{{ route('article.edit',['id'=>$post->id]) }}"><i class="ti-pencil"></i></a></li>
-                                        <li class="jf-btndell"><a href="{{ route('article.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
+                                        <li class="jf-btndell"><a onclick="return confirm('Are you sure?')" href="{{ route('article.delete',['id'=>$post->id]) }}"><i class="ti-trash"></i></a></li>
                                     </ul>
                                     <ul class="jf-jobmatadata">
                                         <li>

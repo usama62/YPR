@@ -23,13 +23,13 @@
 								@csrf
 									<fieldset>	
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" placeholder="Title">
+											<input type="text" name="title" class="form-control" placeholder="Title" required>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="healthcategories" name="categories" class="tokenfield" placeholder="Enter categories"/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias"/>
+											<input type="text" name="slug" class="form-control" placeholder="Enter Title Alias" required/>
 										</div>
 										<div class="form-group tags-input">
 												
@@ -41,10 +41,10 @@
 											<input type="text" id="diseasecategories" name="related_diseases" class="tokenfield" placeholder="Enter related diseases" >
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="health_code" class="form-control" placeholder="Enter health code"/>
+											<input type="text" name="health_code" class="form-control" placeholder="Enter health code" required/>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="competent_company" class="form-control" placeholder="Enter competent company"/>
+											<input type="text" name="competent_company" class="form-control" placeholder="Enter competent company" required/>
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<input type="text" id="type_health" name="type_health" class="tokenfield" placeholder="Enter type of health">

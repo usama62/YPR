@@ -22,7 +22,7 @@
 							@if(session()->has('message'))
 								<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
 							@endif
-								<form method="POST" action="{{ route('category.store') }}" class="jf-formtheme jf-postajobform" >
+								<form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
 								@csrf
 									<fieldset>
 										<div class="form-group jf-inputwithicon">
@@ -30,16 +30,16 @@
 												<select name="parent">
 													<option value="">Category Type</option>
 													@foreach($categories as $cat)
-													<option value="{{$cat->id}}" @if($cat->id == $category->parent_id) selected @endif>{{$cat->title}}</option>
+													<option value="{{$cat->id}}" @if($cat->id == $category->parent_id) selected @endif>{{$cat->name}}</option>
 													@endforeach
 												</select>
 											</span>
 										</div>
 										<div class="form-group jf-inputwithicon">
-											<input type="text" name="title" class="form-control" value="{{$category->title}}">
+											<input type="text" name="name" class="form-control" value="{{$category->name}}" required>
 										</div>
-                                        <div class="form-group jf-inputwithicon">
-											<textarea type="text" name="description" class="form-control"  value="{{$category->description}}"></textarea>
+										<div class="form-group jf-inputwithicon">
+											<input type="text" name="slug" class="form-control" value="{{$category->slug}}" required/>
 										</div>
 										@if(Auth::user()->role == 1)
 										<div class="form-group jf-inputwithicon">
@@ -52,6 +52,25 @@
 											</span>
 										</div>
 										@endif
+										<div class="form-group tags-input" data-name="tags_input">
+												
+										</div>	
+                                        <div class="form-group jf-inputwithicon">
+											<textarea type="text" name="description" class="form-control">{{$category->description}}</textarea>
+										</div>
+										<fieldset class="jf-dragdropimg">
+											<div class="jf-inputtyfile">
+												<label for="jf-uploadimg">
+													<div>
+														<img id="profile-img-tag" src="{{ $category->image }}" style="height:150px" alt="">
+													</div>
+													<span>Upload Company logo Here <a href="javascript:void(0);">Browse</a></span>
+													<em>Maximum upload file size: 500 KB Maximum image size: 300px X 300px</em>
+													<input type="file" name="image" id="jf-uploadimg">
+												</label>
+											</div>
+                                            <input type="hidden" name="hiddenimage" value="{{$category->image}}">
+										</fieldset>
 										<div class="form-group jf-inputwithicon jf-textarea">
 											<button type="submit" class="jf-btn jf-active btn-primary">{{ __('Save') }}</button>
 										</div>
@@ -64,4 +83,19 @@
 			</div>
 		</div>
 	</main>
+	<script>
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				
+				reader.onload = function (e) {
+					$('#profile-img-tag').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+			}
+			$("#jf-uploadimg").change(function(){
+				readURL(this);
+		});
+    </script>
 @endsection

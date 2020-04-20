@@ -78,7 +78,7 @@
 										</div>
 										<div class="form-group jf-inputwithicon">
 											<i class="lnr lnr-lock"></i>
-                                            <input type="password" id="password"  name="password" class="form-control" placeholder="Password">
+                                            <input type="password" id="password" minlength="8" name="password" class="form-control" placeholder="Password">
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

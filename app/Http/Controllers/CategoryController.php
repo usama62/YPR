@@ -60,6 +60,14 @@ class CategoryController extends Controller
             $slug = str_slug($request->slug, "-");
         }
 
+        $founder_image_Name = '';
+        if ($request->hasFile('company_logo')) {
+            $founder_image = $request->file('company_logo');
+            $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
+            $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
+            $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
+        }
+
         $data = new Category();
         $data->user_id=Auth::User()->id;
         $data->name=$request->name;
@@ -68,6 +76,7 @@ class CategoryController extends Controller
         $data->tags=$request->tags_input;
         $data->description=$request->description;
         $data->access_level=$request->access_level;
+        $data->image=$founder_image_Name;
 
         if($data->save()){
             session()->flash('message','Category has been created successfully');
@@ -135,6 +144,16 @@ class CategoryController extends Controller
             'name'=>'required',
         ]);
 
+        $founder_image_Name = '';
+        if ($request->hasFile('image')) {
+            $founder_image = $request->file('image');
+            $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
+            $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
+            $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
+        }else{
+            $founder_image_Name = $request->hiddenimage;
+        }
+
         $data = Category::find($id);
         $data->name=$request->name;
         $data->parent_id=$request->parent;
@@ -142,6 +161,7 @@ class CategoryController extends Controller
         $data->tags=$request->tags_input;
         $data->description=$request->description;
         $data->access_level=$request->access_level;
+        $data->image=$founder_image_Name;
 
         if($data->save()){
             session()->flash('message','CAtegory has been updated successfully');
@@ -180,7 +200,7 @@ class CategoryController extends Controller
         $data['disease'] =Category::where('parent_id', 5)->get(['id','name']);
         $data['health'] =Category::where('parent_id', 3)->get(['id','name']);
         $data['blogs'] = Article::Where('category', 'like', "%Health%")->get();
-        $data['drugs_company'] = Company::Where('company_type', 'drugs')->get();
+        $data['drugs_company'] = Company::Where('company_type', 1)->get();
 
         $data['doctors'] =Doctors::All();
 

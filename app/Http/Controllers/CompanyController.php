@@ -103,6 +103,7 @@ class CompanyController extends Controller
     public function edit($id)
     {
         $data['company'] = Company::find($id);
+        $data['company_type'] = Category::where('parent_id',null)->get();
         return view('admin.company.update',$data);
     }
 

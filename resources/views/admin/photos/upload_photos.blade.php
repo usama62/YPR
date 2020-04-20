@@ -31,14 +31,14 @@
 												<select name="status" required>
 													<option>Status</option>
 													@foreach($status as $key=>$value)
-														<option value="$key">{{$value}}</option>
+														<option value="{{$key}}">{{$value}}</option>
 													@endforeach
 												</select>
 											</span>
 										</div>
 										@endif 
 										<div class="form-group jf-inputwithicon">
-											<textarea type="text" name="description" class="form-control" placeholder="Description" rows="2" required></textarea>
+											<textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
 										</div>
 										<fieldset class="jf-dragdropimg">
 											<div class="jf-inputtyfile">

@@ -23,7 +23,7 @@
                                     <div class="alert alert-{{session('class')}}">{{session("message")}}</div>
                                 @endif
                             </div>
-                            @forelse($saved_items as $saved_item)
+                            @forelse($saved as $saved_item)
                             <div class="jf-featurejob">
                                 <figure class="jf-companyimg">
                                     @if($saved_item->posts->image != null)
@@ -61,7 +61,7 @@
             </div>
         </div>
         <nav class="jf-pagination">
-            {{ $saved_items->links() }}
+            {{ $saved->links() }}
         </nav>
     </main>
 @endsection

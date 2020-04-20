@@ -55,7 +55,7 @@
 									<ul class="jf-btnjobalerts jf-btnjobalertsvtwo">
 									<!-- <li class="jf-btnnewwindow"><a href="javascript:void(0);"><i class="ti-new-window"></i></a></li> -->
 										<li class="jf-btneditjob"><a href="{{ route('doctor.edit',['id'=>$doctor->id]) }}"><i class="ti-pencil"></i></a></li>
-										<li class="jf-btndell"><a href="{{ route('doctor.delete',['id'=>$doctor->id]) }}"><i class="ti-trash"></i></a></li>
+										<li class="jf-btndell"><a onclick="return confirm('Are you sure?')" href="{{ route('doctor.delete',['id'=>$doctor->id]) }}"><i class="ti-trash"></i></a></li>
 									</ul>
 									<ul class="jf-jobmatadata">
 										<li>
