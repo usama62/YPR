@@ -79,11 +79,15 @@ Route::group(['middleware' => ['verified']], function () {
     // Drugs
     Route::get('/create/drugs', 'DrugsController@create');
     Route::get('/drugs', 'DrugsController@show');
+    Route::get('/type-drugs', 'DrugsController@type_Drugs');
+    Route::post('/type-drugs/create','DrugsController@type_Drugs_store')->name("type_drugs.store");
+    Route::get('/type-drugs/delete/{id}', 'DrugsController@delete_type')->name("type_drugs.delete");
     Route::get('/drugs/update/{id}', 'DrugsController@edit')->name("drugs.edit");
     Route::post('/drugs/updated/{id}', 'DrugsController@update')->name("drugs.update");
     Route::post('/drugs/create','DrugsController@store')->name("drugs.store");
     Route::get('/drugs/delete/{id}', 'DrugsController@destroy')->name("drugs.delete");
     Route::get('/drugs/search', 'DrugsController@search')->name("drugs.search");
+    Route::get('/drugs-type/search', 'DrugsController@type_search')->name("type_drugs.search");
     Route::post('/drug/consumption', 'DrugsController@newDrugConsumption')->name("drug.consumption");
 
     // Drugs Brand
@@ -100,18 +104,26 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/health/update/{id}', 'HealthController@edit')->name("health.edit");
     Route::post('/health/updated/{id}', 'HealthController@update')->name("health.update");
     Route::get('/health', 'HealthController@show');
+    Route::get('/type-health', 'HealthController@type_Health');
+    Route::post('/type-health/create','HealthController@type_Health_store')->name("type_health.store");
+    Route::get('/type-health/delete/{id}', 'HealthController@delete_type')->name("type_health.delete");
     Route::post('/health/create','HealthController@store')->name("health.store");
     Route::get('/health/delete/{id}', 'HealthController@destroy')->name("health.delete");
     Route::get('/health/search/', 'HealthController@search')->name("health.search");
+    Route::get('/health-type/search/', 'HealthController@type_search')->name("type_health.search");
 
     // Disease
     Route::get('/create/disease', 'DiseaseController@create');
     Route::get('/disease/update/{id}', 'DiseaseController@edit')->name("disease.edit");
     Route::post('/disease/updated/{id}', 'DiseaseController@update')->name("disease.update");
     Route::get('/disease', 'DiseaseController@show');
+    Route::get('/type-disease', 'DiseaseController@type_Disease');
+    Route::post('/type-disease/create','DiseaseController@type_Disease_store')->name("type_disease.store");
+    Route::get('/type-disease/delete/{id}', 'DiseaseController@delete_type')->name("type_disease.delete");
     Route::post('/disease/create','DiseaseController@store')->name("disease.store");
     Route::get('/disease/delete/{id}', 'DiseaseController@destroy')->name("disease.delete");
     Route::get('/disease/search', 'DiseaseController@search')->name("disease.search");
+    Route::get('/disease-type/search', 'DiseaseController@type_search')->name("disease_type.search");
 
     // Pages
     Route::get('/create/page', 'PageController@create');

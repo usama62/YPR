@@ -582,6 +582,9 @@
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create/drugs') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/drugs') }}"><span>Manage</span></a></li>
+									@if(Auth::User()->role == 1)
+									<li><a href="{{ url('/type-drugs') }}"><span>Type Drugs</span></a></li>
+									@endif
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
@@ -596,6 +599,9 @@
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create/health') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/health') }}"><span>Manage</span></a></li>
+									@if(Auth::User()->role == 1)
+									<li><a href="{{ url('/type-health') }}"><span>Type Health</span></a></li>
+									@endif
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>
@@ -603,6 +609,9 @@
 								<ul class="sub-menu children">
 									<li><a href="{{ url('/create/disease') }}"><span>Create</span></a></li>
 									<li><a href="{{ url('/disease') }}"><span>Manage</span></a></li>
+									@if(Auth::User()->role == 1)
+									<li><a href="{{ url('/type-disease') }}"><span>Type Disease</span></a></li>
+									@endif
 								</ul>
 							</li>
 							<li class="jf-packagesnoti jf-notificationicon menu-item-has-children page_item_has_children"><span class="jf-dropdowarrow"><i class="fa fa-angle-down"></i></span>

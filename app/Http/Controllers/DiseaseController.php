@@ -7,6 +7,7 @@ use App\Posts;
 use App\Category;
 use App\Helper;
 use App\Saved;
+use App\TypeDisease;
 use Auth;
 
 class DiseaseController extends Controller
@@ -231,4 +232,53 @@ class DiseaseController extends Controller
         }
         return back();
     }
+
+     //Type_Disease
+
+     public function type_Disease()
+     {
+         $data['type_diseases'] = TypeDisease::paginate(15);
+         return view('admin.disease.type_disease',$data);
+     }
+ 
+     public function type_Disease_store(Request $request)
+     {
+         // return $request;
+         $request->validate([
+             'type_disease'=>'required',
+         ]);
+      
+         $data = new TypeDisease();
+         $data->name=$request->type_disease;
+         
+         if($data->save()){
+             session()->flash('message','New Disease type has been added successfully');
+             session()->flash('class','success');
+         }else{
+             session()->flash('message','Creation failed');
+             session()->flash('class','danger');
+         }
+         
+         return redirect('type-disease');
+     }
+ 
+     public function delete_type($id)
+     {
+         $data = TypeDisease::find($id);
+         if( $data->delete()){
+             session()->flash('message','Disease type has been deleted successfully');
+             session()->flash('class','danger');
+         }else{
+             session()->flash('message','Delete failed');
+             session()->flash('class','danger');
+         }
+         return back();
+     }
+
+     public function type_search(Request $request)
+     {
+        // return $request;
+        $data['type_diseases'] = TypeDisease::where('name', 'LIKE', '%' . $request->s . '%')->paginate(10);
+        return view('admin.disease.type_disease',$data);
+     }
 }

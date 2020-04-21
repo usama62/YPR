@@ -8,6 +8,7 @@ use App\Category;
 use App\Article;
 use App\Helper;
 use App\Saved;
+use App\TypeHealth;
 use Auth;
 
 class HealthController extends Controller
@@ -229,5 +230,54 @@ class HealthController extends Controller
             session()->flash('class','danger');
         }
         return back();
+    }
+
+    //Type_Health
+
+    public function type_Health()
+    {
+        $data['type_healths'] = TypeHealth::paginate(15);
+        return view('admin.health.type_health',$data);
+    }
+
+    public function type_Health_store(Request $request)
+    {
+        // return $request;
+        $request->validate([
+            'type_health'=>'required',
+        ]);
+     
+        $data = new TypeHealth();
+        $data->name=$request->type_health;
+        
+        if($data->save()){
+            session()->flash('message','New Health type has been added successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Creation failed');
+            session()->flash('class','danger');
+        }
+        
+        return redirect('type-health');
+    }
+
+    public function delete_type($id)
+    {
+        $data = TypeHealth::find($id);
+        if( $data->delete()){
+            session()->flash('message','Health type has been deleted successfully');
+            session()->flash('class','danger');
+        }else{
+            session()->flash('message','Delete failed');
+            session()->flash('class','danger');
+        }
+        return back();
+    }
+
+    public function type_search(Request $request)
+    {
+       // return $request;
+       $data['type_healths'] = TypeHealth::where('name', 'LIKE', '%' . $request->s . '%')->paginate(10);
+       return view('admin.health.type_health',$data);
     }
 }

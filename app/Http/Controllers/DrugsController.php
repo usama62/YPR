@@ -8,6 +8,7 @@ use App\Category;
 use App\Helper;
 use App\Saved;
 use App\DrugConsumption;
+use App\TypeDrugs;
 use Auth;
 
 
@@ -241,5 +242,54 @@ class DrugsController extends Controller
             session()->flash('class','danger');
         }
         return back();
+    }
+
+    //Type_drugs
+
+    public function type_Drugs()
+    {
+        $data['type_drugs'] = TypeDrugs::paginate(15);
+        return view('admin.drugs.type_drugs',$data);
+    }
+
+    public function type_Drugs_store(Request $request)
+    {
+        // return $request;
+        $request->validate([
+            'type_drug'=>'required',
+        ]);
+     
+        $data = new TypeDrugs();
+        $data->name=$request->type_drug;
+        
+        if($data->save()){
+            session()->flash('message','New Drug type has been added successfully');
+            session()->flash('class','success');
+        }else{
+            session()->flash('message','Creation failed');
+            session()->flash('class','danger');
+        }
+        
+        return redirect('type-drugs');
+    }
+
+    public function delete_type($id)
+    {
+        $data = TypeDrugs::find($id);
+        if( $data->delete()){
+            session()->flash('message','Drug type has been deleted successfully');
+            session()->flash('class','danger');
+        }else{
+            session()->flash('message','Delete failed');
+            session()->flash('class','danger');
+        }
+        return back();
+    }
+
+    public function type_search(Request $request)
+    {
+       // return $request;
+       $data['type_drugs'] = TypeDrugs::where('name', 'LIKE', '%' . $request->s . '%')->paginate(10);
+       return view('admin.drugs.type_drugs',$data);
     }
 }
