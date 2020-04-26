@@ -66,6 +66,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/category/delete/{id}', 'CategoryController@destroy')->name("category.delete");
     Route::get('/category/search', 'CategoryController@search')->name("category.search");
     Route::post('/getcategories', 'CategoryController@getcategories')->name("getcategories");
+    Route::post('/get-categories', 'CategoryController@getcategoriesforfrontend')->name("getcategoriesforfrontend");
 
     // Article
     Route::get('/create-blog', 'ArticleController@create');

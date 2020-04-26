@@ -220,4 +220,17 @@ class CategoryController extends Controller
         $data['drugs_list']= $arr;
         return $data;
     }
+
+    public function getcategoriesforfrontend(Request $request){
+        // return $request;
+        if($request->data == "health"){
+            $data['category'] =Category::where('parent_id', 3)->get(['id','name']);
+        }elseif($request->data == "disease"){
+            $data['category'] =Category::where('parent_id', 5)->get(['id','name']);
+        }else{
+            $data['category'] =Category::where('parent_id', 1)->get(['id','name']);
+        }
+        
+        return $data;
+    }
 }

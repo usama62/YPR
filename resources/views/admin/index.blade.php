@@ -1,10 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
-<!--************************************
-				Dashboard Inner Banner Start
-		*************************************-->
 		<div id="jf-dashboardbanner" class="jf-dashboardbanner">
 			<h1>Insights</h1>
 			<ol class="jf-breadcrumb">
@@ -12,16 +8,7 @@
 				<li><a href="javascript:void(0);">Insights</a></li>
 			</ol>
 		</div>
-		<!--************************************
-				Dashboard Inner Banner End
-		*************************************-->
-<!--************************************
-				Main Start
-		*************************************-->
 		<main id="jf-main" class="jf-main jf-haslayout">
-			<!--************************************
-					Alert Boxes Start
-			*************************************-->
 			<div class="jf-dbsectionspace jf-haslayout jf-alertsexamples">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
@@ -70,12 +57,6 @@
 					</div>
 				</div>
 			</div>
-			<!--************************************
-					Alert Boxes End
-			*************************************-->
-			<!--************************************
-					Chart Statistics Start
-			*************************************-->
 			<div class="jf-dbsectionspace jf-haslayout">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-12 col-lg-8">
@@ -144,12 +125,6 @@
 					</div>
 				</div>
 			</div>
-			<!--************************************
-					Chart Statistics End
-			*************************************-->
-			<!--************************************
-					My Jobs Companies Start
-			*************************************-->
 			<div class="jf-dbsectionspace jf-haslayout jf-jobscompanieshold">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">
@@ -607,12 +582,6 @@
 					</div>
 				</div>
 			</div>
-			<!--************************************
-					My Jobs Companies End
-			*************************************-->
-			<!--************************************
-					Jobs Alerts Start
-			*************************************-->
 			<div class="jf-dbsectionspace jf-haslayout jf-jobholder">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
