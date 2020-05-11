@@ -19,10 +19,10 @@
 								<span>Add Details</span>
 							</div>
 							<div class="jf-dashbboardcontent">
-							@if(session()->has('message'))
-								<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
-							@endif
-								<form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
+								@if(session()->has('message'))
+									<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
+								@endif
+								<form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform">
 								@csrf
 									<fieldset>
 										<div class="form-group jf-inputwithicon">

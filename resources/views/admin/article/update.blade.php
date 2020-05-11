@@ -16,7 +16,7 @@
 						<div class="jf-dashboardbox">
 							<div class="jf-dashboardboxtitle">
 								<h2>Blogs</h2>
-								<span>Add Details</span>
+								<span>Update Details</span>
 							</div>
 							<div class="jf-dashbboardcontent">
 								<form method="POST" action="{{ route('article.update',$posts->id) }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >

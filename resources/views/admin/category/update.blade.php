@@ -22,7 +22,7 @@
 							@if(session()->has('message'))
 								<div class="alert alert-{{session('class')}}">{{session("message")}}</div>
 							@endif
-								<form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
+								<form method="POST" action="{{ route('category.update',$category->id) }}" enctype="multipart/form-data" class="jf-formtheme jf-postajobform" >
 								@csrf
 									<fieldset>
 										<div class="form-group jf-inputwithicon">

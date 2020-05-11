@@ -15,13 +15,9 @@
 				success: function(response)
 				{
 					category = response;
-					// console.log("<option>"+category['category'][0].name+"</option>");
 					category.each(function(){
 						console.log("<option>"+category['category']+"</option>");
 					});
-						// $("#option").append("<option>"+category['category'][i].name+"</option>");
-						
-					
 				}
 			});
 		});
@@ -327,7 +323,7 @@
 								</figure>
 								<div class="jf-articlecontent">
 									<div class="jf-articletitle">
-										<h3><a href="javascript:void(0);">{{ str_limit($article->name,20) }}</a></h3>
+										<h3><a href="{{ route('blog.detail',['id'=>$article->id]) }}">{{ str_limit($article->name,20) }}</a></h3>
 									</div>
 									<span class="jf-authorname"><a href="javascript:void(0);">{{$article->abc->name}}</a></span>
 								</div>

@@ -122,8 +122,8 @@ class DoctorsController extends Controller
         ]);
         
         $founder_image_Name = '';
-        if ($request->hasFile('profile_image')) {
-            $founder_image = $request->file('profile_image');
+        if ($request->hasFile('doctors_logo')) {
+            $founder_image = $request->file('doctors_logo');
             $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
             $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
             $founder_image_Name = "/assets/uploads/{$founder_image_Name}";

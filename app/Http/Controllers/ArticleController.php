@@ -115,6 +115,7 @@ class ArticleController extends Controller
 
     public function details($id)
     {
+        // return $id;
         $data['saved'] =Saved::where('post_id', $id)->get();
         $data['details'] = Article::find($id);
         $data['recents'] = Article::orderBy('id','desc')->limit(4)->get();
@@ -143,7 +144,8 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        // return $request;
         $request->validate([
             'title'=>'required',
             'description'=>'required',
@@ -167,12 +169,12 @@ class ArticleController extends Controller
         }
 
         $data = Article::find($id);
-        $data->name=$request->name;
+        $data->name=$request->title;
         $data->description=$request->description;
         $data->hide_publisher=$signed;
         $data->type_blog=$request->type_blog;
         $data->status=$request->status;
-        $data->category=implode(',' , $request->category);
+        $data->category=$request->categories;
         // $data->video_link=$request->video_link;
         $data->image=$founder_image_Name;
 

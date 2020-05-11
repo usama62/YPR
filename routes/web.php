@@ -62,6 +62,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/create-category', 'CategoryController@create');
     Route::get('/category', 'CategoryController@show');
     Route::post('/category/create','CategoryController@store')->name("category.store");
+    Route::post('/category/update/{id}','CategoryController@update')->name("category.update");
     Route::get('/category/edit/{id}','CategoryController@edit')->name("category.edit");
     Route::get('/category/delete/{id}', 'CategoryController@destroy')->name("category.delete");
     Route::get('/category/search', 'CategoryController@search')->name("category.search");

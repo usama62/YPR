@@ -61,8 +61,8 @@ class CategoryController extends Controller
         }
 
         $founder_image_Name = '';
-        if ($request->hasFile('company_logo')) {
-            $founder_image = $request->file('company_logo');
+        if ($request->hasFile('image')) {
+            $founder_image = $request->file('image');
             $founder_image_Name = time() . '.' . $founder_image->getClientOriginalExtension();
             $founder_image->move(public_path().'/assets/uploads/', $founder_image_Name); 
             $founder_image_Name = "/assets/uploads/{$founder_image_Name}";
@@ -139,7 +139,7 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
         $request->validate([
             'name'=>'required',
         ]);
@@ -164,7 +164,7 @@ class CategoryController extends Controller
         $data->image=$founder_image_Name;
 
         if($data->save()){
-            session()->flash('message','CAtegory has been updated successfully');
+            session()->flash('message','Category has been updated successfully');
             session()->flash('class','success');
         }else{
             session()->flash('message','Update failed');
